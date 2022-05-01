@@ -1,0 +1,41 @@
+// @see https://www.typescriptlang.org/tsconfig
+// @see https://devblogs.microsoft.com/typescript/announcing-typescript-4-5-beta/
+
+{
+  "include": ["src/**/*"], // include all files in the src directory
+  "exclude": ["node_modules", "**/*.test.ts"], // dont compile tests
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true, // for import react from "react"
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "alwaysStrict": true,
+    "baseUrl": "./", // enables import { B } from 'src/a/b' without './'
+    "checkJs": false,
+    "esModuleInterop": true,
+    "exactOptionalPropertyTypes": false,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "module": "esnext", // active js runtime
+    "moduleResolution": "node", // should be nodenext @see https://github.com/emotion-js/emotion/issues/2742
+    "noFallthroughCasesInSwitch": false,
+    "noImplicitAny": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noPropertyAccessFromIndexSignature": false,
+    "outDir": "dist",
+    "paths": {}, // map import keys to file paths
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "es2017", // download to this js runtime
+    "typeRoots": ["./src/@types", "./node_modules/@types"]
+    // "noEmit": true,
+  }
+}

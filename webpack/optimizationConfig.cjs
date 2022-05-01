@@ -58,7 +58,6 @@ const createSplitChunks = () => {
 // @see https://webpack.js.org/configuration/optimization/
 module.exports = function ({ isDev }) {
   return {
-    // $FlowFixMe[incompatible-return] webpack 5 typdef doesnt match docs
     chunkIds: isDev ? 'named' : 'deterministic',
     concatenateModules: true, // depends on usedExports
     emitOnErrors: true, // emit even if errors, will propagate to runtime
@@ -69,7 +68,6 @@ module.exports = function ({ isDev }) {
     mergeDuplicateChunks: true,
     minimize: true,
     // minimizer: createTerserPlugin({ pathDist, ifProd }),
-    // $FlowFixMe[incompatible-return] webpack 5 typdef doesnt match docs
     moduleIds: isDev ? 'named' : 'deterministic',
     nodeEnv: isDev ? 'development' : 'production',
     portableRecords: true,

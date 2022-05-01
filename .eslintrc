@@ -2,15 +2,26 @@
   "root": true,
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint", "prettier"],
+  "overrides": [
+    {
+      "files": ["**/*.test.tsx?"],
+      "env": {
+        "jest": true
+      }
+    }
+  ],
   "extends": [
     "eslint:recommended",
     "react-app",
     "react-app/jest",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:json/recommended",
     "prettier"
   ],
   "rules": {
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "no-unused-expressions": "off",
+    "@typescript-eslint/no-unused-expressions": 2
   }
 }

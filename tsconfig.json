@@ -2,8 +2,8 @@
 // @see https://devblogs.microsoft.com/typescript/announcing-typescript-4-5-beta/
 
 {
-  "include": ["src/**/*"], // include all files in the src directory
-  "exclude": ["node_modules", "**/*.test.ts"], // dont compile tests
+  "include": ["src"],
+  "exclude": ["node_modules", "**/*.test.tsx?", "src/setupTests.ts"],
   "compilerOptions": {
     "allowJs": true,
     "allowSyntheticDefaultImports": true, // for import react from "react"
@@ -20,7 +20,7 @@
     "jsx": "react-jsx",
     "jsxImportSource": "@emotion/react",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "module": "esnext", // active js runtime
+    "module": "ESNext", // active js runtime
     "moduleResolution": "node", // should be nodenext @see https://github.com/emotion-js/emotion/issues/2742
     "noFallthroughCasesInSwitch": false,
     "noImplicitAny": true,
@@ -34,8 +34,8 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
-    "target": "es2017", // download to this js runtime
-    "typeRoots": ["./src/@types", "./node_modules/@types"]
+    "target": "es2017"
+    // "typeRoots": ["./src/@types", "./node_modules/@types"]
     // "noEmit": true,
   }
 }

@@ -2,8 +2,8 @@ import { Global } from '@emotion/react';
 import styled from '@emotion/styled';
 
 import { globalStyles } from './globalCss';
+import appJson from './App.json';
 
-// css
 import 'animate.css';
 
 const OuterContainer = styled.div`
@@ -33,7 +33,7 @@ export const App = () => {
 
       <InnerContainer id="inner-container">
         <AppWrapper id="app-wrapper">
-          <h1>Hello world</h1>
+          <h1>{appJson.title}</h1>
         </AppWrapper>
       </InnerContainer>
     </OuterContainer>

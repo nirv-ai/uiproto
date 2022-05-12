@@ -1,27 +1,28 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+
+import { NavLink } from '../Library';
 
 export const AppNav = () => (
   <aside>
     <nav>
       <ul>
         <li>
-          <NavLink to="/">Home</NavLink>
+          <NavLink href="/">Home</NavLink>
         </li>
         <li>
-          <NavLink to="/typography">Typography</NavLink>
+          <NavLink href="/typography">Typography</NavLink>
         </li>
         <li>
-          <NavLink to="/layouts">Layouts</NavLink>
+          <NavLink href="/layouts">Layouts</NavLink>
         </li>
         <li>
-          <NavLink to="/images">Images</NavLink>
+          <NavLink href="/images">Images</NavLink>
         </li>
         <li>
-          <NavLink to="/animation">Animations</NavLink>
+          <NavLink href="/animation">Animations</NavLink>
         </li>
         <li>
-          <NavLink to="/micro-interactions">Micro Interactions</NavLink>
+          <NavLink href="/micro-interactions">Micro Interactions</NavLink>
         </li>
       </ul>
     </nav>

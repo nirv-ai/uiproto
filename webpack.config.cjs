@@ -1,3 +1,4 @@
+// TODO(noah): https://github.com/facebook/create-react-app/blob/main/packages/react-scripts/config/webpack.config.js
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 

@@ -118,6 +118,42 @@ export const globalStyles = css`
       code {
         font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
       }
+
+      /*@see https://medium.com/@dave_lunny/stylish-a-styling-e80c80cbc30e */
+      [role="link"], a {
+        text-decoration: none;
+        cursor: pointer;
+
+        &:is(a) {
+          &:hover {
+            color: var(--color-pink-vibrant);
+          }
+        }
+
+        /** navlinks */
+        &:is(span) {
+          color: var(--color-blue);
+          display: inline-block;
+          position: relative;
+          text-transform: uppercase;
+
+          &:before {
+            background-color: var(--color-pink-vibrant);
+            bottom: -1px; /* again this can be adjusted based on line-height/font-size */
+            content: '';
+            height: 2px;  /* this can be modified based on the boldness of the font */
+            position: absolute;
+            width: 0;
+            transition: width 0.3s ease-in-out;
+          }
+
+          &:hover {
+            &:before {
+              width: 100%;
+            }
+          }
+        }
+      }
     }
   }
 

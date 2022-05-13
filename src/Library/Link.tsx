@@ -1,5 +1,6 @@
 /**
  * for all navigation needs
+ * combines react-aria, react router, and emotion into a single reusable interface
  * @see https://react-spectrum.adobe.com/react-aria/useLink.html
  * @see https://reactrouter.com/docs/en/v6/getting-started/overview#navigation
  */
@@ -9,20 +10,23 @@ import { useLink } from 'react-aria';
 import { css } from '@emotion/react';
 
 const anchorStyles = css`
-  display: inline;
+
 `;
 
 const navStyles = css`
   ${anchorStyles};
-  display: inline-block;
+
 `;
 
-type ElementTypes = 'span' | 'a'; // todo: button
+// TODO:(noah) button, image, etc
+// ^ need see what react-aria gives us for free
+type ElementTypes = 'span' | 'a';
 
+// TODO: (noah) classnames, css, etc
 type LinkProps = {
-  href: string;
-  elementType?: ElementTypes;
   children: ReactNode;
+  elementType?: ElementTypes;
+  href: string;
   target?: string;
 };
 

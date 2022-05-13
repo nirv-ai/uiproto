@@ -25,6 +25,7 @@ type ElementTypes = 'span' | 'a';
 // TODO: (noah) classnames, css, etc
 type LinkProps = {
   children: ReactNode;
+  clicked?: boolean;
   elementType?: ElementTypes;
   href: string;
   target?: string;
@@ -36,6 +37,11 @@ const Link: FC<LinkProps> = props => {
   const { linkProps /*, isPressed*/ } = useLink(props, ref);
 
   const navigate = useNavigate();
+  // const params = useParams();
+  // if (props.clicked) {
+  //   console.info('\n\n wtf are params', params);
+  //   // navigate(props.href);
+  // }
 
   const Component = props.elementType;
   let defaultCss;

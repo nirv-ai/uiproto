@@ -27,13 +27,12 @@ const AppWrapper = styled.main`
 export const AppLayout = () => (
   <OuterContainer id="outer-container">
     <Global styles={globalStyles} />
-
     <InnerContainer id="inner-container">
+      <AppNav />
       <AppWrapper id="app-wrapper">
-        <AppNav />
         <Outlet />
-        <AppFooter />
       </AppWrapper>
+      <AppFooter />
     </InnerContainer>
   </OuterContainer>
 );

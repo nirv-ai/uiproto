@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import { reportWebVitals } from './reportWebVitals';
-import { App } from './Components';
+import { App } from './Screens';
 
 // todo: https://github.com/facebook/create-react-app/tree/main/packages/cra-template-typescript/template/public
 

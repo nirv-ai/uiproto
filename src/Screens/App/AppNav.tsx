@@ -1,16 +1,16 @@
 import React from 'react';
 
 import { MenuNav, menuItem } from '../../Library';
-import appJson from './App.json';
+import appJson from './app.json';
 
 const appNavLinks = [
   menuItem('home', '/', 'Home'),
   menuItem('typography', '/typography', 'Typography'),
-  menuItem('layout', '/layout', 'Layout'),
-  menuItem('images', '/images', 'Images'),
-  menuItem('uielements', '/ui-elements', 'ui elements'),
   menuItem('animation', '/animation', 'Animation'),
+  menuItem('images', '/images', 'Images'),
+  menuItem('layout', '/layout', 'Layout'),
   menuItem('microinteractions', '/micro-interactions', 'Micro interactions'),
+  menuItem('uielements', '/ui-elements', 'ui elements'),
 ];
 
 const headerCss = {

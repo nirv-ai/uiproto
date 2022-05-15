@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import { reportWebVitals } from './reportWebVitals';
-import { App } from './Screens';
+import { Router } from './Router';
 
 // todo: https://github.com/facebook/create-react-app/tree/main/packages/cra-template-typescript/template/public
 
@@ -10,7 +10,7 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 
 root.render(
   <React.StrictMode>
-    <App />
+    <Router />
   </React.StrictMode>
 );
 

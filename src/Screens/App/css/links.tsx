@@ -1,21 +1,7 @@
 import { css } from '@emotion/react';
 
-export const menusAndLinks = css`
-  .inline > ul > [role="menuitem"] {
-    display: inline-flex
-  }
-
-  .block > ul > [role="menuitem"] {
-    display: flex;
-  }
-
-  [role="menuitem"] {
-    & > * {
-      flex: 1 1 100%;
-    }
-  }
-
-  /*@see https://medium.com/@dave_lunny/stylish-a-styling-e80c80cbc30e */
+export const links = css`
+/*@see https://medium.com/@dave_lunny/stylish-a-styling-e80c80cbc30e */
   a,
   [role="link"] {
     text-decoration: none;

@@ -1,11 +1,12 @@
 import { css } from '@emotion/react';
 
-import { rootVars, elements, menusAndLinks, mediaQueries, layout } from './css';
+import { rootVars, reset, menus, links, mediaQueries, layout } from './css';
 
 export const globalStyles = css`
   ${rootVars};
-  ${elements};
+  ${reset};
   ${layout};
-  ${menusAndLinks};
+  ${links}
+  ${menus};
   ${mediaQueries};
 `;

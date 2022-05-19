@@ -1,15 +1,36 @@
 import React from 'react';
 
-import landingJson from './landing.json';
+import text from './text.json';
+
+import {
+  AnimationIntro,
+  LayoutIntro,
+  MicroInteractionsIntro,
+  TypographyIntro,
+  UIElementsIntro,
+} from 'src/Screens';
+
+const LandingShowcase = () => (
+  <>
+    <AnimationIntro />
+    <LayoutIntro />
+    <MicroInteractionsIntro />
+    <TypographyIntro />
+    <UIElementsIntro />
+  </>
+);
 
 export const Landing = () => (
   <article className="screen">
     <section>
-      <h1>{landingJson.title}</h1>
-      <h2>{landingJson.subtitle}</h2>
+      <h1>{text.title}</h1>
+      <h2>{text.subtitle}</h2>
     </section>
     <section>
-      <p>{landingJson.about}</p>
+      <p>{text.about}</p>
     </section>
+    <article>
+      <LandingShowcase />
+    </article>
   </article>
 );

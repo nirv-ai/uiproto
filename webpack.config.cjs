@@ -24,6 +24,9 @@ module.exports = {
   resolve: {
     extensions: ['.tsx', '.ts', '.mjs', '.js', '.json', '.cjs'],
     mainFields: ['module', 'main'],
+    alias: {
+      src: path.resolve(__dirname, 'src/'),
+    },
   },
   optimization: optimizationConfig({ isDev }),
   module: moduleConfig({ MiniCssExtractPlugin, isDev }),

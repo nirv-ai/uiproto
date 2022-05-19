@@ -1,4 +1,8 @@
 import React from 'react';
+import { css } from '@emotion/react';
 
 import text from './text.json';
-export const AppFooter = () => <footer>{text.author}</footer>;
+
+const footerCss = css({});
+
+export const AppFooter = () => <footer css={footerCss}>{text.author}</footer>;

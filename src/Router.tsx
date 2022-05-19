@@ -20,18 +20,11 @@ export const Router = () => {
           <Route index element={<Landing />} />
           <Route path="animation" element={<Animation />} />
           <Route path="images" element={<Images />} />
-          <Route path="Layout" element={<Layout />} />
-          <Route path="MicroInteractions" element={<MicroInteractions />} />
+          <Route path="layout" element={<Layout />} />
+          <Route path="micro-interactions" element={<MicroInteractions />} />
           <Route path="typography" element={<Typography />} />
-          <Route path="UIElements" element={<UIElements />} />
-          <Route
-            path="*"
-            element={
-              <main style={{ padding: '1rem' }}>
-                <p>There's nothing here!</p>
-              </main>
-            }
-          />
+          <Route path="ui-elements" element={<UIElements />} />
+          <Route path="*" element={<p>There's nothing here!</p>} />
         </Route>
       </Routes>
     </HashRouter>

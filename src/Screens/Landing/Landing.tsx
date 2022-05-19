@@ -1,4 +1,5 @@
 import React from 'react';
+import { css } from '@emotion/react';
 
 import text from './text.json';
 
@@ -22,8 +23,10 @@ const LandingShowcase = () => (
   </article>
 );
 
+const landingCss = css({});
+
 export const Landing = () => (
-  <article className="screen">
+  <article className="screen" css={landingCss}>
     <section>
       <h1>{text.title}</h1>
       <h2>{text.subtitle}</h2>

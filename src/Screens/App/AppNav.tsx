@@ -2,9 +2,7 @@ import React from 'react';
 import { css } from '@emotion/react';
 
 import { RiMenu5Line } from 'react-icons/ri';
-import { usePopoverState, Popover, PopoverDisclosure } from 'reakit/Popover';
-
-import { MenuNav, menuItem } from '../../Library';
+import { MenuNav, menuItem, Popover } from '../../Library';
 import text from './text.json';
 
 const appNavLinks = [
@@ -24,21 +22,28 @@ const headerCss = css({
   '& > h1': { fontSize: 'inherit' },
 });
 
-const drawerCss = css({
-  flexBasis: '1.2em',
-  height: '1.2em',
-});
+// const drawerCss = css({
+//   flexBasis: '1.2em',
+//   height: '1.2em',
+// });
+
+/*
+<PopoverDisclosure {...popover} css={drawerCss}>
+*/
+// <RiMenu5Line />
 
 export const AppNav = () => {
-  const popover = usePopoverState({ gutter: 5 });
-
   return (
     <header css={headerCss} className="column">
       <h1>{text.title}</h1>
-      <PopoverDisclosure {...popover} css={drawerCss}>
-        <RiMenu5Line />
-      </PopoverDisclosure>
-      <Popover {...popover} aria-label="Welcome">
+      <Popover
+        aria-label="Custom popover"
+        disclosure={
+          <button>
+            <RiMenu5Line />
+          </button>
+        }
+      >
         <nav>
           <MenuNav NavType="NavLink" ariaLabel="application-nav" links={appNavLinks} />
         </nav>

@@ -3,10 +3,13 @@ import { css } from '@emotion/react';
 export const layout = css`
   #inner-container {
     & > header, & > footer {
-      position: fixed;
-      left: 0;
-      right: 0;
+      align-items: center;
+      color: white;
+      background-color: var(--color-scheme1-lightdark);
       height: 1.5em;
+      left: 0;
+      position: fixed;
+      right: 0;
     }
 
     & > header {

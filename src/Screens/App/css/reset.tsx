@@ -47,6 +47,7 @@ export const reset = css`
   }
 
   a, button, input[type="submit"], input[type="reset"]  {
+    background: none;
     border: none;
     cursor: pointer;
     outline: inherit;

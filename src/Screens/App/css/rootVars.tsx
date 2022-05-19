@@ -32,10 +32,9 @@ export const rootVars = css`
 
     /* colors */
     /* scheme1: https://colorhunt.co/palette/f0e3caff8303a357091b1a17 */
-    --color-scheme1-white1: rgb(189, 220, 204);
     --color-scheme1-darkdark: #1B1A17;
     --color-scheme1-darklight: #A35709;
-    --color-scheme1-lightdark: # FF8303;
+    --color-scheme1-lightdark: #FF8303;
     --color-scheme1-lightlight: #F0E3CA;
     /* scheme1 blue: https://colorhunt.co/palette/c4ddff7fb5ff001d6efee2c5 */
     --color-scheme1-bluedark: #001D6E;

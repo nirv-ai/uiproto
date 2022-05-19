@@ -22,15 +22,10 @@ const headerCss = css({
   '& > h1': { fontSize: 'inherit' },
 });
 
-// const drawerCss = css({
-//   flexBasis: '1.2em',
-//   height: '1.2em',
-// });
-
-/*
-<PopoverDisclosure {...popover} css={drawerCss}>
-*/
-// <RiMenu5Line />
+const drawerCss = css({
+  flexBasis: '1.2em',
+  height: '1.2em',
+});
 
 export const AppNav = () => {
   return (
@@ -39,7 +34,7 @@ export const AppNav = () => {
       <Popover
         aria-label="Custom popover"
         disclosure={
-          <button>
+          <button css={drawerCss}>
             <RiMenu5Line />
           </button>
         }

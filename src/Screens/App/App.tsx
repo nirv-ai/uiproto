@@ -2,10 +2,11 @@ import React from 'react';
 import { Global } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Outlet } from 'react-router-dom';
+import { OverlayProvider } from 'react-aria'; // for react-aria modals
 
-import { globalStyles } from './globalCss';
-import { AppNav } from './AppNav';
 import { AppFooter } from './AppFooter';
+import { AppNav } from './AppNav';
+import { globalStyles } from './globalCss';
 
 const OuterContainer = styled.div`
   display: flex;
@@ -25,14 +26,16 @@ const AppWrapper = styled.main`
 `;
 
 export const App = () => (
-  <OuterContainer id="outer-container">
-    <Global styles={globalStyles} />
-    <InnerContainer id="inner-container">
-      <AppNav />
-      <AppWrapper id="app-wrapper">
-        <Outlet />
-      </AppWrapper>
-      <AppFooter />
-    </InnerContainer>
-  </OuterContainer>
+  <OverlayProvider>
+    <OuterContainer id="outer-container">
+      <Global styles={globalStyles} />
+      <InnerContainer id="inner-container">
+        <AppNav />
+        <AppWrapper id="app-wrapper">
+          <Outlet />
+        </AppWrapper>
+        <AppFooter />
+      </InnerContainer>
+    </OuterContainer>
+  </OverlayProvider>
 );

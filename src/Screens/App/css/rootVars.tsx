@@ -17,8 +17,8 @@ export const rootVars = css`
     --spacing: calc(1% * var(--fsize));
 
     --scale1-L: calc(var(--scale1) * var(--fsize));
-    --scale1-XL: calc(var(--scale1-L) * 2);
-    --scale1-XXL: calc(var(--scale1-L) * 3);
+    --scale1-XL: calc(var(--scale1-L) * 1.25);
+    --scale1-XXL: calc(var(--scale1-L) * 1.5);
     --scale1-S: calc(var(--scale1-L) * 0.75);
     --scale1-XS: calc(var(--scale1) * 0.50);
     --scale1-XXS: calc(var(--scale1) * 5);
@@ -32,6 +32,7 @@ export const rootVars = css`
 
     /* colors */
     /* scheme1: https://colorhunt.co/palette/f0e3caff8303a357091b1a17 */
+    --color-scheme1-white1: rgb(189, 220, 204);
     --color-scheme1-darkdark: #1B1A17;
     --color-scheme1-darklight: #A35709;
     --color-scheme1-lightdark: # FF8303;

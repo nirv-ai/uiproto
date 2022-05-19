@@ -1,15 +1,7 @@
 import { css } from '@emotion/react';
 
 export const layout = css`
-  .row {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-
-    /* all immediate children */
-    & > * {
-      flex: 1 1 100%;
-    }
+  .row {Modal
   }
 
   .column {

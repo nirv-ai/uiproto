@@ -17,7 +17,7 @@ export const links = css`
 
     /** navlinks */
     &:is(span) {
-      display: inline-block;
+      display: block;
       position: relative;
       text-transform: uppercase;
 

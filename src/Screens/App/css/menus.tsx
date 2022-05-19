@@ -10,6 +10,8 @@ export const menus = css`
   }
 
   [role="menuitem"] {
+    list-style-type: none;
+
     & > * {
       flex: 1 1 100%;
     }

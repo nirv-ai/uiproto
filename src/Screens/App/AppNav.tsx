@@ -1,7 +1,9 @@
 import React from 'react';
+import { RiMenu5Line } from 'react-icons/ri';
+import { usePopoverState, Popover, PopoverDisclosure } from 'reakit/Popover';
 
 import { MenuNav, menuItem } from '../../Library';
-import appJson from './app.json';
+import text from './text.json';
 
 const appNavLinks = [
   menuItem('home', '/', 'Home'),
@@ -14,15 +16,25 @@ const appNavLinks = [
 ];
 
 const headerCss = {
+  flexFlow: 'row',
   fontSize: 'var(--fsize-5)',
-  '& > h1': { fontSize: 'inherit ' },
+  '& > h1': { fontSize: 'inherit' },
 };
 
-export const AppNav = () => (
-  <header css={headerCss}>
-    <h1>{appJson.title}</h1>
-    <nav className="block">
-      <MenuNav NavType="NavLink" ariaLabel="application-nav" links={appNavLinks} />
-    </nav>
-  </header>
-);
+export const AppNav = () => {
+  const popover = usePopoverState();
+
+  return (
+    <header css={headerCss} className="column">
+      <h1>{text.title}</h1>
+      <PopoverDisclosure {...popover} css={{ flexBasis: '50px' }}>
+        <RiMenu5Line />
+      </PopoverDisclosure>
+      <Popover {...popover} aria-label="Welcome">
+        <nav>
+          <MenuNav NavType="NavLink" ariaLabel="application-nav" links={appNavLinks} />
+        </nav>
+      </Popover>
+    </header>
+  );
+};

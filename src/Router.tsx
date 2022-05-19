@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import React from 'react';
 
 import {
@@ -14,7 +14,7 @@ import {
 
 export const Router = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Landing />} />
@@ -24,8 +24,16 @@ export const Router = () => {
           <Route path="MicroInteractions" element={<MicroInteractions />} />
           <Route path="typography" element={<Typography />} />
           <Route path="UIElements" element={<UIElements />} />
+          <Route
+            path="*"
+            element={
+              <main style={{ padding: '1rem' }}>
+                <p>There's nothing here!</p>
+              </main>
+            }
+          />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };

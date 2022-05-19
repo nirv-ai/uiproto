@@ -21,7 +21,8 @@
   ],
   "rules": {
     "prettier/prettier": "error",
-    "no-unused-expressions": "off",
-    "@typescript-eslint/no-unused-expressions": 2
+    "@typescript-eslint/no-unused-expressions": "error",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/ban-ts-comment": "off"
   }
 }

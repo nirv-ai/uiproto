@@ -33,7 +33,7 @@ type MenuItemProps = {
     key: string | number;
   };
   state: TreeState<unknown>;
-  onAction: AriaOnAction;
+  onAction: ((key: React.Key) => void) | undefined;
 };
 
 // TODO: (noah) need to fully flesh out the props (check the docs)

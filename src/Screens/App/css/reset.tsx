@@ -4,20 +4,22 @@ export const reset = css`
   html {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    background-color: var(--color-scheme1-lightlight);
+    background-color: white;
     box-sizing: border-box;
     color: var(--color-scheme1-darkdark);
     font-family: Fabriga, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-size: var(--fsize);
+    word-break: break-word;
+    min-height: 100%;
 
     *,
     *::before,
     *::after {
-      color: inherit;
       box-sizing: inherit;
+      color: inherit;
       font-size: inherit;
-      padding: 0;
       margin: 0;
+      padding: 0;
     }
   }
 
@@ -42,5 +44,11 @@ export const reset = css`
 
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  }
+
+  a, button, input[type="submit"], input[type="reset"]  {
+    border: none;
+    cursor: pointer;
+    outline: inherit;
   }
 `;

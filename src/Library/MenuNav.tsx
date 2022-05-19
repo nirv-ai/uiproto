@@ -12,7 +12,7 @@ interface MenuNavProps {
   NavType: 'NavLink' | 'A';
   ariaLabel: string;
   links: LinkConfig[];
-  onAction?: OnActionCb;
+  onAction?: any;
   className?: string;
 }
 

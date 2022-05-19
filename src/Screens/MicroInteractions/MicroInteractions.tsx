@@ -1,3 +1,16 @@
 import React from 'react';
 
-export const MicroInteractions = () => <div>MicroInteractions</div>;
+import text from './text.json';
+
+export const MicroInteractionsIntro = () => (
+  <section>
+    <h2>{text.title}</h2>
+    <p>{text.subtitle}</p>
+  </section>
+);
+
+export const MicroInteractions = () => (
+  <article>
+    <MicroInteractionsIntro />
+  </article>
+);

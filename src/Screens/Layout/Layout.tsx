@@ -1,3 +1,16 @@
 import React from 'react';
 
-export const Layout = () => <div>Layout</div>;
+import text from './text.json';
+
+export const LayoutIntro = () => (
+  <section>
+    <h2>{text.title}</h2>
+    <p>{text.subtitle}</p>
+  </section>
+);
+
+export const Layout = () => (
+  <article>
+    <LayoutIntro />
+  </article>
+);

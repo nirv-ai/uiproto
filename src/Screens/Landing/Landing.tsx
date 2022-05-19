@@ -4,6 +4,7 @@ import text from './text.json';
 
 import {
   AnimationIntro,
+  ImagesIntro,
   LayoutIntro,
   MicroInteractionsIntro,
   TypographyIntro,
@@ -11,13 +12,14 @@ import {
 } from 'src/Screens';
 
 const LandingShowcase = () => (
-  <>
+  <article>
     <AnimationIntro />
+    <ImagesIntro />,
     <LayoutIntro />
     <MicroInteractionsIntro />
     <TypographyIntro />
     <UIElementsIntro />
-  </>
+  </article>
 );
 
 export const Landing = () => (
@@ -25,12 +27,8 @@ export const Landing = () => (
     <section>
       <h1>{text.title}</h1>
       <h2>{text.subtitle}</h2>
-    </section>
-    <section>
       <p>{text.about}</p>
     </section>
-    <article>
-      <LandingShowcase />
-    </article>
+    <LandingShowcase />
   </article>
 );

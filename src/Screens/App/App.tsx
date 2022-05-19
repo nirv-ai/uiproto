@@ -8,6 +8,8 @@ import { AppFooter } from './AppFooter';
 import { AppNav } from './AppNav';
 import { globalStyles } from './globalCss';
 
+import 'animate.css';
+
 const OuterContainer = styled.div`
   display: flex;
   flex-flow: wrap column;

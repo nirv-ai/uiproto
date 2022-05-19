@@ -16,6 +16,7 @@ specifiers:
   '@types/testing-library__jest-dom': 5.14.3
   '@typescript-eslint/eslint-plugin': 5.23.0
   '@typescript-eslint/parser': 5.23.0
+  animate.css: ^4.1.1
   clsx: 1.1.1
   css-loader: 6.7.1
   csv-loader: 3.0.3
@@ -64,6 +65,7 @@ specifiers:
 dependencies:
   '@emotion/react': 11.9.0_react@18.1.0
   '@emotion/styled': 11.8.1_btguaf77hpuxici4esujjeifki
+  animate.css: 4.1.1
   clsx: 1.1.1
   formik: 2.2.9_react@18.1.0
   gsap: 3.10.4
@@ -4386,6 +4388,10 @@ packages:
       require-from-string: 2.0.2
       uri-js: 4.4.1
     dev: true
+
+  /animate.css/4.1.1:
+    resolution: {integrity: sha512-+mRmCTv6SbCmtYJCN4faJMNFVNN5EuCTTprDTAo7YzIGji2KADmakjVA3+8mVDkZ2Bf09vayB35lSQIex2+QaQ==}
+    dev: false
 
   /ansi-align/3.0.1:
     resolution: {integrity: sha512-IOfwwBF5iczOjp/WeY4YxyjqAFMQoZufdQWDd19SEExbVLNXqvpzSJ/M7Za4/sCPmQ0+GRquoA7bGcINcxew6w==}

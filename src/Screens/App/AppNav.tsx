@@ -30,7 +30,7 @@ const drawerCss = css({
 });
 
 export const AppNav = () => {
-  const popover = usePopoverState();
+  const popover = usePopoverState({ gutter: 5 });
 
   return (
     <header css={headerCss} className="column">

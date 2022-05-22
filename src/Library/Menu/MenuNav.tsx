@@ -24,6 +24,7 @@ export const MenuNav: FC<MenuNavProps> = ({ ariaLabel, NavType, links, onAction 
   // const [itemClicked, setItemClicked] = useState<Key>('');
 
   const useAction = (key: Key) => {
+    console.info('\n\n item clicked', key);
     if (onAction) onAction(key);
     // else setItemClicked(key);
   };

@@ -4,22 +4,11 @@
  * @see https://react-spectrum.adobe.com/react-aria/useLink.html
  * @see https://reactrouter.com/docs/en/v6/getting-started/overview#navigation
  */
-import React, { useRef, type ReactNode, type FC } from 'react';
+
+import React, { useRef, type ReactNode, type FC, type ElementType } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLink } from 'react-aria';
-import { css } from '@emotion/react';
 
-const anchorStyles = css`
-
-`;
-
-const navStyles = css`
-  ${anchorStyles};
-
-`;
-
-// TODO:(noah) button, image, etc
-// ^ need see what react-aria gives us for free
 type ElementTypes = 'span' | 'a';
 
 // TODO: (noah) classnames, css, etc
@@ -43,19 +32,7 @@ const Link: FC<LinkProps> = props => {
   //   // navigate(props.href);
   // }
 
-  const Component = props.elementType;
-  let defaultCss;
-
-  switch (Component) {
-    case 'span':
-      defaultCss = navStyles;
-      break;
-    case 'a':
-      defaultCss = anchorStyles;
-      break;
-    default:
-      throw new Error(`invalid component type: ${Component}`);
-  }
+  const Component = props.elementType as ElementType;
 
   return (
     <Component
@@ -64,7 +41,6 @@ const Link: FC<LinkProps> = props => {
       href={props.href}
       target={props.target}
       onClick={() => navigate(props.href)}
-      css={[defaultCss]}
     >
       {props.children}
     </Component>

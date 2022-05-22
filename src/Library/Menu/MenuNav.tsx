@@ -13,20 +13,27 @@ interface MenuNavProps {
   ariaLabel: string;
   links: LinkConfig[];
   onAction?: any;
-  className?: string;
+  renderProps?: { [x: string]: any };
 }
 
 const NAV_TYPES = { NavLink, A };
 
 export const menuItem = (key: Key, href: string, text: string): LinkConfig => ({ key, href, text });
 
-export const MenuNav: FC<MenuNavProps> = ({ ariaLabel, NavType, links, onAction }) => {
+export const MenuNav: FC<MenuNavProps> = ({
+  renderProps = {},
+  ariaLabel,
+  NavType,
+  links,
+  onAction,
+}) => {
+  const { renderProps: parentProps } = renderProps;
   // const [itemClicked, setItemClicked] = useState<Key>('');
 
   const useAction = (key: Key) => {
-    console.info('\n\n item clicked', key);
+    // console.info('\n\n item clicked', key, Object.keys(renderProps));
     if (onAction) onAction(key);
-    // else setItemClicked(key);
+    if (parentProps?.hide) parentProps.hide();
   };
 
   return (
@@ -35,7 +42,7 @@ export const MenuNav: FC<MenuNavProps> = ({ ariaLabel, NavType, links, onAction 
         const ThisNav = NAV_TYPES[NavType];
 
         return (
-          <Item key={key}>
+          <Item key={key} textValue={text}>
             <ThisNav href={href}>{text}</ThisNav>
           </Item>
         );

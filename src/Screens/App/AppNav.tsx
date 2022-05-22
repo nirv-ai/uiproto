@@ -70,9 +70,18 @@ export const AppNav = () => {
           </button>
         }
       >
-        <nav css={navCss}>
-          <MenuNav NavType="NavLink" ariaLabel="application-nav" links={appNavLinks} />
-        </nav>
+        {(renderProps = {}) => {
+          return (
+            <nav css={navCss}>
+              <MenuNav
+                ariaLabel="application-nav"
+                links={appNavLinks}
+                NavType="NavLink"
+                renderProps={renderProps}
+              />
+            </nav>
+          );
+        }}
       </Popover>
     </header>
   );

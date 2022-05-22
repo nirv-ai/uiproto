@@ -4,17 +4,16 @@ import React from 'react';
 import { usePopoverState, Popover as BasePopover, PopoverDisclosure } from 'reakit/Popover';
 
 export const Popover = ({ disclosure, ...props }) => {
-  const popover = usePopoverState();
-
-  console.info('\n\n popover state', popover);
+  const popoverState = usePopoverState();
+  const Children = props.children;
 
   return (
     <>
-      <PopoverDisclosure {...popover} ref={disclosure.ref} {...disclosure.props}>
+      <PopoverDisclosure {...popoverState} ref={disclosure.ref} {...disclosure.props}>
         {disclosureProps => React.cloneElement(disclosure, disclosureProps)}
       </PopoverDisclosure>
-      <BasePopover {...popover} {...props}>
-        {props.children}
+      <BasePopover {...popoverState} {...props}>
+        {typeof props.children === 'function' ? <Children renderProps={popoverState} /> : Children}
       </BasePopover>
     </>
   );

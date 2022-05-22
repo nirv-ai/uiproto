@@ -26,7 +26,7 @@
     "noFallthroughCasesInSwitch": false,
     "noImplicitAny": false,
     "noImplicitOverride": true,
-    "noImplicitReturns": true,
+    "noImplicitReturns": false,
     "noImplicitThis": true,
     "noPropertyAccessFromIndexSignature": false,
     "outDir": "dist",

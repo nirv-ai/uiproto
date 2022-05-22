@@ -14,12 +14,12 @@ import {
 
 const LandingShowcase = () => (
   <article>
+    <TypographyIntro />
+    <ImagesIntro />
+    <UIElementsIntro />
     <AnimationIntro />
-    <ImagesIntro />,
     <LayoutIntro />
     <MicroInteractionsIntro />
-    <TypographyIntro />
-    <UIElementsIntro />
   </article>
 );
 

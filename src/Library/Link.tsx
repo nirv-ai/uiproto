@@ -6,8 +6,9 @@
  */
 
 import React, { useRef, type ReactNode, type FC, type ElementType } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useLink } from 'react-aria';
+import { useNavigate, useMatch } from 'react-router-dom';
+import clsx from 'clsx';
 
 type ElementTypes = 'span' | 'a';
 
@@ -24,25 +25,23 @@ type LinkProps = {
 const Link: FC<LinkProps> = props => {
   const renderProps = props.renderProps.renderProps ?? props.renderProps;
   const ref = useRef<HTMLAnchorElement>(null);
-
   const { linkProps /*, isPressed*/ } = useLink(props, ref);
+  const activeProps = useMatch(props.href);
 
   const navigate = useNavigate();
-  // const params = useParams();
-  // if (props.clicked) {
-  //   console.info('\n\n wtf are params', params);
-  //   // navigate(props.href);
-  // }
 
   const Component = props.elementType as ElementType;
 
   const handleClick = () => {
+    if (activeProps) return void 0;
     navigate(props.href);
     if (renderProps.hide) renderProps.hide();
   };
+
   return (
     <Component
       {...linkProps}
+      className={clsx(activeProps && 'active')}
       href={props.href}
       onClick={handleClick}
       ref={ref}

@@ -30,6 +30,10 @@ const navCss = css({
         paddingLeft: '0.4em',
         paddingRight: '0.4em',
         color: 'white',
+        '&.active': {
+          cursor: 'not-allowed',
+          color: 'black',
+        },
       },
     },
   },

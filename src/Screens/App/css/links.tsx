@@ -21,14 +21,14 @@ export const links = css`
       position: relative;
       text-transform: uppercase;
 
-      &:before {
-        background-color: white;
-        bottom: -1px; /* again this can be adjusted based on line-height/font-size */
-        content: '';
-        height: 2px;  /* this can be modified based on the boldness of the font */
-        position: absolute;
-        width: 0;
-        transition: width 0.6s ease-in-out;
+      &:not(.active):before {
+            background-color: white;
+            bottom: -1px; /* again this can be adjusted based on line-height/font-size */
+            content: '';
+            height: 2px;  /* this can be modified based on the boldness of the font */
+            position: absolute;
+            width: 0;
+            transition: width 0.6s ease-in-out;
       }
 
       &:hover {

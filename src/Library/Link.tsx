@@ -64,7 +64,7 @@ const Link: FC<LinkProps> = props => {
       href={props.href}
       target={props.target}
       onClick={() => navigate(props.href)}
-      css={defaultCss}
+      css={[defaultCss]}
     >
       {props.children}
     </Component>

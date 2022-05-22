@@ -19,6 +19,7 @@ specifiers:
   animate.css: ^4.1.1
   clsx: 1.1.1
   css-loader: 6.7.1
+  csstype: ^3.1.0
   csv-loader: 3.0.3
   eslint: 8.15.0
   eslint-config-prettier: 8.5.0
@@ -67,6 +68,7 @@ dependencies:
   '@emotion/styled': 11.8.1_btguaf77hpuxici4esujjeifki
   animate.css: 4.1.1
   clsx: 1.1.1
+  csstype: 3.1.0
   formik: 2.2.9_react@18.1.0
   gsap: 3.10.4
   history: 5.3.0
@@ -1683,7 +1685,7 @@ packages:
       '@emotion/memoize': 0.7.5
       '@emotion/unitless': 0.7.5
       '@emotion/utils': 1.1.0
-      csstype: 3.0.11
+      csstype: 3.1.0
     dev: false
 
   /@emotion/sheet/1.1.0:
@@ -3780,7 +3782,7 @@ packages:
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
-      csstype: 3.0.11
+      csstype: 3.1.0
 
   /@types/responselike/1.0.0:
     resolution: {integrity: sha512-85Y2BjiufFzaMIlvJDvTTB8Fxl2xfLo4HgmHzVBz08w4wDePCTjYw66PdrolO0kzli3yam/YCgRufyo1DdQVTA==}
@@ -5736,8 +5738,8 @@ packages:
       cssom: 0.3.8
     dev: true
 
-  /csstype/3.0.11:
-    resolution: {integrity: sha512-sa6P2wJ+CAbgyy4KFssIb/JNMLxFvKF1pCYCSXS8ZMuqZnMsrxqI2E5sPyoTpxoPU/gVZMzr2zjOfg8GIZOMsw==}
+  /csstype/3.1.0:
+    resolution: {integrity: sha512-uX1KG+x9h5hIJsaKR9xHUeUraxf8IODOwq9JLNPq6BwB04a/xgpq3rcx47l5BZu5zBPlgD342tdke3Hom/nJRA==}
 
   /csv-loader/3.0.3:
     resolution: {integrity: sha512-JMr83kH2sOFKbRO95fAQV1fLEc1Chx1osJpU7Gd5ZQhmXrsQN479P08sDuyZoO5LMiJ8IsR72Xtl/nSA7rh4Lw==}

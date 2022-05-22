@@ -1,10 +1,10 @@
 import React from 'react';
 import { css } from '@emotion/react';
 
+import { MenuNav, menuItem, Popover } from 'src/Library';
 import { RiMenu5Line } from 'react-icons/ri';
-import { MenuNav, menuItem, Popover } from '../../Library';
 import text from './text.json';
-import uiprotoLogo from 'src/assets/images/uiproto_logo_200x200.png';
+import uiProtoLogo from 'src/assets/images/uiproto_logo_200x200.png';
 
 const appNavLinks = [
   menuItem('home', '/', 'Home'),
@@ -21,25 +21,34 @@ const drawerCss = css({
   height: '1em',
 });
 
-const uiprotoLogoCss = css({
+const uiProtoLogoCss = css({
   objectFit: 'contain',
   maxHeight: '1em',
+});
+
+const navCss = css({
+  ul: {
+    li: {
+      span: { color: 'white' },
+    },
+  },
 });
 
 export const AppNav = () => {
   return (
     <header>
-      <img src={uiprotoLogo} alt="uiproto logo" css={uiprotoLogoCss} />
+      <img src={uiProtoLogo} alt="uiproto logo" css={uiProtoLogoCss} />
       <h1>{text.title}</h1>
       <Popover
         aria-label="Custom popover"
+        gutter={0}
         disclosure={
           <button css={drawerCss}>
             <RiMenu5Line />
           </button>
         }
       >
-        <nav>
+        <nav css={navCss}>
           <MenuNav NavType="NavLink" ariaLabel="application-nav" links={appNavLinks} />
         </nav>
       </Popover>

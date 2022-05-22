@@ -15,10 +15,13 @@ export const reset = css`
     *,
     *::before,
     *::after {
+      background: none;
+      border: none;
       box-sizing: inherit;
       color: inherit;
       font-size: inherit;
       margin: 0;
+      outline: inherit;
       padding: 0;
     }
   }
@@ -47,9 +50,7 @@ export const reset = css`
   }
 
   a, button, input[type="submit"], input[type="reset"]  {
-    background: none;
-    border: none;
+
     cursor: pointer;
-    outline: inherit;
   }
 `;

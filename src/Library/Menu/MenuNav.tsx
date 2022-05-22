@@ -1,6 +1,6 @@
 import React, { type Key, type FC } from 'react';
 
-import { NavLink, A, Menu, Item } from './';
+import { NavLink, A, Menu, Item } from 'src/Library';
 
 type LinkConfig = {
   key: Key;

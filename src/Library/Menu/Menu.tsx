@@ -10,7 +10,9 @@ import type { AriaMenuProps } from '@react-types/menu';
 
 export { Item } from 'react-stately';
 
-export const Menu: FC<AriaMenuProps<HTMLUListElement>> = props => {
+type MenuInterface = AriaMenuProps<HTMLUListElement>;
+
+export const Menu: FC<MenuInterface> = props => {
   // Create state based on the incoming props
   const state = useTreeState({ ...props, selectionMode: 'none' });
 

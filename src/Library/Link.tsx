@@ -13,6 +13,7 @@ type ElementTypes = 'span' | 'a';
 
 // TODO: (noah) classnames, css, etc
 type LinkProps = {
+  renderProps: { [x: string]: any };
   children: ReactNode;
   clicked?: boolean;
   elementType?: ElementTypes;
@@ -21,6 +22,7 @@ type LinkProps = {
 };
 
 const Link: FC<LinkProps> = props => {
+  const renderProps = props.renderProps.renderProps ?? props.renderProps;
   const ref = useRef<HTMLAnchorElement>(null);
 
   const { linkProps /*, isPressed*/ } = useLink(props, ref);
@@ -34,13 +36,17 @@ const Link: FC<LinkProps> = props => {
 
   const Component = props.elementType as ElementType;
 
+  const handleClick = () => {
+    navigate(props.href);
+    if (renderProps.hide) renderProps.hide();
+  };
   return (
     <Component
       {...linkProps}
-      ref={ref}
       href={props.href}
+      onClick={handleClick}
+      ref={ref}
       target={props.target}
-      onClick={() => navigate(props.href)}
     >
       {props.children}
     </Component>

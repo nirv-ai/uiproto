@@ -27,13 +27,8 @@ export const MenuNav: FC<MenuNavProps> = ({
   links,
   onAction,
 }) => {
-  const { renderProps: parentProps } = renderProps;
-  // const [itemClicked, setItemClicked] = useState<Key>('');
-
   const useAction = (key: Key) => {
-    // console.info('\n\n item clicked', key, Object.keys(renderProps));
     if (onAction) onAction(key);
-    if (parentProps?.hide) parentProps.hide();
   };
 
   return (
@@ -43,7 +38,9 @@ export const MenuNav: FC<MenuNavProps> = ({
 
         return (
           <Item key={key} textValue={text}>
-            <ThisNav href={href}>{text}</ThisNav>
+            <ThisNav href={href} renderProps={renderProps}>
+              {text}
+            </ThisNav>
           </Item>
         );
       })}

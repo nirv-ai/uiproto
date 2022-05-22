@@ -16,16 +16,6 @@ const appNavLinks = [
   menuItem('uielements', '/ui-elements', 'ui elements'),
 ];
 
-const drawerCss = css({
-  flexBasis: '1.2em',
-  height: '1em',
-});
-
-const uiProtoLogoCss = css({
-  objectFit: 'contain',
-  maxHeight: '1em',
-});
-
 const navCss = css({
   ul: {
     'li:first-child': {
@@ -36,6 +26,7 @@ const navCss = css({
     },
     li: {
       span: {
+        fontWeight: '100',
         paddingLeft: '0.4em',
         paddingRight: '0.4em',
         color: 'white',
@@ -44,14 +35,35 @@ const navCss = css({
   },
 });
 
+const h1Css = css({
+  fontWeight: 100,
+});
+
+const headerCss = css({
+  animation: 'bounce',
+  animationDuration: '2s',
+});
+
+const drawerCss = css({
+  flexBasis: '1.2em',
+  height: '1em',
+  animation: 'flip',
+  animationDuration: '1s',
+  animationDelay: '2s',
+});
+
+const uiProtoLogoCss = css({
+  objectFit: 'contain',
+  maxHeight: '1em',
+});
+
 export const AppNav = () => {
   return (
-    <header>
+    <header css={headerCss}>
       <img src={uiProtoLogo} alt="uiproto logo" css={uiProtoLogoCss} />
-      <h1>{text.title}</h1>
+      <h1 css={h1Css}>{text.title}</h1>
       <Popover
         aria-label="Custom popover"
-        gutter={0}
         disclosure={
           <button css={drawerCss}>
             <RiMenu5Line />

@@ -22,7 +22,7 @@ export const links = css`
       text-transform: uppercase;
 
       &:before {
-        background-color: var(--color-pink-vibrant);
+        background-color: white;
         bottom: -1px; /* again this can be adjusted based on line-height/font-size */
         content: '';
         height: 2px;  /* this can be modified based on the boldness of the font */

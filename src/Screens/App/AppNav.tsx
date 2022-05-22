@@ -4,6 +4,7 @@ import { css } from '@emotion/react';
 import { RiMenu5Line } from 'react-icons/ri';
 import { MenuNav, menuItem, Popover } from '../../Library';
 import text from './text.json';
+import uiprotoLogo from 'src/assets/images/uiproto_logo_200x200.png';
 
 const appNavLinks = [
   menuItem('home', '/', 'Home'),
@@ -15,21 +16,20 @@ const appNavLinks = [
   menuItem('uielements', '/ui-elements', 'ui elements'),
 ];
 
-const headerCss = css({
-  flexFlow: 'row',
-  fontSize: 'var(--fsize-5)',
-  height: '1.5em',
-  '& > h1': { fontSize: 'inherit' },
-});
-
 const drawerCss = css({
   flexBasis: '1.2em',
-  height: '1.2em',
+  height: '1em',
+});
+
+const uiprotoLogoCss = css({
+  objectFit: 'contain',
+  maxHeight: '1em',
 });
 
 export const AppNav = () => {
   return (
-    <header css={headerCss} className="column">
+    <header>
+      <img src={uiprotoLogo} alt="uiproto logo" css={uiprotoLogoCss} />
       <h1>{text.title}</h1>
       <Popover
         aria-label="Custom popover"

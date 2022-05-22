@@ -6,6 +6,8 @@ import { usePopoverState, Popover as BasePopover, PopoverDisclosure } from 'reak
 export const Popover = ({ disclosure, ...props }) => {
   const popover = usePopoverState();
 
+  console.info('\n\n popover state', popover);
+
   return (
     <>
       <PopoverDisclosure {...popover} ref={disclosure.ref} {...disclosure.props}>

@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 
 export const menus = css`
   .inline > ul > [role="menuitem"] {
-    display: inline-flex
+    display: inline-flex;
   }
 
   .block > ul > [role="menuitem"] {

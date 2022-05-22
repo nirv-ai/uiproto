@@ -28,8 +28,18 @@ const uiProtoLogoCss = css({
 
 const navCss = css({
   ul: {
+    'li:first-child': {
+      paddingTop: '0.2em',
+    },
+    'li:last-child': {
+      paddingBottom: '0.2em',
+    },
     li: {
-      span: { color: 'white' },
+      span: {
+        paddingLeft: '0.4em',
+        paddingRight: '0.4em',
+        color: 'white',
+      },
     },
   },
 });

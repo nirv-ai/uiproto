@@ -35,11 +35,21 @@ export const layout = css`
       nav {
         background-color: var(--color-scheme1-lightdark);
         color: black;
+        /* font-weight: 600; */
       }
     }
 
     > footer {
+      overflow: hidden;
       bottom: 0;
+
+      > h1:first-child {
+        margin-left: 0.5rem;
+      }
+
+      > p {
+        font-family: var(--font-stylish2);
+      }
     }
 
    > main {

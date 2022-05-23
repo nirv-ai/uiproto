@@ -1,7 +1,15 @@
 import { css } from '@emotion/react';
 
 export const rootVars = css`
+  @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,600&family=Inconsolata:wght@200;400&family=Indie+Flower&family=Rubik:wght@300;400&display=swap');
+
   :root {
+    /* fonts */
+    --font-stylish1: 'Bodoni Moda', serif;
+    --font-stylish2: 'Indie Flower', serif;
+    --font-heading1: 'Rubik', cursive;
+    --font-reading1: 'Inconsolata', monospace;
+
     /* zindex layers */
     --layer-1: 1;
     --layer-2: 10;

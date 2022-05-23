@@ -7,7 +7,6 @@ export const reset = css`
     background-color: white;
     box-sizing: border-box;
     color: var(--color-scheme1-darkdark);
-    font-family: Fabriga, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-size: var(--fsize);
     word-break: break-word;
     min-height: 100%;
@@ -24,6 +23,14 @@ export const reset = css`
       outline: inherit;
       padding: 0;
     }
+  }
+
+  a, p, span {
+    font-family: var(--font-reading1);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading1);
+    text-transform: uppercase;
   }
 
   h1 {

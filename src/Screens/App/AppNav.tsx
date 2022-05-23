@@ -26,7 +26,7 @@ const navCss = css({
     },
     li: {
       span: {
-        fontWeight: '100',
+        fontWeight: '400',
         paddingLeft: '0.4em',
         paddingRight: '0.4em',
         color: 'white',

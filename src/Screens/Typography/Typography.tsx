@@ -2,6 +2,7 @@ import React from 'react';
 
 import text from './text.json';
 import { sentences } from 'src/mocks';
+import { CopyPasta } from 'src/Library';
 
 export const TypographyIntro = () => (
   <section>
@@ -14,5 +15,6 @@ export const TypographyIntro = () => (
 export const Typography = () => (
   <article>
     <TypographyIntro />
+    <CopyPasta />
   </article>
 );

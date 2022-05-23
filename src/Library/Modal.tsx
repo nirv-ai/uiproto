@@ -59,7 +59,7 @@ const ModalDialog = (props: ModuleDialogInterface) => {
           style={{
             background: 'white',
             color: 'black',
-            padding: 30,
+            padding: 'var(--spacing-XS)',
           }}
         >
           {children}

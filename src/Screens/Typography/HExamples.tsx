@@ -21,7 +21,7 @@ const HCopyPastaConfig = [
 export const HExamples: FC<any> = () => (
   <>
     {HCopyPastaConfig.map(({ PastaEl, children }, i) => (
-      <CopyPasta key={i} PastaEl={PastaEl}>
+      <CopyPasta key={i} PastaEl={PastaEl} orientation="horizontal">
         {children}
       </CopyPasta>
     ))}

@@ -10,7 +10,8 @@ const StyledDiv = styled.div<SeparatorInterface>`
     background: gray;
     width: ${props => (props.orientation === 'vertical' ? '1px' : '100%')};
     height: ${props => (props.orientation === 'vertical' ? '100%' : '1px')};
-    margin: ${props => (props.orientation === 'vertical' ? '0 5px' : '5px 0')};
+    margin: ${props =>
+      props.orientation === 'vertical' ? '0 var(--spacing-XS)' : 'var(--spacing-XS) 0'};
 `;
 
 export const Separator: FC<SeparatorInterface> = props => {
@@ -27,8 +28,8 @@ const verticalCss = css({
   alignItems: 'center',
   display: 'flex',
   flexDirection: 'row',
+  // TODO:(noah) this is wrong, but the fix is likely with flexbox
   height: 40,
-  marginTop: 20,
 });
 
 export const Separated = props => {

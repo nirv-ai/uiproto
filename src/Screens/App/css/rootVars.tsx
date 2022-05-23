@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 
 export const rootVars = css`
-  @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,600&family=Inconsolata:wght@200;400&family=Indie+Flower&family=Rubik:wght@300;400&family=Belgrano&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,600&family=Inconsolata:wght@200;400&family=Indie+Flower&family=Rubik:wght@300;400&family=Belgrano&family=Kelly+Slab&display=swap');
 
   :root {
     /* fonts */
@@ -10,6 +10,7 @@ export const rootVars = css`
     --font-reading2: 'Inconsolata', monospace;
     --font-stylish1: 'Bodoni Moda', serif;
     --font-stylish2: 'Indie Flower', serif;
+    --font-stylish3: 'Kelly Slab', cursive;
 
     /* zindex layers */
     --layer-1: 1;
@@ -19,25 +20,39 @@ export const rootVars = css`
     --layer-5: 10000;
     --layer-6: 100000;
 
+    /* base vars */
     --fsize: 32px;
+    --line-height: 1.5;
+    --spacing: calc(var(--fsize) * var(--line-height));
+
+    /* base scales */
     --scale1: 1.618;
-    --scale2: 0.618;
+    --scale2: calc(var(--scale1) * 0.7);
+    --use-scale: var(--scale1);
 
-    --spacing: calc(1% * var(--fsize));
 
-    --scale1-L: calc(var(--scale1) * var(--fsize));
-    --scale1-XL: calc(var(--scale1-L) * 1.25);
-    --scale1-XXL: calc(var(--scale1-L) * 1.5);
-    --scale1-S: calc(var(--scale1-L) * 0.75);
-    --scale1-XS: calc(var(--scale1-L) * 0.50);
-    --scale1-XXS: calc(var(--scale1-L) * 0.35);
+    --scale-L: calc(var(--use-scale) * var(--fsize));
+    --scale-XL: calc(var(--scale-L) * 1.25);
+    --scale-XXL: calc(var(--scale-L) * 1.5);
+    --scale-S: calc(var(--scale-L) * 0.75);
+    --scale-XS: calc(var(--scale-L) * 0.50);
+    --scale-XXS: calc(var(--scale-L) * 0.35);
 
-    --fsize-1: var(--scale1-XXL);
-    --fsize-2: var(--scale1-XL);
-    --fsize-3: var(--scale1-L);
-    --fsize-4: var(--scale1-S);
-    --fsize-5: var(--scale1-XS);
-    --fsize-6: var(--scale1-XXS);
+    /* font sizes */
+    --fsize-XXL: var(--scale-XXL);
+    --fsize-XL: var(--scale-XL);
+    --fsize-L: var(--scale-L);
+    --fsize-S: var(--scale-S);
+    --fsize-XS: var(--scale-XS);
+    --fsize-XXS: var(--scale-XXS);
+
+    /* spacing */
+    --spacing-XXL: calc(var(--spacing) * 2);
+    --spacing-XL: calc(var(--spacing) * 1.5);
+    --spacing-L: calc(var(--spacing) * 1.2);
+    --spacing-S: calc(var(--spacing) * 0.8);
+    --spacing-XS: calc(var(--spacing) * 0.5);
+    --spacing-XXS: calc(var(--spacing) * 0.3);
 
     /* colors */
     /* scheme1: https://colorhunt.co/palette/f0e3caff8303a357091b1a17 */

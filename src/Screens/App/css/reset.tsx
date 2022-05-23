@@ -11,6 +11,7 @@ export const reset = css`
     font-size: var(--fsize);
     min-height: 100%;
     word-break: break-word;
+    line-height: var(--line-height);
 
     *,
     *::before,
@@ -32,22 +33,28 @@ export const reset = css`
   }
 
   h1 {
-    font-size: var(--fsize-1);
+    font-size: var(--fsize-XXL);
+    font-weight: 400;
   }
   h2 {
-    font-size: var(--fsize-2);
+    font-size: var(--fsize-XL);
+    font-weight: 400;
   }
   h3 {
-    font-size: var(--fsize-3);
+    font-size: var(--fsize-L);
+    font-weight: 300;
   }
   h4 {
-    font-size: var(--fsize-4);
+    font-size: var(--fsize-S);
+    font-weight: 300;
   }
   h5 {
-    font-size: var(--fsize-5);
+    font-size: var(--fsize-XS);
+    font-weight: 200;
   }
   h6 {
-    font-size: var(--fsize-6);
+    font-size: var(--fsize-XXS);
+    font-weight: 200;
   }
 
   a, p, span {
@@ -64,7 +71,7 @@ export const reset = css`
 
   code.code {
     * {
-      font-size: calc(var(--fsize) * 0.6);
+      font-size: var(--scale-XXS);
     }
   }
 `;

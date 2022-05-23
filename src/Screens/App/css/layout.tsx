@@ -1,8 +1,18 @@
 import { css } from '@emotion/react';
 
 export const layout = css`
+  #outer-container {
+    position: relative;
+    display: flex;
+    flex-flow: wrap column;
+    height: 100%;
+  }
+
   #inner-container {
+    position: relative;
+
     > header, > footer {
+      z-index: var(--layer-6);
       align-items: center;
       background-color: var(--color-scheme1-lightdark);
       color: white;
@@ -19,17 +29,18 @@ export const layout = css`
       top: 0;
 
       > img {
-        margin-left: 0.5em;
+        margin-left: var(--spacing-XS);
       }
 
       > h1 {
-        margin-left: 0.5em;
+        margin-left: var(--spacing-XS);
         font-size: inherit;
+        font-family: var(--font-stylish3);
       }
 
       > button {
         position: absolute;
-        right: 0.5em;
+        right: var(--spacing-XS);
       }
 
       nav {
@@ -42,7 +53,7 @@ export const layout = css`
     > footer {
       overflow: hidden;
       bottom: 0;
-      padding-left: 0.1rem;
+      padding-left: var(--spacing-XXS);
 
       > h1:first-child {
       }
@@ -52,27 +63,24 @@ export const layout = css`
       }
     }
 
-   > main {
-      margin-top: 1.5em;
-      margin-bottom: 1.5em;
-    }
+    #app-wrapper {
+      padding: calc(2 * var(--spacing-XS)) var(--spacing-XS);
 
-    .row {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: space-between;
-    }
+      .row {
+        flex-flow: row wrap;
+      }
 
-    .column {
-      display: flex;
-      flex-flow: column wrap;
-      justify-content: space-between;
-    }
+      .column {
+        flex-flow: column wrap;
+      }
 
-    .row, .column {
-      /* all immediate children */
-      > * {
-        flex: 1 1 100%;
+      .row, .column {
+        display: flex;
+        justify-content: space-between;
+
+        > * {
+          flex: 1 1 100%;
+        }
       }
     }
   }

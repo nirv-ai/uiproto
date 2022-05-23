@@ -18,17 +18,10 @@ const appNavLinks = [
 
 const navCss = css({
   ul: {
-    'li:first-child': {
-      paddingTop: '0.2em',
-    },
-    'li:last-child': {
-      paddingBottom: '0.2em',
-    },
+    padding: 'var(--spacing-XXS)',
     li: {
       span: {
         fontWeight: '400',
-        paddingLeft: '0.4em',
-        paddingRight: '0.4em',
         color: 'white',
         '&.active': {
           cursor: 'not-allowed',

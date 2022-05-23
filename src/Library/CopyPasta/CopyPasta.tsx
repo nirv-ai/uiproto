@@ -1,12 +1,11 @@
 import React from 'react';
 
-import { Copy, Pasta } from 'src/Library';
+import { Copy, Pasta, Separated } from 'src/Library';
 
 export const CopyPasta = () => {
   return (
     <article>
-      <Copy />
-      <Pasta />
+      <Separated orientation="horizontal" firstChildren={<Copy />} secondChildren={<Pasta />} />
     </article>
   );
 };

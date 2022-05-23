@@ -33,10 +33,10 @@ export const Separated = props => {
   const useCss = props.orientation === 'vertical' ? verticalCss : horizontalCss;
 
   return (
-    <div css={useCss}>
+    <article css={useCss}>
       {props.firstChildren}
       <Separator orientation={props.orientation} />
       {props.secondChildren}
-    </div>
+    </article>
   );
 };

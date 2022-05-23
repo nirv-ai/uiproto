@@ -2,12 +2,9 @@ import React, { type FC } from 'react';
 
 import text from './text.json';
 import { sentences } from 'src/mocks';
-import { CopyPasta } from 'src/Library';
+import { HExamples } from './HExamples';
 
-interface TypographyIntroInterface {
-  hello?: string;
-}
-export const TypographyIntro: FC<TypographyIntroInterface> = () => (
+export const TypographyIntro: FC<any> = () => (
   <section>
     <h2>{text.title}</h2>
     <p>{text.subtitle}</p>
@@ -15,14 +12,9 @@ export const TypographyIntro: FC<TypographyIntroInterface> = () => (
   </section>
 );
 
-TypographyIntro.displayName = 'TypographyIntro';
-
 export const Typography = () => (
   <article>
     <TypographyIntro />
-    <div>I am a div</div>
-    <CopyPasta PastaEl={<TypographyIntro hello="goodbye" />}>
-      <h2>this is an explanation</h2>
-    </CopyPasta>
+    <HExamples />
   </article>
 );

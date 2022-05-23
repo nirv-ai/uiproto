@@ -1,14 +1,15 @@
 import { css } from '@emotion/react';
 
 export const rootVars = css`
-  @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,600&family=Inconsolata:wght@200;400&family=Indie+Flower&family=Rubik:wght@300;400&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,600&family=Inconsolata:wght@200;400&family=Indie+Flower&family=Rubik:wght@300;400&family=Belgrano&display=swap');
 
   :root {
     /* fonts */
+    --font-heading1: 'Rubik', cursive;
+    --font-reading1: 'Belgrano', serif;
+    --font-reading2: 'Inconsolata', monospace;
     --font-stylish1: 'Bodoni Moda', serif;
     --font-stylish2: 'Indie Flower', serif;
-    --font-heading1: 'Rubik', cursive;
-    --font-reading1: 'Inconsolata', monospace;
 
     /* zindex layers */
     --layer-1: 1;
@@ -28,8 +29,8 @@ export const rootVars = css`
     --scale1-XL: calc(var(--scale1-L) * 1.25);
     --scale1-XXL: calc(var(--scale1-L) * 1.5);
     --scale1-S: calc(var(--scale1-L) * 0.75);
-    --scale1-XS: calc(var(--scale1) * 0.50);
-    --scale1-XXS: calc(var(--scale1) * 5);
+    --scale1-XS: calc(var(--scale1-L) * 0.50);
+    --scale1-XXS: calc(var(--scale1-L) * 0.35);
 
     --fsize-1: var(--scale1-XXL);
     --fsize-2: var(--scale1-XL);

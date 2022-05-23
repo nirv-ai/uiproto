@@ -35,7 +35,7 @@ export const Separated = props => {
   const useCss = props.orientation === 'vertical' ? verticalCss : horizontalCss;
 
   return (
-    <article css={useCss}>
+    <article css={useCss} className={props?.className ?? false}>
       {props.firstChildren}
       <Separator orientation={props.orientation} />
       {props.secondChildren}

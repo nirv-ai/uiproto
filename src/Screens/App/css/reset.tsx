@@ -26,10 +26,6 @@ export const reset = css`
     }
   }
 
-  a, p, span, code {
-    font-family: var(--font-reading1);
-  }
-
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading1);
     text-transform: uppercase;
@@ -54,14 +50,21 @@ export const reset = css`
     font-size: var(--fsize-6);
   }
 
-  code {
-    background-color: black;
-    color: white;
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  a, p, span {
+    font-family: var(--font-reading1);
   }
 
   a, button, input[type="submit"], input[type="reset"]  {
-
     cursor: pointer;
+  }
+
+  code, pre, .code {
+    font-family: var(--font-reading2);
+  }
+
+  code.code {
+    * {
+      font-size: calc(var(--fsize) * 0.6);
+    }
   }
 `;

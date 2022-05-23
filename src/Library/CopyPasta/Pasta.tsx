@@ -1,5 +1,9 @@
-import React from 'react';
+import React, { type FC } from 'react';
 
-export const Pasta = () => {
-  return <section>I am example of some code</section>;
+interface PastaInterface {
+  PastaEl: any;
+}
+
+export const Pasta: FC<PastaInterface> = ({ PastaEl }) => {
+  return <section>{PastaEl}</section>;
 };

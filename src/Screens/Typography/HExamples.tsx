@@ -1,0 +1,29 @@
+import React, { type FC } from 'react';
+
+import { CopyPasta, H1, H2, H3, H4, H5, H6 } from 'src/Library';
+
+const textString = 'The world is full of objects, more or less interesting.';
+
+const hItem = (El, about) => ({
+  PastaEl: <El>{textString}</El>,
+  children: <p>{about}</p>,
+});
+
+const HCopyPastaConfig = [
+  hItem(H1, 'H1 Element'),
+  hItem(H2, 'H2 Element'),
+  hItem(H3, 'H3 Element'),
+  hItem(H4, 'H4 Element'),
+  hItem(H5, 'H5 Element'),
+  hItem(H6, 'H6 Element'),
+];
+
+export const HExamples: FC<any> = () => (
+  <>
+    {HCopyPastaConfig.map(({ PastaEl, children }, i) => (
+      <CopyPasta key={i} PastaEl={PastaEl}>
+        {children}
+      </CopyPasta>
+    ))}
+  </>
+);

@@ -12,11 +12,12 @@ export const reset = css`
     min-height: 100%;
     word-break: break-word;
     line-height: var(--line-height);
+    letter-spacing: 0.02rem;
 
     *,
     *::before,
     *::after {
-      background: none;
+      background: inherit;
       border: none;
       box-sizing: inherit;
       color: inherit;
@@ -30,6 +31,7 @@ export const reset = css`
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading1);
     text-transform: uppercase;
+    letter-spacing: -0.08em;
   }
 
   h1 {
@@ -54,19 +56,24 @@ export const reset = css`
   }
   h6 {
     font-size: var(--fsize-XXS);
+    letter-spacing: 0.02em;
     font-weight: 200;
-  }
-
-  a, p, span {
-    font-family: var(--font-reading1);
   }
 
   a, button, input[type="submit"], input[type="reset"]  {
     cursor: pointer;
   }
 
+  h1, h2, h3, h4, h5, h6, a, p, span, button, input {
+    max-width: 50ch;
+  }
+
   code, pre, .code {
     font-family: var(--font-reading2);
+
+    * {
+      max-width: unset;
+    }
   }
 
   code.code {

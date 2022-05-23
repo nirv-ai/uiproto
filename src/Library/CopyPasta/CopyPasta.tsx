@@ -1,12 +1,51 @@
-import React from 'react';
-import { renderToStaticMarkup } from 'react-dom/server';
+import React, { type FC, type ReactNode } from 'react';
+import { CopyBlock, dracula } from 'react-code-blocks';
+import reactElementToJSXString from 'react-element-to-jsx-string';
 
-import { Copy, Pasta, Separated } from 'src/Library';
+// Copy, Pasta,
+import { Separated } from 'src/Library';
 
-const CopyCode = () => <code>{renderToStaticMarkup(<Copy />)}</code>;
+interface CopyCodeInterface {
+  CopyEl: any;
+}
 
-export const CopyPasta = () => {
+const CopyCode: FC<CopyCodeInterface> = ({ CopyEl }) => {
+  const renderedString = reactElementToJSXString(CopyEl, {
+    /* @ts-ignore */
+    displayName: reactEl => reactEl?.type?.displayName,
+  });
+
   return (
-    <Separated orientation="horizontal" firstChildren={<CopyCode />} secondChildren={<Pasta />} />
+    <CopyBlock
+      codeBlock
+      language="jsx"
+      showLineNumbers={true}
+      startingLineNumber={0}
+      text={renderedString}
+      theme={dracula}
+    />
+  );
+};
+
+interface CopyPastaInterface {
+  orientation?: 'vertical' | 'horizontal';
+  PastaEl: any;
+  children: ReactNode;
+}
+export const CopyPasta: FC<CopyPastaInterface> = ({
+  orientation = 'horizontal',
+  PastaEl,
+  children,
+}) => {
+  if (typeof PastaEl.type.displayName !== 'string')
+    throw new Error('PastaEl.displayName must be a string');
+
+  const firstChildren = <CopyCode CopyEl={PastaEl} />;
+
+  return (
+    <div css={{ padding: '3rem' }}>
+      {children}
+      <Separated orientation={orientation} firstChildren={firstChildren} secondChildren={PastaEl} />
+    </div>
   );
 };

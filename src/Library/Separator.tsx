@@ -1,19 +1,23 @@
-import React from 'react';
+import React, { type FC } from 'react';
 import { useSeparator } from 'react-aria';
+import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
-const separatorCss = props =>
-  css({
-    backgroundColor: 'gray',
-    width: props.orientation === 'vertical' ? '1px' : '100%',
-    height: props.orientation === 'vertical' ? '100%' : '1px',
-    margin: props.orientation === 'vertical' ? '0 5px' : '5px 0',
-  });
+interface SeparatorInterface {
+  orientation: 'vertical' | 'horizontal';
+}
+const StyledDiv = styled.div<SeparatorInterface>`
+    background: gray;
+    width: ${props => (props.orientation === 'vertical' ? '1px' : '100%')};
+    height: ${props => (props.orientation === 'vertical' ? '100%' : '1px')};
+    margin: ${props => (props.orientation === 'vertical' ? '0 5px' : '5px 0')};
+`;
 
-export const Separator = props => {
+export const Separator: FC<SeparatorInterface> = props => {
+  console.info('\n\n ptops in separate', props);
+
   const { separatorProps } = useSeparator(props);
-
-  return <div {...separatorProps} css={separatorCss} />;
+  return <StyledDiv {...separatorProps} {...props} />;
 };
 
 const horizontalCss = css({
@@ -30,6 +34,7 @@ const verticalCss = css({
 });
 
 export const Separated = props => {
+  console.info('\n\n wtf is props?', props);
   const useCss = props.orientation === 'vertical' ? verticalCss : horizontalCss;
 
   return (

@@ -42,9 +42,9 @@ export const layout = css`
     > footer {
       overflow: hidden;
       bottom: 0;
+      padding-left: 0.1rem;
 
       > h1:first-child {
-        margin-left: 0.5rem;
       }
 
       > p {

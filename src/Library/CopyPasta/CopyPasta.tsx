@@ -1,11 +1,12 @@
 import React from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
 
 import { Copy, Pasta, Separated } from 'src/Library';
 
+const CopyCode = () => <code>{renderToStaticMarkup(<Copy />)}</code>;
+
 export const CopyPasta = () => {
   return (
-    <article>
-      <Separated orientation="vertical" firstChildren={<Copy />} secondChildren={<Pasta />} />
-    </article>
+    <Separated orientation="horizontal" firstChildren={<CopyCode />} secondChildren={<Pasta />} />
   );
 };

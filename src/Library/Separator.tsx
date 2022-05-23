@@ -14,8 +14,6 @@ const StyledDiv = styled.div<SeparatorInterface>`
 `;
 
 export const Separator: FC<SeparatorInterface> = props => {
-  console.info('\n\n ptops in separate', props);
-
   const { separatorProps } = useSeparator(props);
   return <StyledDiv {...separatorProps} {...props} />;
 };
@@ -34,7 +32,6 @@ const verticalCss = css({
 });
 
 export const Separated = props => {
-  console.info('\n\n wtf is props?', props);
   const useCss = props.orientation === 'vertical' ? verticalCss : horizontalCss;
 
   return (

@@ -7,9 +7,10 @@ export const reset = css`
     background-color: white;
     box-sizing: border-box;
     color: var(--color-scheme1-darkdark);
+    font-family: var(--font-reading1);
     font-size: var(--fsize);
-    word-break: break-word;
     min-height: 100%;
+    word-break: break-word;
 
     *,
     *::before,
@@ -25,9 +26,10 @@ export const reset = css`
     }
   }
 
-  a, p, span {
+  a, p, span, code {
     font-family: var(--font-reading1);
   }
+
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading1);
     text-transform: uppercase;
@@ -53,6 +55,8 @@ export const reset = css`
   }
 
   code {
+    background-color: black;
+    color: white;
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
   }
 

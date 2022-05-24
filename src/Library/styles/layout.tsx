@@ -1,6 +1,14 @@
 import { css } from '@emotion/react';
 
 export const layoutCss = css`
+  .inline {
+    display: inline-block;
+  }
+
+  .block {
+    display: block;
+  }
+
   .row {
     flex-flow: row wrap;
   }

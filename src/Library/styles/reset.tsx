@@ -22,6 +22,7 @@ export const resetCss = css`
       box-sizing: inherit;
       color: inherit;
       font-size: inherit;
+      list-style: none;
       margin: 0;
       outline: inherit;
       padding: 0;

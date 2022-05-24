@@ -10,7 +10,7 @@ export type PastaItemType = {
 };
 
 export interface PastaItemInterface {
-  (El: FC<any>, about: string): PastaItemType;
+  (El: FC<any>, about: string | string[], props?: { [x: string]: any }): PastaItemType;
 }
 
 export interface CopyPastasInterface {

@@ -1,4 +1,4 @@
-import React, { type FC } from 'react';
+import { type FC } from 'react';
 import styled from '@emotion/styled';
 
 import { CopyPastas, type PastaItemInterface } from 'src/Library';

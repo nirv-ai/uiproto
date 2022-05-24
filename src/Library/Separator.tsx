@@ -1,7 +1,7 @@
 /**
  * TODO:(noah) speedrunning through; need to review props.orientation === vertical
  */
-import React, { type FC } from 'react';
+import { type FC } from 'react';
 import { useSeparator } from 'react-aria';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';

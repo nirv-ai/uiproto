@@ -1,4 +1,4 @@
-import React, { type ReactElement, type FC } from 'react';
+import { type ReactElement, type FC } from 'react';
 
 import { CopyPasta } from './CopyPasta';
 import { H3 } from 'src/Library';

@@ -1,4 +1,4 @@
-import React, { useRef, type FC, type ReactNode } from 'react';
+import { useRef, type FC, type ReactNode } from 'react';
 import { useOverlayTriggerState } from 'react-stately';
 import {
   FocusScope,

@@ -1,6 +1,6 @@
 /** @see https://reakit.io/docs/popover/#abstracting */
 
-import React from 'react';
+import { cloneElement } from 'react';
 import { usePopoverState, Popover as BasePopover, PopoverDisclosure } from 'reakit/Popover';
 
 export const Popover = ({ disclosure, ...props }) => {
@@ -10,7 +10,7 @@ export const Popover = ({ disclosure, ...props }) => {
   return (
     <>
       <PopoverDisclosure {...popoverState} ref={disclosure.ref} {...disclosure.props}>
-        {disclosureProps => React.cloneElement(disclosure, disclosureProps)}
+        {disclosureProps => cloneElement(disclosure, disclosureProps)}
       </PopoverDisclosure>
       <BasePopover {...popoverState} {...props}>
         {typeof props.children === 'function' ? <Children renderProps={popoverState} /> : Children}

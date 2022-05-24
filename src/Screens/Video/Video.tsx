@@ -1,5 +1,3 @@
-import React from 'react';
-
 import text from './text.json';
 import { sentences } from 'src/mocks';
 import { HIntro, H2, H3 } from 'src/Library';

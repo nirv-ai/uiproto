@@ -1,4 +1,4 @@
-import React, { type FC, type ReactNode, type ElementType } from 'react';
+import { type FC, type ReactNode, type ElementType } from 'react';
 
 interface HInterface {
   children?: ReactNode;

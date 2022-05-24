@@ -1,4 +1,4 @@
-import React, { type FC } from 'react';
+import { type FC } from 'react';
 
 import { CopyPastas, H1, H2, H3, H4, H5, H6, type PastaItemInterface } from 'src/Library';
 

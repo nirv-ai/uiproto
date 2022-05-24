@@ -1,4 +1,4 @@
-import React, { type FC } from 'react';
+import { type FC } from 'react';
 
 import text from './text.json';
 import { HIntro, H2, H3 } from 'src/Library';

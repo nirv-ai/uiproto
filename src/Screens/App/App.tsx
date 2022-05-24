@@ -1,4 +1,3 @@
-import React from 'react';
 import { Global } from '@emotion/react';
 import { Outlet } from 'react-router-dom';
 import { OverlayProvider } from 'react-aria'; // for react-aria modals

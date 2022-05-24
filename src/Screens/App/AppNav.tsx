@@ -1,4 +1,3 @@
-import React from 'react';
 import { css } from '@emotion/react';
 import { RiMenu5Line } from 'react-icons/ri';
 

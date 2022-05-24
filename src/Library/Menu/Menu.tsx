@@ -3,7 +3,7 @@
  * @see https://github.com/adobe/react-spectrum/tree/main/packages/%40react-aria/menu/src
  */
 
-import React, { useRef, type FC, type ReactNode } from 'react';
+import { useRef, type FC, type ReactNode } from 'react';
 import { useMenu, useMenuItem } from 'react-aria';
 import { useTreeState, type TreeState } from 'react-stately';
 import type { AriaMenuProps } from '@react-types/menu';

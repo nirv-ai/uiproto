@@ -5,7 +5,7 @@
  * @see https://reactrouter.com/docs/en/v6/getting-started/overview#navigation
  */
 
-import React, { useRef, type ReactNode, type FC, type ElementType } from 'react';
+import { useRef, type ReactNode, type FC, type ElementType } from 'react';
 import { useLink } from 'react-aria';
 import { useNavigate, useMatch } from 'react-router-dom';
 import clsx from 'clsx';

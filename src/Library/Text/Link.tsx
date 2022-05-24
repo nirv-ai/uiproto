@@ -3,59 +3,70 @@
  * @see https://reactrouter.com/docs/en/v6/getting-started/overview#navigation
  */
 
-import { useRef, type ReactNode, type FC, type ElementType } from 'react';
+import { createRef, type FC } from 'react';
 import { useLink } from 'react-aria';
 import { useNavigate, useMatch } from 'react-router-dom';
 import clsx from 'clsx';
 
-type ElementTypes = 'span' | 'a';
+import { TextWithRef, type TextInterface } from './Text';
 
-type LinkProps = {
-  renderProps: { [x: string]: any };
-  children: ReactNode;
-  clicked?: boolean;
-  elementType?: ElementTypes;
+export interface LinkInterface extends TextInterface {
+  [x: string]: any;
   href: string;
+  renderProps?: { [x: string]: any };
   target?: string;
-};
+}
 
-const Link: FC<LinkProps> = props => {
-  const renderProps = props.renderProps.renderProps ?? props.renderProps;
-  const ref = useRef<HTMLAnchorElement>(null);
-  const { linkProps /*, isPressed*/ } = useLink(props, ref);
+export const Link: FC<LinkInterface> = ({ renderProps, className, ...props }) => {
+  const ref = createRef<HTMLElement>();
+
   const activeProps = useMatch(props.href);
+
+  const { linkProps /*, isPressed*/ } = useLink(
+    {
+      ...props,
+      isDisabled: !!activeProps,
+      elementType: props.ElType,
+    },
+    ref
+  );
 
   const navigate = useNavigate();
 
-  const Component = props.elementType as ElementType;
+  const useRenderProps = renderProps?.renderProps ?? props.renderProps ?? {};
 
   const handleClick = () => {
-    if (activeProps) return void 0;
-    navigate(props.href);
-    if (renderProps.hide) renderProps.hide();
+    if (activeProps || props.ElType === 'a') return void 0;
+
+    if (props.href.startsWith('http')) {
+      if (props.target === '_blank') window.open(props.href, props.target);
+      else window.location.assign(props.href);
+    } else {
+      navigate(props.href);
+      if (useRenderProps.hide) useRenderProps.hide();
+    }
   };
 
+  const useClass = clsx(activeProps && 'active', className).trim() || undefined;
+
   return (
-    <Component
+    <TextWithRef
       {...linkProps}
-      className={clsx(activeProps && 'active')}
+      {...props}
+      className={useClass}
       href={props.href}
       onClick={handleClick}
       ref={ref}
       target={props.target}
     >
       {props.children}
-    </Component>
+    </TextWithRef>
   );
 };
+Link.displayName = 'Link';
 
-type CreateLinkType = (elementType: ElementTypes) => FC<LinkProps>;
-
-const createLink: CreateLinkType = elementType => props =>
-  <Link {...props} elementType={elementType} />;
-
-export const A = createLink('a');
+export const A = props => <Link {...props} ElType="a" />;
 A.displayName = 'A';
 
-export const NavLink = createLink('span');
+export const NavLink = props => <Link ariaRole="link" {...props} ElType="span" />;
 NavLink.displayName = 'NavLink';

@@ -6,14 +6,14 @@ import text from './text.json';
 import uiProtoLogo from 'src/assets/images/uiproto_logo_200x200.png';
 
 const appNavLinks = [
-  menuItem('/', 'Home'),
-  menuItem('/typography', 'Typography'),
-  menuItem('/images', 'Images'),
-  menuItem('/ui-elements', 'ui elements'),
-  menuItem('/layout', 'Layout'),
-  menuItem('/video', 'video'),
-  menuItem('/animation', 'Animation'),
-  menuItem('/micro-interactions', 'Micro interactions'),
+  menuItem('/', 'Home', 'Home Screen'),
+  menuItem('/typography', 'Typography', 'Typography Screen'),
+  menuItem('/images', 'Images', 'Images Screen'),
+  menuItem('/ui-elements', 'ui elements', 'UI Elements Screen'),
+  menuItem('/layout', 'Layout', 'Layout Screen'),
+  menuItem('/video', 'video', 'Video Screen'),
+  menuItem('/animation', 'Animation', 'Animation Screen'),
+  menuItem('/micro-interactions', 'Micro interactions', 'Micro Interactions Screen'),
 ];
 
 const navCss = css({
@@ -24,7 +24,6 @@ const navCss = css({
         fontWeight: '400',
         color: 'white',
         '&.active': {
-          cursor: 'not-allowed',
           color: 'black',
         },
       },
@@ -66,12 +65,7 @@ export const AppNav = () => {
         {(renderProps = {}) => {
           return (
             <nav css={navCss}>
-              <MenuNav
-                ariaLabel="application-nav"
-                links={appNavLinks}
-                NavType="NavLink"
-                renderProps={renderProps}
-              />
+              <MenuNav ariaLabel="application-nav" links={appNavLinks} renderProps={renderProps} />
             </nav>
           );
         }}

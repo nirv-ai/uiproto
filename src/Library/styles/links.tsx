@@ -21,7 +21,7 @@ export const linksCss = css`
       text-transform: uppercase;
 
       &:not(.active):before {
-            background-color: white;
+            background-color: black;
             bottom: -1px; /* again this can be adjusted based on line-height/font-size */
             content: '';
             height: 2px;  /* this can be modified based on the boldness of the font */
@@ -34,6 +34,10 @@ export const linksCss = css`
         &:before {
           width: 100%;
         }
+      }
+
+      &.active {
+        cursor: not-allowed;
       }
     } /* end navlinks */
   } /* end a, [role="link"] */

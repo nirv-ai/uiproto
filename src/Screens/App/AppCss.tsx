@@ -54,7 +54,11 @@ export const AppCss = css`
       overflow: hidden;
       bottom: 0;
       padding-left: var(--spacing-XXS);
+      color: white;
 
+      > strong {
+        color: inherit;
+      }
       > small {
         font-family: var(--font-stylish2);
       }

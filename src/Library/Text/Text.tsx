@@ -1,53 +1,93 @@
-import { type FC, type ReactElement } from 'react';
+import { forwardRef, type FC, type ReactNode } from 'react';
 import clsx from 'clsx';
 
-interface TextInterface {
+export interface TextInterface {
   [x: string]: any;
+  ariaLabel?: string;
   ariaRole?: string;
   block?: boolean;
-  children: ReactElement;
+  children?: ReactNode;
   className?: string;
-  elType?: 'p' | 'b' | 'strong' | 'em' | 'mark' | 'small';
+  ElType: 'p' | 'b' | 'strong' | 'em' | 'mark' | 'small' | 'span' | 'a' | 'button';
+  forwardedRef?: any;
   inline?: boolean;
 }
 
-export const Span: FC<TextInterface> = ({
+export const Text: FC<TextInterface> = ({
+  ariaLabel,
   ariaRole,
   block = false,
   children,
   className,
-  elType,
+  ElType,
   inline = false,
+  forwardedRef,
   ...props
 }) => {
-  const UseEl = elType ?? 'span';
-  if (!elType && !ariaRole)
-    throw new Error('You must provide an ariaRole or use a more semantic Text element');
+  switch (ElType) {
+    case 'span': {
+      if (!ariaRole) {
+        console.error('\n\n props before error', props);
+        throw new Error('You must provide an ariaRole or use a more semantic Text element');
+      }
+      break;
+    }
+    case 'a': {
+      if (ElType === 'a' && !ariaLabel) {
+        console.error('\n\n props before error', props);
+        throw new Error('You must provide an ariaLabel for all anchor tags');
+      }
+
+      break;
+    }
+    default: {
+      if (props.href && (!ariaLabel || !ariaRole)) {
+        console.error('\n\n props before error', props);
+        throw new Error(
+          'You must provide an ariaLabel and ariaRole for all link type Text components'
+        );
+      }
+    }
+  }
 
   const useClass = clsx({ inline, block }, className).trim() || undefined;
 
   return (
-    <UseEl role={ariaRole} className={useClass} {...props}>
+    <ElType
+      aria-label={ariaLabel}
+      className={useClass}
+      ref={forwardedRef}
+      role={ariaRole}
+      {...props}
+    >
       {children}
-    </UseEl>
+    </ElType>
   );
 };
-Span.displayName = 'Span';
+Text.displayName = 'Text';
 
-export const P = props => <Span elType="p" {...props} />;
+export const TextWithRef = forwardRef((props: TextInterface, ref) => {
+  return <Text {...props} forwardedRef={ref} />;
+});
+TextWithRef.displayName = 'TextWithRef';
+
+export const P = props => <Text ElType="p" {...props} />;
 P.displayName = 'P';
 
-export const B = props => <Span elType="b" {...props} />;
+export const B = props => <Text ElType="b" {...props} />;
 B.displayName = 'B';
 
-export const Em = props => <Span elType="em" {...props} />;
+export const Em = props => <Text ElType="em" {...props} />;
 Em.displayName = 'Em';
 
-export const Strong = props => <Span elType="strong" {...props} />;
+export const Strong = props => <Text ElType="strong" {...props} />;
 Strong.displayName = 'Strong';
 
-export const Mark = props => <Span elType="mark" {...props} />;
+export const Mark = props => <Text ElType="mark" {...props} />;
 Mark.displayName = 'Mark';
 
-export const Small = props => <Span elType="small" {...props} />;
+export const Small = props => <Text ElType="small" {...props} />;
 Small.displayName = 'Small';
+
+export const Span = props => <Text ElType="span" {...props} />;
+Span.displayName = 'Span';

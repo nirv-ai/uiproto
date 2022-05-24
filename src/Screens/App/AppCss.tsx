@@ -46,7 +46,7 @@ export const AppCss = css`
       nav {
         background-color: var(--color-scheme1-lightdark);
         color: black;
-        /* font-weight: 600; */
+        font-family: var(--font-heading1);
       }
     }
 

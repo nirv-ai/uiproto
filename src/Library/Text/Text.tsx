@@ -8,7 +8,22 @@ export interface TextInterface {
   block?: boolean;
   children?: ReactNode;
   className?: string;
-  ElType: 'p' | 'b' | 'strong' | 'em' | 'mark' | 'small' | 'span' | 'a' | 'button';
+  ElType:
+    | 'a'
+    | 'b'
+    | 'button'
+    | 'em'
+    | 'h1'
+    | 'h2'
+    | 'h3'
+    | 'h4'
+    | 'h5'
+    | 'h6'
+    | 'mark'
+    | 'p'
+    | 'small'
+    | 'span'
+    | 'strong';
   forwardedRef?: any;
   inline?: boolean;
 }

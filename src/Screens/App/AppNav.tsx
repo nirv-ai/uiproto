@@ -2,18 +2,19 @@ import React from 'react';
 import { css } from '@emotion/react';
 import { RiMenu5Line } from 'react-icons/ri';
 
-import { MenuNav, menuItem, Popover, H1 } from 'src/Library';
+import { MenuNav, menuItem, Popover } from 'src/Library';
 import text from './text.json';
 import uiProtoLogo from 'src/assets/images/uiproto_logo_200x200.png';
 
 const appNavLinks = [
-  menuItem('home', '/', 'Home'),
-  menuItem('typography', '/typography', 'Typography'),
-  menuItem('animation', '/animation', 'Animation'),
-  menuItem('images', '/images', 'Images'),
-  menuItem('layout', '/layout', 'Layout'),
-  menuItem('microinteractions', '/micro-interactions', 'Micro interactions'),
-  menuItem('uielements', '/ui-elements', 'ui elements'),
+  menuItem('/', 'Home'),
+  menuItem('/typography', 'Typography'),
+  menuItem('/images', 'Images'),
+  menuItem('/ui-elements', 'ui elements'),
+  menuItem('/layout', 'Layout'),
+  menuItem('/video', 'video'),
+  menuItem('/animation', 'Animation'),
+  menuItem('/micro-interactions', 'Micro interactions'),
 ];
 
 const navCss = css({
@@ -30,10 +31,6 @@ const navCss = css({
       },
     },
   },
-});
-
-const h1Css = css({
-  fontWeight: 100,
 });
 
 const headerCss = css({
@@ -58,7 +55,7 @@ export const AppNav = () => {
   return (
     <header css={headerCss}>
       <img src={uiProtoLogo} alt="uiproto logo" css={uiProtoLogoCss} />
-      <H1 css={h1Css}>{text.title}</H1>
+      <span className="appname">{text.title}</span>
       <Popover
         aria-label="Custom popover"
         disclosure={

@@ -10,6 +10,7 @@ import {
   MicroInteractions,
   Typography,
   UIElements,
+  Video,
 } from './Screens';
 
 export const Router = () => {
@@ -24,6 +25,7 @@ export const Router = () => {
           <Route path="micro-interactions" element={<MicroInteractions />} />
           <Route path="typography" element={<Typography />} />
           <Route path="ui-elements" element={<UIElements />} />
+          <Route path="video" element={<Video />} />
           <Route path="*" element={<p>There's nothing here!</p>} />
         </Route>
       </Routes>

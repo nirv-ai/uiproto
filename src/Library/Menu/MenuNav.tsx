@@ -3,7 +3,6 @@ import React, { type Key, type FC } from 'react';
 import { NavLink, A, Menu, Item } from 'src/Library';
 
 type LinkConfig = {
-  key: Key;
   href: string;
   text: string;
 };
@@ -18,7 +17,7 @@ interface MenuNavProps {
 
 const NAV_TYPES = { NavLink, A };
 
-export const menuItem = (key: Key, href: string, text: string): LinkConfig => ({ key, href, text });
+export const menuItem = (href: string, text: string): LinkConfig => ({ href, text });
 
 export const MenuNav: FC<MenuNavProps> = ({
   renderProps = {},
@@ -33,11 +32,11 @@ export const MenuNav: FC<MenuNavProps> = ({
 
   return (
     <Menu aria-label={ariaLabel} onAction={useAction}>
-      {links.map(({ key, href, text }) => {
+      {links.map(({ href, text }) => {
         const ThisNav = NAV_TYPES[NavType];
 
         return (
-          <Item key={key} textValue={text}>
+          <Item key={text} textValue={text}>
             <ThisNav href={href} renderProps={renderProps}>
               {text}
             </ThisNav>

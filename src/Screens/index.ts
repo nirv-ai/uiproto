@@ -6,3 +6,4 @@ export * from './Layout';
 export * from './MicroInteractions';
 export * from './Typography';
 export * from './UIElements';
+export * from './Video';

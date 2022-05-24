@@ -17,7 +17,7 @@ export const layout = css`
       flex: 1 1 100%;
     }
   }
-  
+
   #outer-container {
     position: relative;
     display: flex;
@@ -49,10 +49,11 @@ export const layout = css`
         margin-left: var(--spacing-XS);
       }
 
-      > h1 {
+      > .appname {
         margin-left: var(--spacing-XS);
         font-size: inherit;
         font-family: var(--font-stylish3);
+        text-transform: uppercase;
       }
 
       > button {

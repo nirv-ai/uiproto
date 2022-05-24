@@ -2,6 +2,7 @@ import React from 'react';
 import { css } from '@emotion/react';
 
 import text from './text.json';
+import { H2, H3 } from 'src/Library';
 
 import {
   AnimationIntro,
@@ -13,14 +14,14 @@ import {
 } from 'src/Screens';
 
 const LandingShowcase = () => (
-  <article>
+  <section>
     <TypographyIntro />
     <ImagesIntro />
     <UIElementsIntro />
     <AnimationIntro />
     <LayoutIntro />
     <MicroInteractionsIntro />
-  </article>
+  </section>
 );
 
 const landingCss = css({});
@@ -28,8 +29,8 @@ const landingCss = css({});
 export const Landing = () => (
   <article className="screen" css={landingCss}>
     <section>
-      <h1>{text.title}</h1>
-      <h2>{text.subtitle}</h2>
+      <H2>{text.title}</H2>
+      <H3>{text.subtitle}</H3>
       <p>{text.about}</p>
     </section>
     <LandingShowcase />

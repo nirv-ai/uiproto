@@ -11,8 +11,8 @@ import 'animate.css';
 
 export const App = () => (
   <OverlayProvider>
+    <Global styles={globalStyles} />
     <div id="outer-container">
-      <Global styles={globalStyles} />
       <div id="inner-container">
         <AppNav />
         <main id="app-wrapper">

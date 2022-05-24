@@ -1,8 +1,8 @@
 import React from 'react';
 import { css } from '@emotion/react';
-
-import { MenuNav, menuItem, Popover } from 'src/Library';
 import { RiMenu5Line } from 'react-icons/ri';
+
+import { MenuNav, menuItem, Popover, H1 } from 'src/Library';
 import text from './text.json';
 import uiProtoLogo from 'src/assets/images/uiproto_logo_200x200.png';
 
@@ -46,7 +46,7 @@ const drawerCss = css({
   height: '1em',
   animation: 'flip',
   animationDuration: '1s',
-  animationDelay: '2s',
+  animationDelay: '1.5s',
 });
 
 const uiProtoLogoCss = css({
@@ -58,7 +58,7 @@ export const AppNav = () => {
   return (
     <header css={headerCss}>
       <img src={uiProtoLogo} alt="uiproto logo" css={uiProtoLogoCss} />
-      <h1 css={h1Css}>{text.title}</h1>
+      <H1 css={h1Css}>{text.title}</H1>
       <Popover
         aria-label="Custom popover"
         disclosure={

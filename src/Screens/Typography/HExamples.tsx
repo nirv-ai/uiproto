@@ -21,7 +21,7 @@ const HCopyPastaConfig = [
 
 export const HExamples: FC<any> = () => (
   <>
-    <H3 css={{ marginTop: 'var(--spacing-XL)' }}>header examples</H3>
+    <H4 css={{ marginTop: 'var(--spacing-XL)' }}>header examples</H4>
     <p>{sentences}</p>
     {HCopyPastaConfig.map(({ PastaEl, children }, i) => (
       <CopyPasta key={i} PastaEl={PastaEl} orientation="horizontal">

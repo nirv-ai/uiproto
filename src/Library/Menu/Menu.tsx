@@ -7,7 +7,6 @@ import React, { useRef, type FC, type ReactNode } from 'react';
 import { useMenu, useMenuItem } from 'react-aria';
 import { useTreeState, type TreeState } from 'react-stately';
 import type { AriaMenuProps } from '@react-types/menu';
-
 export { Item } from 'react-stately';
 
 type MenuInterface = AriaMenuProps<HTMLUListElement>;

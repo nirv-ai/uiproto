@@ -1,24 +1,26 @@
 import { type FC } from 'react';
 
 import text from './text.json';
-import { HIntro, H2, H3 } from 'src/Library';
+import { Screen, Section } from 'src/Library';
 import { sentences } from 'src/mocks';
 import { HExamples, CtaExamples, TextExamples, LinkExamples } from './Examples';
 
 export const TypographyIntro: FC<any> = () => (
-  <section>
-    <HIntro Title={H2} SubTitle={H3} text={text} />
+  <Section text={text}>
     <p>{sentences}</p>
-  </section>
+  </Section>
 );
 
-export const Typography = () => (
-  <article>
-    <HIntro text={text} />
-    <p>{sentences}</p>
-    <TextExamples />
-    <LinkExamples />
-    <CtaExamples />
-    <HExamples />
-  </article>
-);
+export const Typography = () => {
+  const docTitle = 'UIProto: Typography Components for React & Typescript';
+
+  return (
+    <Screen text={text} docTitle={docTitle}>
+      <p>{sentences}</p>
+      <TextExamples />
+      <LinkExamples />
+      <CtaExamples />
+      <HExamples />
+    </Screen>
+  );
+};

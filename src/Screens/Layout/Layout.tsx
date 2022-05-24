@@ -1,16 +1,19 @@
 import text from './text.json';
 import { sentences } from 'src/mocks';
-import { HIntro, H2, H3 } from 'src/Library';
+import { Section, Screen } from 'src/Library';
 
 export const LayoutIntro = () => (
-  <section>
-    <HIntro Title={H2} SubTitle={H3} text={text} />
+  <Section text={text}>
     <p>{sentences}</p>
-  </section>
+  </Section>
 );
-export const Layout = () => (
-  <article>
-    <HIntro text={text} />
-    <p>{sentences}</p>
-  </article>
-);
+
+export const Layout = () => {
+  const docTitle = 'UIProto: Layout Components for React & Typescript';
+
+  return (
+    <Screen text={text} docTitle={docTitle}>
+      <p>{sentences}</p>
+    </Screen>
+  );
+};

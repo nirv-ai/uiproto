@@ -34,3 +34,5 @@ export const CopyPastas: FC<CopyPastasInterface> = ({ title, about = sentences, 
     ))}
   </>
 );
+
+CopyPastas.displayName = 'CopyPastas';

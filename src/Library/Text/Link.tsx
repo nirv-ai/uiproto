@@ -1,6 +1,4 @@
 /**
- * for all navigation needs
- * combines react-aria, react router, and emotion into a single reusable interface
  * @see https://react-spectrum.adobe.com/react-aria/useLink.html
  * @see https://reactrouter.com/docs/en/v6/getting-started/overview#navigation
  */
@@ -12,7 +10,6 @@ import clsx from 'clsx';
 
 type ElementTypes = 'span' | 'a';
 
-// TODO: (noah) classnames, css, etc
 type LinkProps = {
   renderProps: { [x: string]: any };
   children: ReactNode;
@@ -52,8 +49,13 @@ const Link: FC<LinkProps> = props => {
   );
 };
 
-const createLink = (elementType: ElementTypes) => (props: LinkProps) =>
+type CreateLinkType = (elementType: ElementTypes) => FC<LinkProps>;
+
+const createLink: CreateLinkType = elementType => props =>
   <Link {...props} elementType={elementType} />;
 
 export const A = createLink('a');
+A.displayName = 'A';
+
 export const NavLink = createLink('span');
+NavLink.displayName = 'NavLink';

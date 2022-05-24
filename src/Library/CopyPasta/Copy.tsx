@@ -36,3 +36,5 @@ export const Copy: FC<CopyInterface> = ({ CopyEl }) => {
     </pre>
   );
 };
+
+Copy.displayName = 'Copy';

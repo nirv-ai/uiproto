@@ -7,3 +7,5 @@ interface PastaInterface {
 export const Pasta: FC<PastaInterface> = ({ PastaEl }) => {
   return <section>{PastaEl}</section>;
 };
+
+Pasta.displayName = 'Pasta';

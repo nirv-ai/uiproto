@@ -17,7 +17,7 @@ const appNavLinks = [
 ];
 
 const navCss = css({
-  ul: {
+  menu: {
     padding: 'var(--spacing-XXS)',
     li: {
       span: {

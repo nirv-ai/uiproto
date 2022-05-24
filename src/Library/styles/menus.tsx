@@ -4,11 +4,11 @@ import { css } from '@emotion/react';
 // ^ should be { rolemenuitem { &.inline} { &.block } }
 
 export const menusCss = css`
-  .inline > ul > [role="menuitem"] {
+  .inline > menu > [role="menuitem"] {
     display: inline-flex;
   }
 
-  .block > ul > [role="menuitem"] {
+  .block > menu > [role="menuitem"] {
     display: flex;
   }
 

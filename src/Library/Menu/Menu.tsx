@@ -20,13 +20,15 @@ export const Menu: FC<MenuInterface> = props => {
   const { menuProps } = useMenu(props, state, ref);
 
   return (
-    <ul {...menuProps} ref={ref}>
+    <menu {...menuProps} ref={ref}>
       {[...state.collection].map(item => (
         <MenuItem key={item.key} item={item} state={state} onAction={props.onAction} />
       ))}
-    </ul>
+    </menu>
   );
 };
+
+Menu.displayName = 'Menu';
 
 type MenuItemProps = {
   item: {
@@ -61,3 +63,5 @@ export const MenuItem: FC<MenuItemProps> = ({ item, state, onAction }) => {
     </li>
   );
 };
+
+MenuItem.displayName = 'MenuItem';

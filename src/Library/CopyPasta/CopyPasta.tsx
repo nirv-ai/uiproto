@@ -11,6 +11,7 @@ interface CopyPastaInterface {
   orientation?: 'vertical' | 'horizontal';
   PastaEl: any;
 }
+
 export const CopyPasta: FC<CopyPastaInterface> = ({
   orientation = 'horizontal',
   PastaEl,
@@ -31,3 +32,5 @@ export const CopyPasta: FC<CopyPastaInterface> = ({
     </section>
   );
 };
+
+CopyPasta.displayName = 'CopyPasta';

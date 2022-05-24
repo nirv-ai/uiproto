@@ -18,3 +18,5 @@ export const Popover = ({ disclosure, ...props }) => {
     </>
   );
 };
+
+Popover.displayName = 'Popover';

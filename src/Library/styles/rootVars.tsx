@@ -56,6 +56,7 @@ export const rootVarsCss = css`
     --spacing-XXS: calc(var(--spacing) * 0.3);
 
     /* colors */
+    /* these pallets are hella wack */
     /* scheme1: https://colorhunt.co/palette/f0e3caff8303a357091b1a17 */
     --color-scheme1-darkdark: #1B1A17;
     --color-scheme1-darklight: #A35709;

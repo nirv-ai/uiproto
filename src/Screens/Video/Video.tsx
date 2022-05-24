@@ -1,17 +1,19 @@
 import text from './text.json';
 import { sentences } from 'src/mocks';
-import { HIntro, H2, H3 } from 'src/Library';
+import { Screen, Section } from 'src/Library';
 
 export const VideoIntro = () => (
-  <section>
-    <HIntro Title={H2} SubTitle={H3} text={text} />
+  <Section text={text}>
     <p>{sentences}</p>
-  </section>
+  </Section>
 );
 
-export const Video = () => (
-  <article>
-    <HIntro text={text} />
-    <p>{sentences}</p>
-  </article>
-);
+export const Video = () => {
+  const docTitle = 'UIProto: Video Components for React & Typescript';
+
+  return (
+    <Screen text={text} docTitle={docTitle}>
+      <p>{sentences}</p>
+    </Screen>
+  );
+};

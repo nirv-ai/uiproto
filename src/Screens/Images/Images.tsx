@@ -1,17 +1,19 @@
 import text from './text.json';
 import { sentences } from 'src/mocks';
-import { HIntro, H2, H3 } from 'src/Library';
+import { Section, Screen } from 'src/Library';
 
 export const ImagesIntro = () => (
-  <section>
-    <HIntro Title={H2} SubTitle={H3} text={text} />
+  <Section text={text}>
     <p>{sentences}</p>
-  </section>
+  </Section>
 );
 
-export const Images = () => (
-  <article>
-    <HIntro text={text} />
-    <p>{sentences}</p>
-  </article>
-);
+export const Images = () => {
+  const docTitle = 'UIProto: Image Components for React & Typescript';
+
+  return (
+    <Screen text={text} docTitle={docTitle}>
+      <p>{sentences}</p>
+    </Screen>
+  );
+};

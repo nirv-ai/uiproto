@@ -1,6 +1,7 @@
 import { type Key, type FC } from 'react';
 
-import { NavLink, A, Menu, Item } from 'src/Library';
+import { Menu, Item } from 'src/Library';
+import { NavLink, A } from 'src/Library/Text/Link';
 
 type LinkConfig = {
   href: string;
@@ -46,3 +47,5 @@ export const MenuNav: FC<MenuNavProps> = ({
     </Menu>
   );
 };
+
+MenuNav.displayName = 'MenuNav';

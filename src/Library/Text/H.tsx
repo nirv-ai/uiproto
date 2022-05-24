@@ -1,10 +1,11 @@
 import { type FC, type ReactNode, type ElementType } from 'react';
 
-interface HInterface {
+export interface HInterface {
   children?: ReactNode;
   HType: ElementType;
   [x: string]: any;
 }
+
 const H: FC<HInterface> = ({ children, HType, ...props }) => {
   return <HType {...props}>{children}</HType>;
 };
@@ -25,12 +26,12 @@ H4.displayName = 'H4';
 H5.displayName = 'H5';
 H6.displayName = 'H6';
 
-interface HIntroInterface {
+export interface HIntroInterface {
   Title?: FC<HType>;
   SubTitle?: FC<HType>;
   text: {
     title: string;
-    subtitle: string;
+    subtitle?: string;
     [x: string]: any;
   };
 }
@@ -38,7 +39,7 @@ interface HIntroInterface {
 export const HIntro: FC<HIntroInterface> = ({ Title = H1, SubTitle = H2, text }) => (
   <>
     <Title>{text.title}</Title>
-    <SubTitle>{text.subtitle}</SubTitle>
+    {text.subtitle ? <SubTitle>{text.subtitle}</SubTitle> : null}
   </>
 );
 

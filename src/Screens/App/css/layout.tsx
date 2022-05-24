@@ -1,6 +1,23 @@
 import { css } from '@emotion/react';
 
 export const layout = css`
+  .row {
+    flex-flow: row wrap;
+  }
+
+  .column {
+    flex-flow: column wrap;
+  }
+
+  .row, .column {
+    display: flex;
+    justify-content: space-between;
+
+    > * {
+      flex: 1 1 100%;
+    }
+  }
+  
   #outer-container {
     position: relative;
     display: flex;
@@ -65,23 +82,6 @@ export const layout = css`
 
     #app-wrapper {
       padding: calc(2 * var(--spacing-XS)) var(--spacing-XS);
-
-      .row {
-        flex-flow: row wrap;
-      }
-
-      .column {
-        flex-flow: column wrap;
-      }
-
-      .row, .column {
-        display: flex;
-        justify-content: space-between;
-
-        > * {
-          flex: 1 1 100%;
-        }
-      }
     }
   }
 `;

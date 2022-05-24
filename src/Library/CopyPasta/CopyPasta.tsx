@@ -20,7 +20,7 @@ export const CopyPasta: FC<CopyPastaInterface> = ({
   const secondChildren = <Pasta PastaEl={PastaEl} />;
 
   return (
-    <div css={{ padding: '0.2rem 3rem 1rem' }}>
+    <section css={{ padding: 'var(--spacing-XS) var(--spacing-XXS)' }}>
       {children}
       <Separated
         className="code"
@@ -28,6 +28,6 @@ export const CopyPasta: FC<CopyPastaInterface> = ({
         firstChildren={firstChildren}
         secondChildren={secondChildren}
       />
-    </div>
+    </section>
   );
 };

@@ -8,7 +8,6 @@ interface CopyInterface {
 }
 
 export const Copy: FC<CopyInterface> = ({ CopyEl }) => {
-  console.info('\n\n copyEl', CopyEl);
   const renderedString = reactElementToJSXString(CopyEl, {
     displayName: reactEl => {
       /* @ts-ignore */

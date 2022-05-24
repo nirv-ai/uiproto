@@ -7,7 +7,7 @@ import { HExamples } from './HExamples';
 export const TypographyIntro: FC<any> = () => (
   <section>
     <h2>{text.title}</h2>
-    <p>{text.subtitle}</p>
+    <h3>{text.subtitle}</h3>
     <p>{sentences}</p>
   </section>
 );

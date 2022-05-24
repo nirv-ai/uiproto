@@ -1,5 +1,6 @@
 import React, { type FC } from 'react';
 
+import { sentences } from 'src/mocks';
 import { CopyPasta, H1, H2, H3, H4, H5, H6 } from 'src/Library';
 
 const textString = 'The world is full of objects, more or less interesting.';
@@ -20,6 +21,8 @@ const HCopyPastaConfig = [
 
 export const HExamples: FC<any> = () => (
   <>
+    <H3 css={{ marginTop: 'var(--spacing-XL)' }}>header examples</H3>
+    <p>{sentences}</p>
     {HCopyPastaConfig.map(({ PastaEl, children }, i) => (
       <CopyPasta key={i} PastaEl={PastaEl} orientation="horizontal">
         {children}

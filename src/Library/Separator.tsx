@@ -1,3 +1,6 @@
+/**
+ * TODO:(noah) speedrunning through; need to review props.orientation === vertical
+ */
 import React, { type FC } from 'react';
 import { useSeparator } from 'react-aria';
 import styled from '@emotion/styled';
@@ -41,6 +44,11 @@ export const Separated = props => {
 
   return (
     <section className="row" css={{ columnGap: '1ch' }}>
+      <div css={[separatedCss, useCss]}>
+        {props.firstChildren}
+        <Separator orientation={props.orientation} />
+        {props.secondChildren}
+      </div>
       <div
         css={{
           backgroundColor: 'var(--color-scheme1-lightdark)',
@@ -49,11 +57,6 @@ export const Separated = props => {
         }}
       >
         {' '}
-      </div>
-      <div css={[separatedCss, useCss]}>
-        {props.firstChildren}
-        <Separator orientation={props.orientation} />
-        {props.secondChildren}
       </div>
     </section>
   );

@@ -3,7 +3,6 @@ import React, { type FC, type ReactNode, type ElementType } from 'react';
 interface HInterface {
   children: ReactNode;
   HType: ElementType;
-  // [x: string]: any;
 }
 const H: FC<HInterface> = ({ children, HType, ...props }) => {
   return <HType {...props}>{children}</HType>;

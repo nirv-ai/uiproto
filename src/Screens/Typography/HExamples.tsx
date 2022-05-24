@@ -1,12 +1,9 @@
 import React, { type FC } from 'react';
 
-import { sentences } from 'src/mocks';
-import { CopyPasta, H1, H2, H3, H4, H5, H6 } from 'src/Library';
+import { CopyPastas, H1, H2, H3, H4, H5, H6, type PastaItemInterface } from 'src/Library';
 
-const textString = 'The world is full of objects, more or less interesting.';
-
-const hItem = (El, about) => ({
-  PastaEl: <El>{textString}</El>,
+const hItem: PastaItemInterface = (El, about) => ({
+  PastaEl: <El>The world is full of objects, more or less interesting.</El>,
   children: <p>{about}</p>,
 });
 
@@ -20,13 +17,5 @@ const HCopyPastaConfig = [
 ];
 
 export const HExamples: FC<any> = () => (
-  <>
-    <H4 css={{ marginTop: 'var(--spacing-XL)' }}>header examples</H4>
-    <p>{sentences}</p>
-    {HCopyPastaConfig.map(({ PastaEl, children }, i) => (
-      <CopyPasta key={i} PastaEl={PastaEl} orientation="horizontal">
-        {children}
-      </CopyPasta>
-    ))}
-  </>
+  <CopyPastas title="Header Examples" pastaConfig={HCopyPastaConfig} />
 );

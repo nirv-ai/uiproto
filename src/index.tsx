@@ -1,16 +1,21 @@
+// todo: https://github.com/facebook/create-react-app/tree/main/packages/cra-template-typescript/template/public
+
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
+import { Global } from '@emotion/react';
 
+import { indexCss } from './indexCss';
 import { reportWebVitals } from './reportWebVitals';
 import { Router } from './Router';
-
-// todo: https://github.com/facebook/create-react-app/tree/main/packages/cra-template-typescript/template/public
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
 root.render(
   <StrictMode>
-    <Router />
+    <>
+      <Global styles={indexCss} />
+      <Router />
+    </>
   </StrictMode>
 );
 

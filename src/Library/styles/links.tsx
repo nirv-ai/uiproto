@@ -1,10 +1,9 @@
 import { css } from '@emotion/react';
 
-export const links = css`
+export const linksCss = css`
 /*@see https://medium.com/@dave_lunny/stylish-a-styling-e80c80cbc30e */
-  a,
+  a, .a,
   [role="link"] {
-    text-decoration: none;
     cursor: pointer;
     color: var(--color-blue);
 

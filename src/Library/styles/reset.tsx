@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-export const reset = css`
+export const resetCss = css`
   html {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
@@ -25,6 +25,7 @@ export const reset = css`
       margin: 0;
       outline: inherit;
       padding: 0;
+      text-decoration: none;
     }
   }
 

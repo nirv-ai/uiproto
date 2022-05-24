@@ -1,16 +1,12 @@
-import { Global } from '@emotion/react';
 import { Outlet } from 'react-router-dom';
 import { OverlayProvider } from 'react-aria'; // for react-aria modals
 
+import { AppCss } from './AppCss';
 import { AppFooter } from './AppFooter';
 import { AppNav } from './AppNav';
-import { globalStyles } from './globalCss';
-
-import 'animate.css';
 
 export const App = () => (
-  <OverlayProvider>
-    <Global styles={globalStyles} />
+  <OverlayProvider css={AppCss}>
     <div id="outer-container">
       <div id="inner-container">
         <AppNav />

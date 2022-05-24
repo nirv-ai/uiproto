@@ -1,10 +1,11 @@
 import { css } from '@emotion/react';
 
-export const rootVars = css`
+export const rootVarsCss = css`
   @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,600&family=Inconsolata:wght@200;400&family=Indie+Flower&family=Rubik:wght@300;400&family=Belgrano&family=Kelly+Slab&display=swap');
 
   :root {
     /* fonts */
+    --font-max-width: 50ch;
     --font-heading1: 'Rubik', cursive;
     --font-reading1: 'Belgrano', serif;
     --font-reading2: 'Inconsolata', monospace;

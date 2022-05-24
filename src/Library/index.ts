@@ -5,3 +5,4 @@ export * from './Modal';
 export * from './Popover';
 export * from './Separator';
 export * from './Text';
+export * from './styles';

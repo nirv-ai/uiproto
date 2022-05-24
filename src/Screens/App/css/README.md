@@ -1,8 +1,0 @@
-- used the breakpoints recommended at the link below
-- @see https://www.freecodecamp.org/news/css-media-queries-breakpoints-media-types-standard-resolutions-and-more/
-- @see https://tympanus.net/Development/CreativeLinkEffects/
-- mobile first responsive layout (hence we use min-width instead of max-width media queries)
-- @see https://matemarschalko.medium.com/the-golden-ratio-in-sass-and-css-development-f958e18aa640
-- TODO: (noah) need to make sure this looks good in different contexts
-- ^ e.g. as a type-scale for fonts, for different grid layouts, etc
-- ^ check type-scale.com

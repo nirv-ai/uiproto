@@ -54,7 +54,7 @@ export const AppNav = () => {
   return (
     <header css={headerCss}>
       <img src={uiProtoLogo} alt="uiproto logo" css={uiProtoLogoCss} />
-      <span className="appname">{text.title}</span>
+      <span className="appname h1">{text.title}</span>
       <Popover
         aria-label="Custom popover"
         disclosure={

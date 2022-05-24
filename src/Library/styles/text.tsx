@@ -34,12 +34,12 @@ export const textCss = css`
     font-weight: 200;
   }
 
-  a, button, input[type="submit"], input[type="reset"], .cta  {
+  button, input[type="submit"], input[type="reset"], .cta  {
     cursor: pointer;
   }
 
-  h1, h2, h3, h4, h5, h6, a, p, span, button, input,
+  h1, h2, h3, h4, h5, h6, p, span, button, input,
   .h1, .h2, .h3, .h4, .h5, .h6, .cta {
-    max-width: 50ch;
+    max-width: var(--font-max-width);
   }
 `;

@@ -1,23 +1,6 @@
 import { css } from '@emotion/react';
 
-export const layout = css`
-  .row {
-    flex-flow: row wrap;
-  }
-
-  .column {
-    flex-flow: column wrap;
-  }
-
-  .row, .column {
-    display: flex;
-    justify-content: space-between;
-
-    > * {
-      flex: 1 1 100%;
-    }
-  }
-
+export const AppCss = css`
   #outer-container {
     position: relative;
     display: flex;
@@ -51,9 +34,8 @@ export const layout = css`
 
       > .appname {
         margin-left: var(--spacing-XS);
-        font-size: inherit;
         font-family: var(--font-stylish3);
-        text-transform: uppercase;
+        font-size: inherit;
       }
 
       > button {
@@ -80,9 +62,9 @@ export const layout = css`
         font-family: var(--font-stylish2);
       }
     }
+  }
 
-    #app-wrapper {
+  #app-wrapper {
       padding: calc(2 * var(--spacing-XS)) var(--spacing-XS);
     }
-  }
 `;

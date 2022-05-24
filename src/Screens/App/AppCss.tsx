@@ -55,10 +55,7 @@ export const AppCss = css`
       bottom: 0;
       padding-left: var(--spacing-XXS);
 
-      > h1:first-child {
-      }
-
-      > p {
+      > small {
         font-family: var(--font-stylish2);
       }
     }

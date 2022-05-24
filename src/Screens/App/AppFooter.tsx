@@ -1,13 +1,9 @@
-import { css } from '@emotion/react';
-
 import text from './text.json';
-import { H1 } from 'src/Library';
-
-const footerCss = css({});
+import { Strong, Small, textCss } from 'src/Library';
 
 export const AppFooter = () => (
-  <footer css={footerCss}>
-    <H1>{text.author}</H1>
-    <p>for the rule breakers</p>
+  <footer css={textCss}>
+    <Strong className="h1">{text.author}</Strong>
+    <Small>for the rule breakers</Small>
   </footer>
 );

@@ -1,13 +1,13 @@
 import { type FC } from 'react';
 
-import text from './text.json';
-import { Screen, Section } from 'src/Library';
-import { sentences } from 'src/mocks';
 import { HExamples, CtaExamples, TextExamples, LinkExamples } from './Examples';
+import { Screen, Section, P } from 'src/Library';
+import { sentences } from 'src/mocks';
+import text from './text.json';
 
 export const TypographyIntro: FC<any> = () => (
   <Section text={text}>
-    <p>{sentences}</p>
+    <P>{sentences}</P>
   </Section>
 );
 
@@ -16,7 +16,7 @@ export const Typography = () => {
 
   return (
     <Screen text={text} docTitle={docTitle}>
-      <p>{sentences}</p>
+      <P>{sentences}</P>
       <TextExamples />
       <LinkExamples />
       <CtaExamples />

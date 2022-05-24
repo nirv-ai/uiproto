@@ -1,5 +1,5 @@
 import text from './text.json';
-import { Screen } from 'src/Library';
+import { Screen, P } from 'src/Library';
 
 import {
   AnimationIntro,
@@ -28,8 +28,8 @@ export const Landing = () => {
 
   return (
     <Screen docTitle={docTitle} text={{ title: text.title }}>
-      <p>{text.subtitle}</p>
-      <p>{text.about}</p>
+      <P>{text.subtitle}</P>
+      <P>{text.about}</P>
       <LandingShowcase />
     </Screen>
   );

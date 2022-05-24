@@ -7,7 +7,7 @@ interface TextInterface {
   block?: boolean;
   children: ReactElement;
   className?: string;
-  elType?: 'p' | 'b' | 'strong' | 'em' | 'mark';
+  elType?: 'p' | 'b' | 'strong' | 'em' | 'mark' | 'small';
   inline?: boolean;
 }
 
@@ -48,3 +48,6 @@ Strong.displayName = 'Strong';
 
 export const Mark = props => <Span elType="mark" {...props} />;
 Mark.displayName = 'Mark';
+
+export const Small = props => <Span elType="small" {...props} />;
+Small.displayName = 'Small';

@@ -1,10 +1,10 @@
 import text from './text.json';
 import { sentences } from 'src/mocks';
-import { Screen, Section } from 'src/Library';
+import { Screen, Section, P } from 'src/Library';
 
 export const UIElementsIntro = () => (
   <Section text={text}>
-    <p>{sentences}</p>
+    <P>{sentences}</P>
   </Section>
 );
 
@@ -13,7 +13,7 @@ export const UIElements = () => {
 
   return (
     <Screen text={text} docTitle={docTitle}>
-      <p>{sentences}</p>
+      <P>{sentences}</P>
     </Screen>
   );
 };

@@ -1,10 +1,10 @@
 import text from './text.json';
 import { sentences } from 'src/mocks';
-import { Section, Screen } from 'src/Library';
+import { Section, Screen, P } from 'src/Library';
 
 export const ImagesIntro = () => (
   <Section text={text}>
-    <p>{sentences}</p>
+    <P>{sentences}</P>
   </Section>
 );
 
@@ -13,7 +13,7 @@ export const Images = () => {
 
   return (
     <Screen text={text} docTitle={docTitle}>
-      <p>{sentences}</p>
+      <P>{sentences}</P>
     </Screen>
   );
 };

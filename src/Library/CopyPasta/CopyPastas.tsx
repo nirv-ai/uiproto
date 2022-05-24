@@ -1,7 +1,7 @@
 import { type ReactElement, type FC } from 'react';
 
 import { CopyPasta } from './CopyPasta';
-import { H3 } from 'src/Library';
+import { H3, P } from 'src/Library';
 import { sentences } from 'src/mocks';
 
 export type PastaItemType = {
@@ -26,7 +26,7 @@ const copyPastasCss = {
 export const CopyPastas: FC<CopyPastasInterface> = ({ title, about = sentences, pastaConfig }) => (
   <>
     <H3 css={copyPastasCss}>{title}</H3>
-    <p>{about}</p>
+    <P>{about}</P>
     {pastaConfig.map(({ PastaEl, children }, i) => (
       <CopyPasta key={i} PastaEl={PastaEl} orientation="horizontal">
         {children}

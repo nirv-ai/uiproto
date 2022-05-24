@@ -1,11 +1,11 @@
 import { type FC } from 'react';
 import styled from '@emotion/styled';
 
-import { CopyPastas, type PastaItemInterface } from 'src/Library';
+import { CopyPastas, P, type PastaItemInterface } from 'src/Library';
 
 const ctaItem: PastaItemInterface = (El, about) => ({
   PastaEl: <El>lol need to style the buttons</El>,
-  children: <p>{about}</p>,
+  children: <P>{about}</P>,
 });
 
 const Button = styled.button``;

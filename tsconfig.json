@@ -15,7 +15,7 @@
     "esModuleInterop": true,
     "exactOptionalPropertyTypes": false,
     "noEmitOnError": false,
-    "forceConsistentCasingInFileNames": true,
+    "forceConsistentCasingInFileNames": false, // fks with webpck plugins, e.g. responsive-loader
     "importHelpers": true,
     "isolatedModules": true,
     "jsx": "react-jsx",

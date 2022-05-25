@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { useState, type FC } from 'react';
 
 import { getClass } from 'src/Library';
 
@@ -17,6 +17,7 @@ export interface ImgInterface {
   onError?: (e: Error) => void;
   sizes?: string;
   src: string;
+  srcFallback?: string;
   srcSet?: string;
   useMap?: string;
   width?: number | string;
@@ -61,12 +62,16 @@ export const Img: FC<ImgInterface> = ({
   onError,
   referrerPolicy = 'strict-origin-when-cross-origin',
   src,
+  srcFallback = 'https://via.placeholder.com/150',
   width,
   ...props
 }) => {
+  const [useSrc, setSrc] = useState(src);
+
   const handleError = e => {
     console.error(`error loading img: ${src}`, e);
     if (onError) onError(e);
+    setSrc(srcFallback);
   };
 
   const useClass = getClass(imgClass, className);
@@ -91,6 +96,7 @@ export const Img: FC<ImgInterface> = ({
     <img
       {...props}
       alt={alt}
+      title={alt}
       className={useClass}
       decoding={decoding}
       height={height}
@@ -102,7 +108,7 @@ export const Img: FC<ImgInterface> = ({
       onError={handleError}
       /* @ts-ignore */
       referrerPolicy={referrerPolicy}
-      src={src}
+      src={useSrc}
     />
   );
 };

@@ -13,18 +13,19 @@ declare module '*.webp' {
   export = value;
 }
 
+// @see https://github.com/dazuaz/responsive-loader/issues/105
 // @see https://stackoverflow.com/questions/60816666/how-to-use-query-param-import-in-webpack-with-typescript-without-getting-cannot
 declare module '*&useResponsiveLoader=true' {
   const defaultExport: {
+    placeholder: string;
+    src: string;
     srcSet: string;
+    toString(): string;
     images: {
       height: number;
       width: number;
       path: string;
     }[];
-    src: string;
-    placeholder: string;
-    toString(): string;
   };
   export default defaultExport;
 }

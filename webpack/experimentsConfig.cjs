@@ -6,7 +6,7 @@ module.exports = function ({ isDev }) {
     // futureDefaults: true,
     // outputModule: true,
     // syncWebAssembly: false,
-    cacheUnaffected: isDev,
+    // cacheUnaffected: isDev,
     layers: true,
     lazyCompilation: isDev, // theres no webpack in prod
     topLevelAwait: true,

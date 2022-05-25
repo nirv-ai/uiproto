@@ -33,7 +33,7 @@ const getAssetLoaders = () => [
   },
 ];
 
-module.exports = function ({ MiniCssExtractPlugin }) {
+module.exports = function ({ MiniCssExtractPlugin, isDev }) {
   return {
     rules: [
       ...getAssetLoaders(),
@@ -42,7 +42,14 @@ module.exports = function ({ MiniCssExtractPlugin }) {
         use: {
           loader: 'responsive-loader',
           options: {
+            name: 'images/[name]-[width]-[contenthash:7].[ext]',
             adapter: require('responsive-loader/sharp'),
+            // sizes: [320, 640], // 960, 1200, 1800, 2400
+            placeholder: true,
+            placeholderSize: 20,
+            disable: false,
+            eModule: true,
+            emitFile: true,
           },
         },
       },

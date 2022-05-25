@@ -4,7 +4,6 @@ import { getClass } from 'src/Library';
 
 export interface ImgInterface {
   alt?: string;
-  ariaRole?: string;
   block?: boolean;
   className?: string;
   crossorigin?: 'anonymous' | 'use-credentials';
@@ -15,7 +14,7 @@ export interface ImgInterface {
   href?: string;
   imgClass?: string;
   loading?: 'eager' | 'lazy';
-  onError?: (E: Error) => void;
+  onError?: (e: Error) => void;
   sizes?: string;
   src: string;
   srcSet?: string;
@@ -29,6 +28,23 @@ export interface ImgInterface {
     | 'strict-origin-when-cross-origin'
     | 'strict-origin'
     | 'unsafe-url';
+  ariaRole?:
+    | 'button'
+    | 'checkbox'
+    | 'link'
+    | 'menuitem'
+    | 'menuitemcheckbox'
+    | 'menuitemradio'
+    | 'none'
+    | 'option'
+    | 'presentation'
+    | 'progressbar'
+    | 'scrollbar'
+    | 'separator'
+    | 'slider'
+    | 'switch'
+    | 'tab'
+    | 'treeitem';
 }
 
 export const Img: FC<ImgInterface> = ({
@@ -42,6 +58,7 @@ export const Img: FC<ImgInterface> = ({
   height,
   imgClass,
   loading = 'lazy',
+  onError,
   referrerPolicy = 'strict-origin-when-cross-origin',
   src,
   width,
@@ -49,6 +66,7 @@ export const Img: FC<ImgInterface> = ({
 }) => {
   const handleError = e => {
     console.error(`error loading img: ${src}`, e);
+    if (onError) onError(e);
   };
 
   const useClass = getClass(imgClass, className);
@@ -95,4 +113,13 @@ import { A } from 'src/library;
 todo <a><img></a>
 else if (href) useRole = 'link'; // TODO:(noah) google this
 export const ImgLink
+*/
+
+/*
+figure
+figcaption
+*/
+
+/*
+picture
 */

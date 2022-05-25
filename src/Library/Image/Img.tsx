@@ -71,7 +71,7 @@ export const Img: FC<ImgInterface> = ({
   const handleError = e => {
     console.error(`error loading img: ${src}`, e);
     if (onError) onError(e);
-    setSrc(srcFallback);
+    if (useSrc !== srcFallback) setSrc(srcFallback);
   };
 
   const useClass = getClass(imgClass, className);
@@ -79,13 +79,14 @@ export const Img: FC<ImgInterface> = ({
   let useRole;
   if (ariaRole) useRole = ariaRole;
   else
-    switch (typeof ariaRole) {
-      // empty string, must be presentational
+    switch (typeof alt) {
       case 'string': {
-        useRole = 'presentation';
+        // empty string, must be presentational
+        if (!alt.length) useRole = 'presentation';
+        else useRole = 'img';
         break;
       }
-      // no alt, use default role
+      // not alt, use default role
       case 'undefined': {
         useRole = 'img';
         break;
@@ -96,16 +97,16 @@ export const Img: FC<ImgInterface> = ({
     <img
       {...props}
       alt={alt}
-      title={alt}
       className={useClass}
       decoding={decoding}
       height={height}
+      loading={loading}
+      onError={handleError}
       role={useRole}
+      title={alt}
       width={width}
       /* @ts-ignore */
       fetchpriority={fetchpriority}
-      loading={loading}
-      onError={handleError}
       /* @ts-ignore */
       referrerPolicy={referrerPolicy}
       src={useSrc}

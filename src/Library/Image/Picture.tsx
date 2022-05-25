@@ -3,6 +3,8 @@ import { type FC } from 'react';
 import { Img, type ImgInterface } from './Img';
 
 // TODO: (noah) review https://github.com/dazuaz/responsive-loader
+// ^ skipping responsive loader for the time being
+// ^ likely just build a custom webpack loader based on sharp.js
 export type PictureInterface = {
   sizes?: string;
   image: ImgInterface;

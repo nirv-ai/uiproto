@@ -9,6 +9,8 @@ export interface TextInterface {
   block?: boolean;
   children?: ReactNode;
   className?: string;
+  forwardedRef?: any;
+  inline?: boolean;
   ElType:
     | 'a'
     | 'b'
@@ -27,18 +29,16 @@ export interface TextInterface {
     | 'strong'
     | 'sub'
     | 'sup';
-  forwardedRef?: any;
-  inline?: boolean;
 }
 
 export const Text: FC<TextInterface> = ({
   ariaLabel,
   ariaRole,
-  block = false,
+  block,
   children,
   className,
   ElType,
-  inline = false,
+  inline,
   forwardedRef,
   ...props
 }) => {

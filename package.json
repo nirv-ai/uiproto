@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/noahehall/uiproto/issues"
   },
-  "packageManager": "pnpm",
+  "packageManager": "pnpm@7",
   "homepage": "https://github.com/noahehall/uiproto#readme",
   "devDependencies": {
     "@react-types/dialog": "^3.3.5",

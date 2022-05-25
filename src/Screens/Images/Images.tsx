@@ -1,6 +1,7 @@
-import text from './text.json';
-import { sentences } from 'src/mocks';
+import { ImgExamples } from './Examples';
 import { Section, Screen, P } from 'src/Library';
+import { sentences } from 'src/mocks';
+import text from './text.json';
 
 export const ImagesIntro = () => (
   <Section text={text}>
@@ -14,6 +15,7 @@ export const Images = () => {
   return (
     <Screen text={text} docTitle={docTitle}>
       <P>{sentences}</P>
+      <ImgExamples />
     </Screen>
   );
 };

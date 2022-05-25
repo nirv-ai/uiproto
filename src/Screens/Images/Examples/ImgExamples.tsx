@@ -1,10 +1,11 @@
 import { type FC } from 'react';
 
 import { Img, Picture, CopyPastas, P, type PastaItemInterface } from 'src/Library';
-import beerImageJpg from 'src/assets/images/nicJackson/beer.jpg?sizes[]=300,sizes[]=600,sizes[]=1024,sizes[]=2048&useResponsiveLoader=true';
+import beerImageJpg from 'src/assets/images/nicJackson/beer.jpg?&srcset';
+// import beerImageJpgph from 'src/assets/images/nicJackson/beer.jpg?placeholder';
 import beerImageWebp from 'src/assets/images/nicJackson/beer.jpg';
 
-console.info('\n\n wtf images', beerImageJpg, beerImageWebp);
+console.info('\n\n wtf images', beerImageJpg);
 const imgItem: PastaItemInterface = (El, about, props = {}) => ({
   PastaEl: <El {...props} />,
   children: <P>{about}</P>,

@@ -23,7 +23,15 @@ export const Copy: FC<CopyInterface> = ({ CopyEl }) => {
 
   return (
     <pre>
-      <code className="code">
+      <code
+        className="code"
+        css={{
+          '*': {
+            wordBreak: 'break-all',
+            wordWrap: 'break-word',
+          },
+        }}
+      >
         <CopyBlock
           codeBlock
           language="jsx"

@@ -34,7 +34,7 @@ export const resetCss = css`
     font-family: var(--font-reading2);
 
     * {
-      max-width: unset;
+      max-width: 80vw;
     }
   }
 

@@ -68,7 +68,9 @@
     "webpack": "5.72.1",
     "webpack-cli": "4.9.2",
     "webpack-dev-server": "4.9.0",
+    "webpack-image-placeholder-loader": "^1.2.1",
     "webpack-image-resize-loader": "5.0.0",
+    "webpack-image-srcset-loader": "^5.0.4",
     "webpack-manifest-plugin": "5.0.0"
   },
   "dependencies": {

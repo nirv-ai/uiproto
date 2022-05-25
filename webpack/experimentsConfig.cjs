@@ -8,7 +8,7 @@ module.exports = function ({ isDev }) {
     // syncWebAssembly: false,
     cacheUnaffected: isDev,
     layers: true,
-    lazyCompilation: true,
+    lazyCompilation: isDev, // theres no webpack in prod
     topLevelAwait: true,
   };
 };

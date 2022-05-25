@@ -6,9 +6,9 @@
 import { createRef, type FC } from 'react';
 import { useLink } from 'react-aria';
 import { useNavigate, useMatch } from 'react-router-dom';
-import clsx from 'clsx';
 
 import { TextWithRef, type TextInterface } from './Text';
+import { getClass } from 'src/Library/Utils';
 
 export interface LinkInterface extends TextInterface {
   [x: string]: any;
@@ -22,6 +22,7 @@ export const Link: FC<LinkInterface> = ({ renderProps, className, ...props }) =>
 
   const activeProps = useMatch(props.href);
 
+  // TODO: (noah) isPressed is an excellent opportunity for some micro interactions
   const { linkProps /*, isPressed*/ } = useLink(
     {
       ...props,
@@ -47,7 +48,7 @@ export const Link: FC<LinkInterface> = ({ renderProps, className, ...props }) =>
     }
   };
 
-  const useClass = clsx(activeProps && 'active', className).trim() || undefined;
+  const useClass = getClass(activeProps && 'active', className);
 
   return (
     <TextWithRef

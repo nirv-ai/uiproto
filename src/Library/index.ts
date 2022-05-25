@@ -6,3 +6,4 @@ export * from './Popover';
 export * from './Separator';
 export * from './styles';
 export * from './Text';
+export * from './Utils';

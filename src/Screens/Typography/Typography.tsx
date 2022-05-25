@@ -1,6 +1,6 @@
 import { type FC } from 'react';
 
-import { HExamples, CtaExamples, TextExamples, LinkExamples } from './Examples';
+import { HExamples, ButtonExamples, TextExamples, LinkExamples } from './Examples';
 import { Screen, Section, P } from 'src/Library';
 import { sentences } from 'src/mocks';
 import text from './text.json';
@@ -17,9 +17,9 @@ export const Typography = () => {
   return (
     <Screen text={text} docTitle={docTitle}>
       <P>{sentences}</P>
+      <ButtonExamples />
       <TextExamples />
       <LinkExamples />
-      <CtaExamples />
       <HExamples />
     </Screen>
   );

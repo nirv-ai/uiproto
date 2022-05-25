@@ -1,5 +1,6 @@
 import { forwardRef, type FC, type ReactNode } from 'react';
-import clsx from 'clsx';
+
+import { getClass } from 'src/Library/Utils';
 
 export interface TextInterface {
   [x: string]: any;
@@ -65,7 +66,7 @@ export const Text: FC<TextInterface> = ({
     }
   }
 
-  const useClass = clsx({ inline, block }, className).trim() || undefined;
+  const useClass = getClass(inline, block, className);
 
   return (
     <ElType

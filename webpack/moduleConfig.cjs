@@ -1,11 +1,11 @@
-const svgToMiniDataURI = require('mini-svg-data-uri');
-
 // @see https://webpack.js.org/guides/asset-modules/
 // @see https://webpack.js.org/configuration/output/#template-strings
 // asset/resource: emit separate file (e.g. file-loader)
 // asset/inline: export data uri (e.g. url-loader)
 // asset/source: export source code (e.g. raw-loader)
 // asset: automatically choose (e.g. url-loader with asset size limit)
+
+const imgTest = /\.(je?pg|a?png|gif|avif|webp)$/i;
 const getAssetLoaders = () => [
   {
     test: /\.(eot|otf|ttf|woff|woff2)$/,
@@ -14,7 +14,7 @@ const getAssetLoaders = () => [
   },
   {
     // @see https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types
-    test: /\.(je?pg|a?png|gif|avif|webp)$/,
+    test: imgTest,
     type: 'asset/resource',
     generator: { filename: '[file][query]' },
   },
@@ -23,7 +23,7 @@ const getAssetLoaders = () => [
     type: 'asset/inline',
     generator: {
       filename: '[file][query]',
-      dataUrl: content => svgToMiniDataURI(content.toString()),
+      dataUrl: content => require('mini-svg-data-uri')(content.toString()),
     },
   },
   {
@@ -37,6 +37,15 @@ module.exports = function ({ MiniCssExtractPlugin }) {
   return {
     rules: [
       ...getAssetLoaders(),
+      {
+        test: imgTest,
+        use: {
+          loader: 'responsive-loader',
+          options: {
+            adapter: require('responsive-loader/sharp'),
+          },
+        },
+      },
       {
         test: /\.(csv|tsv)$/i,
         use: ['csv-loader'],

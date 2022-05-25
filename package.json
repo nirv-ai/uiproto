@@ -60,7 +60,9 @@
     "mini-svg-data-uri": "1.4.4",
     "prettier": "2.6.2",
     "react-dev-utils": "12.0.1",
+    "responsive-loader": "^2.3.0",
     "sb": "6.5.0-beta.8",
+    "sharp": "^0.30.5",
     "style-loader": "3.3.1",
     "ts-jest": "28.0.2",
     "ts-loader": "9.3.0",
@@ -68,6 +70,7 @@
     "webpack": "5.72.1",
     "webpack-cli": "4.9.2",
     "webpack-dev-server": "4.9.0",
+    "webpack-image-resize-loader": "^5.0.0",
     "webpack-manifest-plugin": "5.0.0"
   },
   "dependencies": {

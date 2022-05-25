@@ -11,6 +11,10 @@ const cacheGroupBaseParams = {
 // [\\/] only necessary when supporting windows
 // ^ no plans to support windows, plus it messes up my ability to write regex
 const createCacheGroups = () => ({
+  images: {
+    test: /\.(png|jpe?g|gif|svg|webp)$/,
+    priority: 20,
+  },
   etc: {
     ...cacheGroupBaseParams,
     test: /node_modules/,
@@ -58,23 +62,23 @@ const createSplitChunks = () => {
 // @see https://webpack.js.org/configuration/optimization/
 module.exports = function ({ isDev }) {
   return {
+    // mangleWasmImports: false,
+    // minimize: true,
+    // minimizer: createTerserPlugin({ pathDist, ifProd }),
+    // moduleIds: isDev ? 'named' : 'deterministic',
     chunkIds: isDev ? 'named' : 'deterministic',
     concatenateModules: true, // depends on usedExports
     emitOnErrors: true, // emit even if errors, will propagate to runtime
     flagIncludedChunks: true,
     innerGraph: true, // required for emotion
     mangleExports: isDev ? false : 'deterministic',
-    mangleWasmImports: false,
     mergeDuplicateChunks: true,
-    minimize: true,
-    // minimizer: createTerserPlugin({ pathDist, ifProd }),
-    moduleIds: isDev ? 'named' : 'deterministic',
     nodeEnv: isDev ? 'development' : 'production',
     portableRecords: true,
     providedExports: true,
     realContentHash: true,
     removeAvailableModules: false,
-    removeEmptyChunks: false,
+    removeEmptyChunks: true,
     runtimeChunk: 'single', // all entry points runtime in the same file
     sideEffects: true,
     splitChunks: createSplitChunks(),

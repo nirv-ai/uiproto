@@ -9,6 +9,7 @@ const appNavLinks = [
   menuItem('/', 'Home', 'Home Screen'),
   menuItem('/typography', 'Typography', 'Typography Screen'),
   menuItem('/images', 'Images', 'Images Screen'),
+  menuItem('/forms', 'forms', 'Forms Screen'),
   menuItem('/ui-elements', 'ui elements', 'UI Elements Screen'),
   menuItem('/layout', 'Layout', 'Layout Screen'),
   menuItem('/video', 'video', 'Video Screen'),

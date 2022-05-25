@@ -24,7 +24,9 @@ export interface TextInterface {
     | 'p'
     | 'small'
     | 'span'
-    | 'strong';
+    | 'strong'
+    | 'sub'
+    | 'sup';
   forwardedRef?: any;
   inline?: boolean;
 }

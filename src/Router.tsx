@@ -3,6 +3,7 @@ import { HashRouter, Routes, Route } from 'react-router-dom';
 import {
   Animation,
   App,
+  Forms,
   Images,
   Landing,
   Layout,
@@ -25,6 +26,7 @@ export const Router = () => {
           <Route path="typography" element={<Typography />} />
           <Route path="ui-elements" element={<UIElements />} />
           <Route path="video" element={<Video />} />
+          <Route path="forms" element={<Forms />} />
           <Route path="*" element={<p>There's nothing here!</p>} />
         </Route>
       </Routes>

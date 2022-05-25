@@ -3,6 +3,7 @@ import { Screen, P } from 'src/Library';
 
 import {
   AnimationIntro,
+  FormsIntro,
   ImagesIntro,
   LayoutIntro,
   MicroInteractionsIntro,
@@ -15,6 +16,7 @@ const LandingShowcase = () => (
   <>
     <TypographyIntro />
     <ImagesIntro />
+    <FormsIntro />
     <UIElementsIntro />
     <LayoutIntro />
     <VideoIntro />

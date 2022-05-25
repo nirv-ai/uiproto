@@ -63,7 +63,7 @@ module.exports = function ({ isDev }) {
     emitOnErrors: true, // emit even if errors, will propagate to runtime
     flagIncludedChunks: true,
     innerGraph: true, // required for emotion
-    mangleExports: 'deterministic',
+    mangleExports: isDev ? false : 'deterministic',
     mangleWasmImports: false,
     mergeDuplicateChunks: true,
     minimize: true,

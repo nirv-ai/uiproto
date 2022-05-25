@@ -13,7 +13,8 @@ const getAssetLoaders = () => [
     generator: { filename: '[file][query]' },
   },
   {
-    test: /\.(jpg|jpeg|png|gif)$/,
+    // @see https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types
+    test: /\.(je?pg|a?png|gif|avif|webp)$/,
     type: 'asset/resource',
     generator: { filename: '[file][query]' },
   },

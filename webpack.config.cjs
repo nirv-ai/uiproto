@@ -2,33 +2,28 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const pluginsConfig = require('./webpack/pluginsConfig.cjs');
+const experimentsConfig = require('./webpack/experimentsConfig.cjs');
 const moduleConfig = require('./webpack/moduleConfig.cjs');
 const optimizationConfig = require('./webpack/optimizationConfig.cjs');
+const outputConfig = require('./webpack/outputConfig.cjs');
+const pluginsConfig = require('./webpack/pluginsConfig.cjs');
+const resolveConfig = require('./webpack/resolveConfig.cjs');
 
 // @see https://webpack.js.org/guides/typescript/
 const mode = process.env.NODE_ENV || 'development';
 const isDev = mode === 'development';
+const dirName = __dirname;
 
 module.exports = {
-  mode,
-  entry: './src/index.tsx',
   devtool: 'inline-source-map',
+  entry: './src/index.tsx',
+  experiments: experimentsConfig({ isDev }),
+  mode,
+  module: moduleConfig({ MiniCssExtractPlugin, isDev }),
+  optimization: optimizationConfig({ isDev }),
+  output: outputConfig({ isDev, dirName }),
+  plugins: pluginsConfig({ MiniCssExtractPlugin, isDev }),
+  resolve: resolveConfig({ isDev, dirName }),
   stats: 'normal',
   target: 'web',
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].bundle.js',
-    chunkFilename: '[name].bundle.js',
-  },
-  resolve: {
-    extensions: ['.tsx', '.ts', '.mjs', '.js', '.json', '.cjs'],
-    mainFields: ['module', 'main'],
-    alias: {
-      src: path.resolve(__dirname, 'src/'),
-    },
-  },
-  optimization: optimizationConfig({ isDev }),
-  module: moduleConfig({ MiniCssExtractPlugin, isDev }),
-  plugins: pluginsConfig({ MiniCssExtractPlugin, isDev }),
 };

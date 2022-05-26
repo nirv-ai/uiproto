@@ -2,7 +2,8 @@ import { css } from '@emotion/react';
 
 export const imageCss = css`
   img {
-    object-fit: contain;
+    image-rendering: -webkit-optimize-contrast;
+    object-fit: cover;
 
     &.width-only {
       height: auto; /* overries any html height */
@@ -11,6 +12,10 @@ export const imageCss = css`
     &.height-only {
       max-height: 100%;
       width: auto; /* overries any html width */
+    }
+
+    &.width-only, &.height-only {
+      object-fit: unset;
     }
   }
 

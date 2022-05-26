@@ -22,6 +22,16 @@ const ImgCopyPastaConfig = [
     ...imgProps,
     src: '',
     alt: 'default fallback src when img load error',
+    title: 'img errors on logged to console (open devtools)',
+  }),
+
+  imgItem(Img, 'Img Element', {
+    ...imgProps,
+    src: '',
+    alt: 'default fallback src when img load error',
+    srcFallback: 'https://images.pexels.com/photos/11438396/pexels-photo-11438396.jpeg',
+    title: 'optionally pass an onError fn or srcFallback string',
+    onError: () => console.error('do something on error'),
   }),
 
   imgItem(Img, 'Img Element', { ...imgProps, alt: 'local image', src: beerImageJpg }),
@@ -47,7 +57,6 @@ const ImgCopyPastaConfig = [
     src: beerImageJpg,
     wrapClass: 'sixteen-nine',
     alt: 'best for images with aspect-ratio 16:9',
-    title: 'this img isnt 16:9, so its centered horizontally',
   }),
 
   imgItem(Img, 'Img Element', {
@@ -55,7 +64,6 @@ const ImgCopyPastaConfig = [
     src: beerImageJpg,
     wrapClass: 'four-three',
     alt: 'best for images with aspect-ratio 4:3',
-    title: 'this img isnt 4:3, so its centered vertically',
   }),
 
   imgItem(Img, 'Img Element', {
@@ -63,7 +71,6 @@ const ImgCopyPastaConfig = [
     src: beerImageJpg,
     wrapClass: 'square',
     alt: 'best for square images',
-    title: 'this img isnt square, so its centered vertically',
   }),
 
   imgItem(Img, 'Img Element', {

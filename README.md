@@ -1,6 +1,6 @@
 # uiproto
 
-typescript starter kit for the UI
+typescript starter kit for the UI focusing on UI primitives with high Accessibility for rapidly prototyping Single Page Web Apps and Static frontends
 
 ## attribution
 

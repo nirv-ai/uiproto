@@ -28,6 +28,9 @@ export const ImgWrapper: FC<ImgWrapperInterface> = ({
 };
 ImgWrapper.displayName = 'ImgWrapper';
 
+/**
+ * TODO:(noah) likely should decompose this into multiple composite Img components
+ */
 export interface ImgInterface {
   alt?: string;
   block?: boolean;

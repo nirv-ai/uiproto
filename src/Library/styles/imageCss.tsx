@@ -31,7 +31,7 @@ export const imageCss = css`
     &.four-three {
       aspect-ratio: 4 / 3;
     }
-   /* for images with ratio 16:9 */
+
     &.sixteen-nine {
       aspect-ratio: 16 / 9;
     }

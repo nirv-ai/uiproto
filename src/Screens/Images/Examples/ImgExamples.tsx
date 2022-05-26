@@ -1,6 +1,6 @@
 import { type FC } from 'react';
 
-import { Img, CopyPastas, P, type PastaItemInterface } from 'src/Library';
+import { Img, CopyPastas, P, LazyImg, type PastaItemInterface } from 'src/Library';
 import beerImageJpg from 'src/assets/images/nicJackson/beer.jpg';
 
 const imgItem: PastaItemInterface = (El, about, props = {}) => ({
@@ -73,6 +73,12 @@ const ImgCopyPastaConfig = [
     alt: 'set a custom aspect-ratio via css padding hack',
     wrapCss: { paddingBottom: '25%' },
     title: 'must set padding[left|right|top|bottom] to a % value',
+  }),
+
+  imgItem(LazyImg, 'LazyImg Element', {
+    ...imgProps,
+    alt: 'via React.lazy & React.Suspense',
+    src: beerImageJpg,
   }),
 ];
 

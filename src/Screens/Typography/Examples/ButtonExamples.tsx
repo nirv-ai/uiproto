@@ -5,6 +5,7 @@ import {
   Button,
   CopyPastas,
   IconButton,
+  LoadingIcon,
   P,
   ResetButton,
   SubmitButton,
@@ -22,6 +23,10 @@ const buttonItem: PastaItemInterface = (El, about, props = {}) => ({
 
 const ButtonCopyPastaConfig = [
   buttonItem(IconButton, 'Icon Button Element', { desc: 'for screen readers only' }),
+  {
+    PastaEl: <LoadingIcon desc="Various default icons are setup in src/Library somewhere" />,
+    children: <p></p>,
+  },
   buttonItem(Button, 'Button Element'),
   buttonItem(SubmitButton, 'Form Submit Button Element', { name: 'my-name', value: 'my-value' }),
   buttonItem(ResetButton, 'Form Reset Button'),

@@ -1,9 +1,8 @@
 import { createRef, type FC } from 'react';
-import { useButton, useToggleButton, useVisuallyHidden } from 'react-aria';
+import { useButton, useToggleButton } from 'react-aria';
 import { useToggleState } from 'react-stately';
 
-import { TextWithRef, Text, type TextInterface } from './Text';
-import { getClass } from 'src/Library/Utils';
+import { TextWithRef, type TextInterface } from './Text';
 
 export interface ButtonInterface extends TextInterface {
   [x: string]: any;
@@ -34,26 +33,6 @@ export const Button: FC<ButtonInterface> = ({
   );
 };
 Button.displayName = 'Button';
-
-export interface IconInterface extends ButtonInterface {
-  desc: string;
-}
-
-export const IconButton: FC<IconInterface> = ({ desc, children, ...props }) => {
-  const { visuallyHiddenProps } = useVisuallyHidden();
-
-  const useClass = getClass(props.className, 'icon');
-
-  return (
-    <Button {...props} className={useClass}>
-      {children}
-      <Text ElType="mark" {...visuallyHiddenProps}>
-        {desc}
-      </Text>
-    </Button>
-  );
-};
-IconButton.displayName = 'IconButton';
 
 export interface FormButtonInterface extends ButtonInterface {
   value?: string;

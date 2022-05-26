@@ -1,12 +1,8 @@
 import { css } from '@emotion/react';
 
-export const layoutCss = css`
-  .inline {
-    display: inline-block;
-  }
-
-  .block {
-    display: block;
+export const flexCss = css`
+  .flex {
+    display: flex;
   }
 
   .row {
@@ -23,6 +19,13 @@ export const layoutCss = css`
 
     > * {
       flex: 1 1 100%;
+    }
+
+    // equal sized flex items
+    &.equal {
+      > * {
+        flex: 1 1 0%;
+      }
     }
   }
 `;

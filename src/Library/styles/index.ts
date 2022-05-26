@@ -1,3 +1,4 @@
+export * from './image';
 export * from './layout';
 export * from './links';
 export * from './mediaQueries';

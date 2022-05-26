@@ -61,6 +61,14 @@ const ImgCopyPastaConfig = [
   imgItem(Img, 'Img Element', {
     ...imgProps,
     src: beerImageJpg,
+    wrapClass: 'square',
+    alt: 'best for square images',
+    title: 'this img isnt square, so its centered vertically',
+  }),
+
+  imgItem(Img, 'Img Element', {
+    ...imgProps,
+    src: beerImageJpg,
     wrapClass: 'pad',
     alt: 'set a custom aspect-ratio via css padding hack',
     wrapCss: { paddingBottom: '25%' },

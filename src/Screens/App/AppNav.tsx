@@ -53,7 +53,14 @@ const uiProtoLogoCss = css({
 export const AppNav = () => {
   return (
     <header css={headerCss}>
-      <Img src={uiProtoLogo} alt="uiproto logo" css={uiProtoLogoCss} ariaRole="presentation" />
+      <Img
+        src={uiProtoLogo}
+        alt="UIProto Logo"
+        css={uiProtoLogoCss}
+        ariaRole="presentation"
+        width="50px"
+        height="50px"
+      />
       <Strong className="appname h1">{text.title}</Strong>
       <Popover
         aria-label="Custom popover"

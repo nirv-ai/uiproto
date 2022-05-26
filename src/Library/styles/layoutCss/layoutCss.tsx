@@ -1,6 +1,7 @@
 import { css } from '@emotion/react';
 
-import { flexCss } from './flex';
+import { flexCss } from './flexCss';
+import { gridCss } from './gridCss';
 
 export const layoutCss = css`
   .inline {
@@ -11,5 +12,6 @@ export const layoutCss = css`
     display: block;
   }
 
-  ${flexCss};
+  ${flexCss}
+  ${gridCss}
 `;

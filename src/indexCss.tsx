@@ -12,11 +12,11 @@ import {
 } from 'src/Library';
 
 export const indexCss = css`
-  ${rootVarsCss};
-  ${resetCss};
+  ${rootVarsCss}
+  ${resetCss}
   ${layoutCss}
   ${textCss}
   ${linksCss}
   ${imageCss}
-  ${mediaQueriesCss};
+  ${mediaQueriesCss}
 `;

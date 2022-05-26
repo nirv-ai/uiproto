@@ -1,26 +1,56 @@
-import { useState, type FC } from 'react';
+import { useState, type FC, type ReactNode } from 'react';
+import * as CSS from 'csstype';
 
 import { getClass } from 'src/Library';
+
+export interface ImgWrapperInterface {
+  ariaRole?: string;
+  caption?: string;
+  children: ReactNode;
+  className?: string;
+  wrapCss?: CSS.Properties;
+}
+
+export const ImgWrapper: FC<ImgWrapperInterface> = ({
+  ariaRole = 'img',
+  caption,
+  children,
+  className,
+  wrapCss = {},
+}) => {
+  const useClass = getClass('img-wrapper', className);
+  return (
+    <figure className={useClass} role={ariaRole} css={wrapCss as any}>
+      {children}
+      {caption ? <figcaption>{caption}</figcaption> : null}
+    </figure>
+  );
+};
+ImgWrapper.displayName = 'ImgWrapper';
 
 export interface ImgInterface {
   alt?: string;
   block?: boolean;
+  caption?: ImgWrapperInterface['caption'];
   className?: string;
   crossorigin?: 'anonymous' | 'use-credentials';
   decoding?: 'async' | 'auto' | 'sync';
   ElType?: string;
   fetchpriority?: 'high' | 'low' | 'auto';
-  height?: number | string;
+  height: string; // required to reserve space preventing thrashing
   href?: string;
-  imgClass?: string;
   loading?: 'eager' | 'lazy';
   onError?: (e: Error) => void;
   sizes?: string;
   src: string;
   srcFallback?: string;
   srcSet?: string;
+  title?: string;
   useMap?: string;
-  width?: number | string;
+  width: string; // required to reserve space preventing thrashing
+  wrap?: boolean;
+  wrapClass?: string;
+  wrapCss?: CSS.Properties;
   referrerPolicy?:
     | 'origin-only' // ts doesnt like this
     | 'no-referrer-when-downgrade'
@@ -52,18 +82,22 @@ export const Img: FC<ImgInterface> = ({
   alt,
   ariaRole,
   block,
+  caption,
   className,
   decoding = 'async',
   ElType,
   fetchpriority = 'low',
   height,
-  imgClass,
   loading = 'lazy',
   onError,
   referrerPolicy = 'strict-origin-when-cross-origin',
   src,
   srcFallback = 'https://via.placeholder.com/150',
+  title,
   width,
+  wrap = false,
+  wrapClass,
+  wrapCss,
   ...props
 }) => {
   const [useSrc, setSrc] = useState(src);
@@ -74,7 +108,7 @@ export const Img: FC<ImgInterface> = ({
     if (useSrc !== srcFallback) setSrc(srcFallback);
   };
 
-  const useClass = getClass(imgClass, className);
+  const useClass = getClass(className);
 
   let useRole;
   if (ariaRole) useRole = ariaRole;
@@ -93,7 +127,7 @@ export const Img: FC<ImgInterface> = ({
       }
     }
 
-  return (
+  const RenderImg = () => (
     <img
       {...props}
       alt={alt}
@@ -103,7 +137,7 @@ export const Img: FC<ImgInterface> = ({
       loading={loading}
       onError={handleError}
       role={useRole}
-      title={alt}
+      title={title || alt}
       width={width}
       /* @ts-ignore */
       fetchpriority={fetchpriority}
@@ -111,6 +145,18 @@ export const Img: FC<ImgInterface> = ({
       referrerPolicy={referrerPolicy}
       src={useSrc}
     />
+  );
+
+  return (
+    <>
+      {wrap || wrapClass || wrapCss || caption ? (
+        <ImgWrapper className={wrapClass} caption={caption} wrapCss={wrapCss}>
+          <RenderImg />
+        </ImgWrapper>
+      ) : (
+        <RenderImg />
+      )}
+    </>
   );
 };
 Img.displayName = 'Img';

@@ -166,17 +166,21 @@ export const Img: FC<ImgInterface> = ({
 Img.displayName = 'Img';
 
 /*
+TODO:(noah) finish these img types
+// IMG LINK
 import { A } from 'src/library;
 todo <a><img></a>
 else if (href) useRole = 'link'; // TODO:(noah) google this
 export const ImgLink
 */
 
+// ImgCaption
 /*
 figure
 figcaption
 */
 
+// picture with srcset n stuff
 /*
 picture
 */

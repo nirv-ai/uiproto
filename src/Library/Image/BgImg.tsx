@@ -2,10 +2,15 @@ import { type FC } from 'react';
 
 import { Text, getClass, type TextInterface } from 'src/Library';
 
-export const parseSrcToBgImgCssProp = (src: string): string => {
+const toCssBackgroundShorthandParser = (src: string) => {
   const [url, ...rest] = src.trim().split(' ');
   return `url(${url}) ${rest.join(' ')}`.trim();
 };
+
+export const toCssBackgroundShorthand = (src: string | string[]): string =>
+  Array.isArray(src)
+    ? src.map(src => toCssBackgroundShorthandParser(src)).join(', ')
+    : toCssBackgroundShorthandParser(src);
 
 export interface BgImgInterface extends TextInterface {
   [x: string]: any;
@@ -49,9 +54,7 @@ export const BgImg: FC<BgImgInterface> = ({
 
   const useClass = getClass(className, 'bg-img', block ? 'block' : 'inline');
 
-  const background = Array.isArray(src)
-    ? src.map(src => parseSrcToBgImgCssProp(src)).join(', ')
-    : parseSrcToBgImgCssProp(src);
+  const background = toCssBackgroundShorthand(src);
 
   const bgImgCss = {
     width,

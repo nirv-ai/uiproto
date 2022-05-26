@@ -9,6 +9,10 @@ export interface LazyImgInterface extends ImgInterface {
   Fallback?: ReactElement;
 }
 
+/**
+ * TODO:(noah) currenly only the loading of the img src file is lazy, not hte request
+ * enhance this so that the fallback is displayed until the img request is complete
+ */
 export const LazyImg: FC<LazyImgInterface> = ({ Fallback = LoadingIcon, ...props }) => {
   return (
     <Suspense fallback={<>Fallback</>}>

@@ -1,6 +1,7 @@
+/** TODO:(noah) extract non Img examples into other files */
 import { type FC } from 'react';
 
-import { Img, CopyPastas, P, LazyImg, type PastaItemInterface } from 'src/Library';
+import { Img, CopyPastas, P, LazyImg, BgImg, type PastaItemInterface } from 'src/Library';
 import beerImageJpg from 'src/assets/images/nicJackson/beer.jpg';
 
 const imgItem: PastaItemInterface = (El, about, props = {}) => ({
@@ -36,7 +37,13 @@ const ImgCopyPastaConfig = [
 
   imgItem(Img, 'Img Element', { ...imgProps, alt: 'local image', src: beerImageJpg }),
 
-  imgItem(Img, 'Img Element', {
+  imgItem(LazyImg, 'LazyImg Element', {
+    ...imgProps,
+    alt: 'via React.lazy & React.Suspense',
+    src: beerImageJpg,
+  }),
+
+  imgItem(LazyImg, 'LazyImg Element', {
     ...imgProps,
     src: beerImageJpg,
     className: 'width-only',
@@ -44,7 +51,7 @@ const ImgCopyPastaConfig = [
     alt: 'width-only sets css max-width and overrides html height via css',
   }),
 
-  imgItem(Img, 'Img Element', {
+  imgItem(LazyImg, 'LazyImg Element', {
     ...imgProps,
     src: beerImageJpg,
     className: 'height-only',
@@ -52,40 +59,40 @@ const ImgCopyPastaConfig = [
     alt: 'width-only sets css max-height and overrides html width via css',
   }),
 
-  imgItem(Img, 'Img Element', {
+  imgItem(LazyImg, 'LazyImg Element', {
     ...imgProps,
     src: beerImageJpg,
     wrapClass: 'sixteen-nine',
     alt: 'best for images with aspect-ratio 16:9',
   }),
 
-  imgItem(Img, 'Img Element', {
+  imgItem(LazyImg, 'LazyImg Element', {
     ...imgProps,
     src: beerImageJpg,
     wrapClass: 'four-three',
     alt: 'best for images with aspect-ratio 4:3',
   }),
 
-  imgItem(Img, 'Img Element', {
+  imgItem(LazyImg, 'LazyImg Element', {
     ...imgProps,
     src: beerImageJpg,
     wrapClass: 'square',
     alt: 'best for square images',
   }),
 
-  imgItem(Img, 'Img Element', {
+  imgItem(LazyImg, 'LazyImg Element', {
     ...imgProps,
     src: beerImageJpg,
     wrapClass: 'pad',
     alt: 'set a custom aspect-ratio via css padding hack',
     wrapCss: { paddingBottom: '25%' },
-    title: 'must set padding[left|right|top|bottom] to a % value',
+    title: 'must set padding[left|right|top|bottom] to a value',
   }),
 
-  imgItem(LazyImg, 'LazyImg Element', {
+  imgItem(BgImg, 'BgImg Element', {
     ...imgProps,
-    alt: 'via React.lazy & React.Suspense',
     src: beerImageJpg,
+    alt: 'ima span with a background-image',
   }),
 ];
 

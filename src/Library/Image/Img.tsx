@@ -11,6 +11,7 @@ export interface ImgWrapperInterface {
   wrapCss?: CSS.Properties;
 }
 
+/** TODO: (noah) use Figure & Figcaption component whenever they're complete */
 export const ImgWrapper: FC<ImgWrapperInterface> = ({
   ariaRole = 'img',
   caption,
@@ -123,7 +124,7 @@ export const Img: FC<ImgInterface> = ({
         else useRole = 'img';
         break;
       }
-      // not alt, use default role
+      // no alt, use default role
       case 'undefined': {
         useRole = 'img';
         break;

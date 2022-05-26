@@ -9,6 +9,7 @@ export const imageCss = css`
       height: auto; /* overries any html height */
       max-width: 100%;
     }
+
     &.height-only {
       max-height: 100%;
       width: auto; /* overries any html width */
@@ -19,15 +20,15 @@ export const imageCss = css`
     }
   }
 
+  .bg-img {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-origin: content-box;
+  }
+
   .img-wrapper {
     position: relative;
-
-    &.bg-img {
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
-        background-origin: content-box;
-      }
 
     &.square {
       aspect-ratio: 1 / 1;
@@ -54,7 +55,7 @@ export const imageCss = css`
       }
     }
 
-    &.bg-img, &.square, &.four-three, &.sixteen-nine, &.pad {
+    &.square, &.four-three, &.sixteen-nine, &.pad {
       > img {
         width: 100%;
         height: 100%;

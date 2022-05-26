@@ -3,7 +3,7 @@ import { lazy, Suspense, type FC, type ReactElement } from 'react';
 import { type ImgInterface } from './Img';
 import { LoadingIcon } from 'src/Library';
 
-const Img = lazy(() => import('./ImgDefault'));
+const Img = lazy(() => import('./DefaultImg'));
 
 export interface LazyImgInterface extends ImgInterface {
   Fallback?: ReactElement;

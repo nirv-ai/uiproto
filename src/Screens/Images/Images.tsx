@@ -1,4 +1,4 @@
-import { ImgExamples } from './Examples';
+import { ImgExamples, LazyImgExamples, BgImgExamples } from './Examples';
 import { Section, Screen, P } from 'src/Library';
 import { sentences } from 'src/mocks';
 import text from './text.json';
@@ -16,6 +16,8 @@ export const Images = () => {
     <Screen text={text} docTitle={docTitle}>
       <P>{sentences}</P>
       <ImgExamples />
+      <BgImgExamples />
+      <LazyImgExamples />
     </Screen>
   );
 };

@@ -34,12 +34,13 @@ export const textCss = css`
     font-weight: 200;
   }
 
-  button, input[type="submit"], input[type="reset"], .cta  {
+  button, input[type="submit"], input[type="reset"], [role=button], .icon {
     cursor: pointer;
   }
 
-  h1, h2, h3, h4, h5, h6, p, span, button, input,
-  .h1, .h2, .h3, .h4, .h5, .h6, .cta {
+  h1, h2, h3, h4, h5, h6, p, span,
+  button, input[type="submit"], input[type="reset"], [role=button], .icon,
+  .h1, .h2, .h3, .h4, .h5, .h6,{
     max-width: var(--font-max-width);
   }
 `;

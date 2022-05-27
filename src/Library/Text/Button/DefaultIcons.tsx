@@ -1,5 +1,5 @@
 import { type FC, type ReactNode, type ReactElement } from 'react';
-import { FaTruckLoading } from 'react-icons/fa';
+import { FaTruckLoading, FaMinus, FaPlus } from 'react-icons/fa';
 import { GrCheckbox, GrCheckboxSelected } from 'react-icons/gr';
 
 import { IconButton, type IconInterface } from './IconButton';
@@ -30,3 +30,9 @@ export const UncheckedIcon = props => (
   <DefaultIcon {...props} desc="Loading..." Icon={<GrCheckbox />} />
 );
 UncheckedIcon.displayName = 'UncheckedIcon';
+
+export const PlusIcon = props => <DefaultIcon {...props} Icon={<FaPlus />} />;
+PlusIcon.displayName = 'PlusIcon';
+
+export const MinusIcon = props => <DefaultIcon {...props} Icon={<FaMinus />} />;
+MinusIcon.displayName = 'MinusIcon';

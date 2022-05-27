@@ -1,9 +1,8 @@
-import { GrCheckbox, GrCheckboxSelected } from 'react-icons/gr';
 import { useCheckbox, useId, VisuallyHidden, useFocusRing, useCheckboxGroupItem } from 'react-aria';
 import { useRef, useContext, forwardRef, type FC, type ReactNode } from 'react';
 import { useToggleState } from 'react-stately';
 
-import { getClass, Label } from 'src/Library';
+import { getClass, Label, CheckedIcon, UncheckedIcon } from 'src/Library';
 import { CheckboxGroupContext } from './CheckboxGroupContext';
 
 // @see https://react-spectrum.adobe.com/react-aria/useCheckbox.html
@@ -26,12 +25,12 @@ export const CheckboxBase = forwardRef(
     {
       ariaLabel,
       checkboxLast,
-      CheckedEl = GrCheckboxSelected,
+      CheckedEl = CheckedIcon,
       children,
       className,
       label,
       state = {},
-      UncheckedEl = GrCheckbox,
+      UncheckedEl = UncheckedIcon,
       ...props
     }: CheckboxBaseInterface,
     ref
@@ -59,10 +58,12 @@ export const CheckboxBase = forwardRef(
     const isSelected = () =>
       typeof state.isSelected === 'function' ? state.isSelected(props.value) : state.isSelected;
 
+    // @see https://bugs.webkit.org/show_bug.cgi?id=219188
+    // ^ ElType === button requires double click
     const RenderCheckboxes = isSelected() ? (
-      <CheckedEl className={focusRing} />
+      <CheckedEl className={focusRing} ElType="span" ariaRole="checkbox" />
     ) : (
-      <UncheckedEl className={focusRing} />
+      <UncheckedEl className={focusRing} ElType="span" ariaRole="checkbox" />
     );
 
     // TODO: (noah) logic is far too wet, refactor

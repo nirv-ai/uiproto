@@ -1,4 +1,4 @@
-import { createRef, type FC } from 'react';
+import { useRef, type FC } from 'react';
 import { useButton, useToggleButton } from 'react-aria';
 import { useToggleState } from 'react-stately';
 
@@ -16,13 +16,14 @@ export const Button: FC<ButtonInterface> = ({
   type = 'button',
   ...props
 }) => {
-  const ref = createRef<HTMLButtonElement>();
+  const ref = useRef<HTMLButtonElement>();
   const { buttonProps } = useButton(
     {
       ...props,
       type,
       elementType: ElType,
     },
+    /* @ts-ignore */
     ref
   );
 
@@ -52,7 +53,7 @@ export const ResetButton: FC<FormButtonInterface> = props => {
 ResetButton.displayName = 'ResetButton';
 
 export const Toggle: FC<ButtonInterface> = ({ children, ElType = 'button', ...props }) => {
-  const ref = createRef<HTMLButtonElement>();
+  const ref = useRef<HTMLButtonElement>();
   const state = useToggleState(props as any);
   const { buttonProps /*, isPressed */ } = useToggleButton(
     {
@@ -60,6 +61,7 @@ export const Toggle: FC<ButtonInterface> = ({ children, ElType = 'button', ...pr
       elementType: ElType,
     },
     state,
+    /* @ts-ignore */
     ref
   );
 

@@ -3,7 +3,7 @@
  * @see https://reactrouter.com/docs/en/v6/getting-started/overview#navigation
  */
 
-import { createRef, type FC } from 'react';
+import { useRef, type FC } from 'react';
 import { useLink } from 'react-aria';
 import { useNavigate, useMatch } from 'react-router-dom';
 
@@ -18,7 +18,7 @@ export interface LinkInterface extends TextInterface {
 }
 
 export const Link: FC<LinkInterface> = ({ renderProps, className, ...props }) => {
-  const ref = createRef<HTMLElement>();
+  const ref = useRef<HTMLElement>();
 
   const activeProps = useMatch(props.href);
 
@@ -29,6 +29,7 @@ export const Link: FC<LinkInterface> = ({ renderProps, className, ...props }) =>
       isDisabled: !!activeProps,
       elementType: props.ElType,
     },
+    /* @ts-ignore */
     ref
   );
 

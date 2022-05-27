@@ -2,6 +2,7 @@ import { type FC, type ReactNode } from 'react';
 import { useCheckboxGroup } from 'react-aria';
 import { useCheckboxGroupState } from 'react-stately';
 
+import { Span } from 'src/Library';
 import { CheckboxGroupContext } from './CheckboxGroupContext';
 
 export interface CheckboxGroupInterface {
@@ -17,7 +18,9 @@ export const CheckboxGroup: FC<CheckboxGroupInterface> = props => {
 
   return (
     <fieldset {...groupProps}>
-      <span {...labelProps}>{label}</span>
+      <Span ariaRole="presentation" {...labelProps}>
+        {label}
+      </Span>
       <CheckboxGroupContext.Provider value={state} children={children} />
     </fieldset>
   );

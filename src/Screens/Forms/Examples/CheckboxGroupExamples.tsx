@@ -11,8 +11,8 @@ import {
 const CheckboxGroupItem: PastaItemInterface = (El, about, props: any) => ({
   PastaEl: (
     <El {...props}>
-      <CheckboxInGroup value="first" label="first" />
-      <CheckboxInGroup value="second" label="second" />
+      <CheckboxInGroup value="first" label="one" checkboxLast />
+      <CheckboxInGroup value="second" label="two" />
     </El>
   ),
   children: <P>{about}</P>,

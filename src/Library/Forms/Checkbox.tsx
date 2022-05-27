@@ -69,6 +69,7 @@ export const Checkbox: FC<CheckboxInterface> = ({
     <UncheckedEl className={focusRing} />
   );
 
+  // TODO: (noah) logic is far too wet, refactor
   return children || label ? (
     <Label>
       <VisuallyHidden>

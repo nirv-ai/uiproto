@@ -28,6 +28,10 @@ export const resetCss = css`
       padding: 0;
       text-decoration: none;
     }
+
+    [disabled] {
+      cursor: not-allowed;
+    }
   }
 
   code, pre, .code {

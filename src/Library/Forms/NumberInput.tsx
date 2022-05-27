@@ -10,6 +10,7 @@ export interface NumberInputInterface {
   labelId?: string;
   minusId?: string;
   plusId?: string;
+  steps?: number;
 }
 
 export const NumberInput: FC<NumberInputInterface> = ({
@@ -18,12 +19,13 @@ export const NumberInput: FC<NumberInputInterface> = ({
   minusId,
   inputId,
   ariaLabel,
+  steps = 5,
   ...props
 }) => {
   const [useValue, setValue] = useState(props.value);
   const [isFocused, setIsFocused] = useState(false);
 
-  const tempValue = useRef({});
+  const tempValue = useRef<{ [x: string]: any }>({});
   const inputRef = useRef<HTMLInputElement>(null);
   const plusRef = useRef<HTMLButtonElement>(null);
   const minusRef = useRef<HTMLButtonElement>(null);
@@ -35,12 +37,12 @@ export const NumberInput: FC<NumberInputInterface> = ({
 
   const plusClick = event => {
     event.preventDefault();
-    setValue(useValue + 1);
+    setValue(useValue + steps);
   };
 
   const minusClick = event => {
     event.preventDefault();
-    setValue(useValue - 1);
+    setValue(useValue - steps);
   };
 
   const RenderInput: FC<any> = numberProps => {
@@ -48,17 +50,16 @@ export const NumberInput: FC<NumberInputInterface> = ({
       <input
         {...props}
         {...numberProps}
-        onClick={() => setIsFocused(true)}
-        key="wtf"
         autoFocus={isFocused}
         id={iId}
+        key={iId}
+        onClick={() => setIsFocused(true)}
         ref={inputRef}
       />
     );
   };
   const handleCheckClick = e => {
     e.preventDefault();
-    /* @ts-ignore */
     setValue(tempValue.current?.floatValue);
     setIsFocused(false);
   };
@@ -74,9 +75,14 @@ export const NumberInput: FC<NumberInputInterface> = ({
         ) : null}
       </Label>
 
-      {/* @ts-ignore */}
-      <MinusIcon id={mId} forwardedRef={minusRef} ariaRole="button" onClick={minusClick} />
-      {/* @ts-ignore */}
+      <MinusIcon
+        disabled={isFocused}
+        id={mId}
+        forwardedRef={minusRef}
+        ariaRole="button"
+        onClick={minusClick}
+      />
+
       <NumberFormat
         onValueChange={(values, { source }) => {
           if (source === 'event') {
@@ -90,8 +96,14 @@ export const NumberInput: FC<NumberInputInterface> = ({
         thousandSeparator
         value={useValue}
       />
-      {/* @ts-ignore */}
-      <PlusIcon id={pId} forwardedRef={plusRef} ariaRole="button" onClick={plusClick} />
+
+      <PlusIcon
+        id={pId}
+        forwardedRef={plusRef}
+        ariaRole="button"
+        onClick={plusClick}
+        disabled={isFocused}
+      />
     </Section>
   );
 };

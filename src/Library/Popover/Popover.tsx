@@ -1,19 +1,17 @@
-/** @see https://reakit.io/docs/popover/#abstracting */
-
 import { cloneElement } from 'react';
-import { usePopoverState, Popover as BasePopover, PopoverDisclosure } from 'reakit/Popover';
+import { usePopoverState, Popover as BasePopover, PopoverDisclosure } from 'ariakit/popover';
 
-export const Popover = ({ disclosure, ...props }) => {
+export const Popover = ({ disclosure, children, ...props }) => {
   const popoverState = usePopoverState();
-  const Children = props.children;
 
+  const Children = children;
   return (
     <>
-      <PopoverDisclosure {...popoverState} ref={disclosure.ref} {...disclosure.props}>
+      <PopoverDisclosure state={popoverState}>
         {disclosureProps => cloneElement(disclosure, disclosureProps)}
       </PopoverDisclosure>
-      <BasePopover {...popoverState} {...props}>
-        {typeof props.children === 'function' ? <Children renderProps={popoverState} /> : Children}
+      <BasePopover state={popoverState} {...props}>
+        {typeof children === 'function' ? <Children renderProps={popoverState} /> : Children}
       </BasePopover>
     </>
   );

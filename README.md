@@ -11,4 +11,13 @@ frontend typescript starter kit focusing on semantic UI primitives with high Acc
 
 ## links
 
+### internal
+
 - [UIProto kanban](https://github.com/users/noahehall/projects/2)
+
+### external
+
+- we rely heavily on adobes react-aria, react-stately and the ariakit (alpha)
+- [ariakit alpha doesnt have docs, check the sourcecode](https://github.com/ariakit/ariakit/tree/main/packages/ariakit/src)
+- [adobes react-aria](https://react-spectrum.adobe.com/react-aria)
+- [adobes react-stately](https://react-spectrum.adobe.com/react-stately)

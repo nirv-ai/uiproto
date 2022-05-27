@@ -6,23 +6,30 @@ import { PlusIcon, MinusIcon, CircleCheckIcon, Label, Section } from 'src/Librar
 
 export interface NumberInputInterface {
   [x: string]: any;
+  displayType?: 'input' | 'text';
   inputId?: string;
   labelId?: string;
   minusId?: string;
   plusId?: string;
+  prefix?: string;
   steps?: number;
+  suffix?: string;
 }
 
 export const NumberInput: FC<NumberInputInterface> = ({
-  labelId,
-  plusId,
-  minusId,
-  inputId,
   ariaLabel,
+  displayType = 'input',
+  inputId,
+  labelId,
+  minusId,
+  plusId,
+  prefix,
   steps = 5,
+  suffix,
+  value,
   ...props
 }) => {
-  const [useValue, setValue] = useState(props.value);
+  const [useValue, setValue] = useState(value);
   const [isFocused, setIsFocused] = useState(false);
 
   const tempValue = useRef<{ [x: string]: any }>({});
@@ -65,7 +72,7 @@ export const NumberInput: FC<NumberInputInterface> = ({
   };
 
   return (
-    <Section>
+    <Section className="number-input-wrapper">
       <Label id={lId}>
         {props.label}
         {isFocused ? (
@@ -85,14 +92,13 @@ export const NumberInput: FC<NumberInputInterface> = ({
 
       <NumberFormat
         onValueChange={(values, { source }) => {
-          if (source === 'event') {
-            tempValue.current = values;
-          }
+          if (source === 'event') tempValue.current = values;
         }}
-        displayType="input"
-        isNumericString={false}
-        prefix="$"
         customInput={RenderInput}
+        displayType={displayType}
+        isNumericString={false}
+        prefix={prefix}
+        suffix={suffix}
         thousandSeparator
         value={useValue}
       />

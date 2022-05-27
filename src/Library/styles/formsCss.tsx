@@ -16,4 +16,10 @@ export const formsCss = css`
   input, .checkbox, [type=checkbox], label {
     cursor: pointer;
   }
+
+  .number-input-wrapper {
+    > label:first-of-type {
+      font-size: 0.7rem;
+    }
+  }
 `;

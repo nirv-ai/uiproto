@@ -1,6 +1,6 @@
 import { useEffect, type FC, type ReactNode } from 'react';
 
-import { HIntro, type HIntroInterface, H2, H3 } from 'src/Library';
+import { HIntro, type HIntroInterface, H2, H3, getClass } from 'src/Library';
 
 export interface ArticleInterface extends HIntroInterface {
   children: ReactNode;
@@ -37,11 +37,19 @@ Screen.displayName = 'Screen';
 
 export interface SectionInterface extends Partial<HIntroInterface> {
   children: ReactNode;
+  className?: string;
 }
 
-export const Section: FC<SectionInterface> = ({ text, Title = H2, SubTitle = H3, children }) => {
+export const Section: FC<SectionInterface> = ({
+  text,
+  Title = H2,
+  SubTitle = H3,
+  children,
+  className,
+}) => {
+  const useClass = getClass(className);
   return (
-    <section>
+    <section className={useClass}>
       {text ? <HIntro Title={Title} SubTitle={SubTitle} text={text} /> : null}
       {children}
     </section>

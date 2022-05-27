@@ -9,8 +9,15 @@ const numberInputItem: PastaItemInterface = (El, about, props: any) => ({
 
 const NumberInputCopyPastaConfig = [
   numberInputItem(NumberInput, 'NumberInput Element', {
-    label: 'Donation',
+    label: 'Total errors in the last 24 hours',
     value: 1234567,
+    ariaLabel: 'ima aria-label',
+  }),
+
+  numberInputItem(NumberInput, 'NumberInput Element', {
+    label: 'Donate to your local opens source developer',
+    value: 995,
+    prefix: '$',
     ariaLabel: 'ima aria-label',
   }),
 ];

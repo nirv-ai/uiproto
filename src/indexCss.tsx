@@ -2,13 +2,14 @@ import { css } from '@emotion/react';
 import 'animate.css';
 
 import {
-  rootVarsCss,
+  formsCss,
+  imageCss,
   layoutCss,
-  resetCss,
-  textCss,
   linksCss,
   mediaQueriesCss,
-  imageCss,
+  resetCss,
+  rootVarsCss,
+  textCss,
 } from 'src/Library';
 
 export const indexCss = css`
@@ -18,5 +19,6 @@ export const indexCss = css`
   ${textCss}
   ${linksCss}
   ${imageCss}
+  ${formsCss}
   ${mediaQueriesCss}
 `;

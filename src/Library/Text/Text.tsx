@@ -1,4 +1,5 @@
 import { forwardRef, type FC, type ReactNode } from 'react';
+import { Role } from 'ariakit/role';
 
 import { getClass } from 'src/Library/Utils';
 
@@ -71,7 +72,8 @@ export const Text: FC<TextInterface> = ({
   const useClass = getClass(inline, block, className);
 
   return (
-    <ElType
+    <Role
+      as={ElType}
       aria-label={ariaLabel}
       className={useClass}
       ref={forwardedRef}
@@ -79,7 +81,7 @@ export const Text: FC<TextInterface> = ({
       {...props}
     >
       {children}
-    </ElType>
+    </Role>
   );
 };
 Text.displayName = 'Text';

@@ -1,4 +1,5 @@
 export * from './CopyPasta';
+export * from './Forms';
 export * from './Image';
 export * from './Layout';
 export * from './Menu';

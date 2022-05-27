@@ -14,7 +14,7 @@ import {
 
 const textItem: PastaItemInterface = (El, about, props = {}) => ({
   PastaEl: <El {...props}>The world is full of objects, more or less interesting.</El>,
-  children: <p>{about}</p>,
+  children: <P>{about}</P>,
 });
 
 const PCopyPastaConfig = [

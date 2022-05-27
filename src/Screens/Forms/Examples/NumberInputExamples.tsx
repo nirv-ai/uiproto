@@ -10,12 +10,8 @@ const numberInputItem: PastaItemInterface = (El, about, props: any) => ({
 const NumberInputCopyPastaConfig = [
   numberInputItem(NumberInput, 'NumberInput Element', {
     label: 'Donation',
-    value: 'my value',
+    value: 1234567,
     ariaLabel: 'ima aria-label',
-    formatOptions: {
-      style: 'currency',
-      currency: 'USD',
-    },
   }),
 ];
 

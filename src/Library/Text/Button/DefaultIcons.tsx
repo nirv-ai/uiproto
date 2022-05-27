@@ -1,6 +1,8 @@
-import { type FC, type ReactNode, type ReactElement } from 'react';
+import { AiOutlineCheckCircle, AiOutlineMinusCircle } from 'react-icons/ai';
 import { FaTruckLoading, FaMinus, FaPlus } from 'react-icons/fa';
 import { GrCheckbox, GrCheckboxSelected } from 'react-icons/gr';
+import { MdOutlineCancel } from 'react-icons/md';
+import { type FC, type ReactNode, type ReactElement } from 'react';
 
 import { IconButton, type IconInterface } from './IconButton';
 
@@ -36,3 +38,12 @@ PlusIcon.displayName = 'PlusIcon';
 
 export const MinusIcon = props => <DefaultIcon {...props} Icon={<FaMinus />} />;
 MinusIcon.displayName = 'MinusIcon';
+
+export const CircleCheckIcon = props => <DefaultIcon {...props} Icon={<AiOutlineCheckCircle />} />;
+CircleCheckIcon.displayName = 'CircleCheckIcon';
+
+export const CircleXIcon = props => <DefaultIcon {...props} Icon={<MdOutlineCancel />} />;
+CircleXIcon.displayName = 'CircleXIcon';
+
+export const CircleMinusIcon = props => <DefaultIcon {...props} Icon={<AiOutlineMinusCircle />} />;
+CircleMinusIcon.displayName = 'CircleMinusIcon';

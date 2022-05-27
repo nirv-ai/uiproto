@@ -91,6 +91,7 @@
     "react-element-to-jsx-string": "15.0.0",
     "react-icons": "4.3.1",
     "react-intl": "6.0.3",
+    "react-number-format": "^4.9.3",
     "react-query": "3.39.0",
     "react-router-dom": "6.3.0",
     "react-stately": "3.13.0",

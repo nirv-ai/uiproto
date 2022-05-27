@@ -12,14 +12,17 @@ const checkboxItem: PastaItemInterface = (El, about, { children, ...props }: any
 
 const CheckboxCopyPastaConfig = [
   checkboxItem(Checkbox, 'Checkbox Element', {
+    value: 'my value',
     ariaLabel: 'ima aria-label',
   }),
 
   checkboxItem(Checkbox, 'Checkbox Element', {
+    value: 'my value',
     label: 'ima label',
   }),
 
   checkboxItem(Checkbox, 'Checkbox Element', {
+    value: 'my value',
     checkboxLast: true,
     children: <Child />,
   }),

@@ -1,6 +1,7 @@
-import { useRef, useCallback, type FC, type ReactNode } from 'react';
-import { useCheckbox, useId } from 'react-aria';
+import { useRef, type FC, type ReactNode } from 'react';
+import { useCheckbox, useId, VisuallyHidden, useFocusRing } from 'react-aria';
 import { useToggleState } from 'react-stately';
+import { GrCheckbox, GrCheckboxSelected } from 'react-icons/gr';
 
 import { getClass } from 'src/Library';
 import { Label } from './Label';
@@ -9,20 +10,24 @@ import { Label } from './Label';
 export interface CheckboxInterface {
   ariaLabel?: string;
   checkboxLast?: boolean;
+  CheckedEl: FC<any>;
   children?: ReactNode;
   className?: string;
   defaultSelected?: boolean;
   id?: string;
   label?: string;
+  UncheckedEl: FC<any>;
   value?: string;
 }
 
 export const Checkbox: FC<CheckboxInterface> = ({
   ariaLabel,
   checkboxLast,
+  CheckedEl = GrCheckboxSelected,
   className,
   id,
   label,
+  UncheckedEl = GrCheckbox,
   value,
   ...props
 }) => {
@@ -51,30 +56,47 @@ export const Checkbox: FC<CheckboxInterface> = ({
   const state = useToggleState(sendProps);
   const ref = useRef<HTMLInputElement>(null);
   const { inputProps } = useCheckbox(sendProps, state, ref as any);
+  const { isFocusVisible, focusProps } = useFocusRing();
+
+  const { isSelected } = state;
 
   const useClass = getClass(className, 'checkbox');
+  const focusRing = getClass(isFocusVisible && 'focus-ring', 'checkbox');
 
-  const RenderCheckbox = useCallback(
-    () => <input {...inputProps} ref={ref} className={useClass} />,
-    [inputProps, useClass, ref]
+  const RenderCheckboxes = isSelected ? (
+    <CheckedEl className={focusRing} />
+  ) : (
+    <UncheckedEl className={focusRing} />
   );
 
   return children || label ? (
     <Label>
+      <VisuallyHidden>
+        <input {...inputProps} {...focusProps} ref={ref} className={useClass} />
+      </VisuallyHidden>
       {checkboxLast ? (
         <>
           {children || label}
-          <RenderCheckbox />
+          {RenderCheckboxes}
         </>
       ) : (
         <>
-          <RenderCheckbox />
+          {RenderCheckboxes}
           {children || label}
         </>
       )}
     </Label>
   ) : (
-    <input {...inputProps} ref={ref} className={useClass} />
+    <>
+      <VisuallyHidden>
+        <input {...inputProps} {...focusProps} ref={ref} className={useClass} />
+      </VisuallyHidden>
+      {isSelected ? (
+        <CheckedEl onClick={state.toggle} className={focusRing} />
+      ) : (
+        <UncheckedEl onClick={state.toggle} className={focusRing} />
+      )}
+    </>
   );
 };
 Checkbox.displayName = 'Checkbox';

@@ -1,10 +1,16 @@
 import { css } from '@emotion/react';
 
 export const formsCss = css`
-  input, .checkbox, [type=checkbox] {
-    width: 0.7rem;
-    height: 0.7rem;
-    margin: 0.3rem;
+  label, .label {
+    display: flex;
+    gap: var(--spacing-XXS);
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .checkbox, [type=checkbox] {
+    width: 1rem;
+    height: 1rem;
   }
 
   input, .checkbox, [type=checkbox], label {

@@ -20,6 +20,7 @@ const CheckboxCopyPastaConfig = [
   }),
 
   checkboxItem(Checkbox, 'Checkbox Element', {
+    checkboxLast: true,
     children: <Child />,
   }),
 ];

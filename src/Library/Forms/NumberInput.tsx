@@ -24,7 +24,7 @@ export const NumberInput: FC<NumberInputInterface> = ({
   minusId,
   plusId,
   prefix,
-  steps = 5,
+  steps = 1,
   suffix,
   value,
   ...props

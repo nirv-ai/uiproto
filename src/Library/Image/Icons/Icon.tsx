@@ -3,13 +3,14 @@ import { useVisuallyHidden } from 'react-aria';
 
 import { getClass, Text, Button, type ButtonInterface } from 'src/Library';
 
-export interface IconInterface extends ButtonInterface {
+export interface IconsInterface extends ButtonInterface {
   desc: string;
 }
-export const IconButton: FC<IconInterface> = ({ desc, className, children, ...props }) => {
+// by default renders button, but set ElType to anything
+export const Icons: FC<IconsInterface> = ({ desc, className, children, ...props }) => {
   const { visuallyHiddenProps } = useVisuallyHidden();
 
-  const useClass = getClass(className, 'icon');
+  const useClass = getClass(className, 'Icon');
 
   return (
     <Button {...props} className={useClass}>
@@ -20,4 +21,4 @@ export const IconButton: FC<IconInterface> = ({ desc, className, children, ...pr
     </Button>
   );
 };
-IconButton.displayName = 'IconButton';
+Icons.displayName = 'Icons';

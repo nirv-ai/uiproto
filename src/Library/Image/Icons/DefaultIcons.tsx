@@ -4,17 +4,18 @@ import { GrCheckbox, GrCheckboxSelected } from 'react-icons/gr';
 import { MdOutlineCancel } from 'react-icons/md';
 import { type FC, type ReactNode, type ReactElement } from 'react';
 import { BsToggleOff, BsToggleOn } from 'react-icons/bs';
-import { IconButton, type IconInterface } from './IconButton';
 
-export interface DefaultIconInterface extends IconInterface {
+import { Icons, type IconsInterface } from 'src/Library';
+
+export interface DefaultIconsInterface extends IconsInterface {
   children: ReactNode;
   Icon: ReactElement;
 }
 
-export const DefaultIcon: FC<DefaultIconInterface> = ({ Icon, desc, ...props }) => (
-  <IconButton {...props} desc={desc}>
+export const DefaultIcon: FC<DefaultIconsInterface> = ({ Icon, desc, ...props }) => (
+  <Icons {...props} desc={desc}>
     {Icon}
-  </IconButton>
+  </Icons>
 );
 DefaultIcon.displayName = 'DefaultIcon';
 

@@ -4,7 +4,7 @@ import { BiBot } from 'react-icons/bi';
 import {
   Button,
   CopyPastas,
-  IconButton,
+  Icons,
   LoadingIcon,
   P,
   ResetButton,
@@ -22,9 +22,16 @@ const buttonItem: PastaItemInterface = (El, about, props = {}) => ({
 });
 
 const ButtonCopyPastaConfig = [
-  buttonItem(IconButton, 'Icon Button Element', { desc: 'for screen readers only' }),
+  buttonItem(Icons, 'Icons Element', { desc: 'for screen readers only' }),
   {
     PastaEl: <LoadingIcon desc="Various default icons are setup in src/Library somewhere" />,
+    children: <p></p>,
+  },
+  buttonItem(Icons, 'Icons Element', { desc: 'for screen readers only' }),
+  {
+    PastaEl: (
+      <LoadingIcon desc="Icons can render as any element" ElType="span" ariaRole="presentation" />
+    ),
     children: <p></p>,
   },
   buttonItem(Button, 'Button Element'),

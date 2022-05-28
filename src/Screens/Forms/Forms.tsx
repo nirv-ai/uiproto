@@ -1,7 +1,12 @@
 import text from './text.json';
 import { sentences } from 'src/mocks';
 import { Section, Screen, P } from 'src/Library';
-import { CheckboxExamples, CheckboxGroupExamples, NumberInputExamples } from './Examples';
+import {
+  ButtonExamples,
+  CheckboxExamples,
+  CheckboxGroupExamples,
+  NumberInputExamples,
+} from './Examples';
 
 export const FormsIntro = () => (
   <Section text={text}>
@@ -15,6 +20,7 @@ export const Forms = () => {
   return (
     <Screen text={text} docTitle={docTitle}>
       <P>{sentences}</P>
+      <ButtonExamples />
       <CheckboxExamples />
       <CheckboxGroupExamples />
       <NumberInputExamples />

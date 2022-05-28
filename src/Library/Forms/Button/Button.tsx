@@ -1,6 +1,5 @@
 import { useRef, type FC } from 'react';
-import { useButton, useToggleButton } from 'react-aria';
-import { useToggleState } from 'react-stately';
+import { useButton } from 'react-aria';
 
 import { TextWithRef, type TextInterface } from 'src/Library';
 
@@ -62,24 +61,3 @@ export const ResetButton: FC<FormButtonInterface> = props => {
   return <Button {...props} type="reset" />;
 };
 ResetButton.displayName = 'ResetButton';
-
-export const Toggle: FC<ButtonInterface> = ({ children, ElType = 'button', ...props }) => {
-  const ref = useRef<HTMLButtonElement>();
-  const state = useToggleState(props as any);
-  const { buttonProps /*, isPressed */ } = useToggleButton(
-    {
-      ...props,
-      elementType: ElType,
-    },
-    state,
-    /* @ts-ignore */
-    ref
-  );
-
-  return (
-    <TextWithRef {...buttonProps} {...props} ref={ref} ElType={ElType}>
-      {children}
-    </TextWithRef>
-  );
-};
-Toggle.displayName = 'Toggle';

@@ -9,7 +9,6 @@ import {
   P,
   ResetButton,
   SubmitButton,
-  Toggle,
   type PastaItemInterface,
 } from 'src/Library';
 
@@ -22,22 +21,18 @@ const buttonItem: PastaItemInterface = (El, about, props = {}) => ({
 });
 
 const ButtonCopyPastaConfig = [
-  buttonItem(Icons, 'Icons Element', { desc: 'for screen readers only' }),
-  {
-    PastaEl: <LoadingIcon desc="Various default icons are setup in src/Library somewhere" />,
-    children: <p></p>,
-  },
-  buttonItem(Icons, 'Icons Element', { desc: 'for screen readers only' }),
+  buttonItem(Icons, 'Icons Element', { desc: 'default renders a button' }),
+
   {
     PastaEl: (
       <LoadingIcon desc="Icons can render as any element" ElType="span" ariaRole="presentation" />
     ),
     children: <p></p>,
   },
+
   buttonItem(Button, 'Button Element'),
   buttonItem(SubmitButton, 'Form Submit Button Element', { name: 'my-name', value: 'my-value' }),
   buttonItem(ResetButton, 'Form Reset Button'),
-  buttonItem(Toggle, 'Toggle Element'),
 ];
 
 export const ButtonExamples: FC<any> = () => (

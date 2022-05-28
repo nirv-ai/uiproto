@@ -4,11 +4,11 @@ import { useToggleState } from 'react-stately';
 
 import { ToggleOffIcon, ToggleOnIcon, Label } from 'src/Library';
 
-export interface SwitchInterface {
+export interface ToggleSwitchInterface {
   [x: string]: any;
   ariaLabel: string;
 }
-export const Switch: FC<SwitchInterface> = ({ ariaLabel, title, ...props }) => {
+export const ToggleSwitch: FC<ToggleSwitchInterface> = ({ ariaLabel, title, ...props }) => {
   const sendProps = {
     ...props,
     'aria-label': ariaLabel,
@@ -21,6 +21,7 @@ export const Switch: FC<SwitchInterface> = ({ ariaLabel, title, ...props }) => {
     e.preventDefault();
     state.toggle();
   };
+
   return (
     <Label onClick={handleClick} title={title}>
       <VisuallyHidden>
@@ -31,3 +32,4 @@ export const Switch: FC<SwitchInterface> = ({ ariaLabel, title, ...props }) => {
     </Label>
   );
 };
+ToggleSwitch.displayName = 'ToggleSwitch';

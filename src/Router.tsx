@@ -1,4 +1,7 @@
 import { HashRouter, Routes, Route } from 'react-router-dom';
+import { Global } from '@emotion/react';
+
+import { indexCss } from './indexCss';
 
 import {
   Animation,
@@ -13,9 +16,11 @@ import {
   Video,
 } from './Screens';
 
+console.info('\n\n wtddf');
 export const Router = () => {
   return (
     <HashRouter>
+      <Global styles={indexCss} />;
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Landing />} />

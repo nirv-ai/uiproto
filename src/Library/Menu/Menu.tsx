@@ -58,7 +58,7 @@ export const MenuItem: FC<MenuItemProps> = ({ item, state, onAction }) => {
   );
 
   return (
-    <li {...menuItemProps} ref={ref}>
+    <li role="presentation" {...menuItemProps} ref={ref}>
       {item.rendered}
     </li>
   );

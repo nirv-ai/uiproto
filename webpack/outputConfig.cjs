@@ -5,5 +5,6 @@ module.exports = function ({ isDev, dirName }) {
     path: path.resolve(dirName, 'dist'),
     filename: '[name].bundle.js',
     chunkFilename: '[name].bundle.js',
+    publicPath: 'auto',
   };
 };

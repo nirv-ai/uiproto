@@ -7,20 +7,24 @@ export const resetCss = css`
     background-color: white;
     box-sizing: border-box;
     color: var(--color-scheme1-darkdark);
+    color-scheme: light dark;
     font-family: var(--font-reading1);
     font-size: var(--fsize);
-    min-height: 100%;
-    word-break: break-word;
-    line-height: var(--line-height);
     letter-spacing: 0.02rem;
+    line-height: var(--line-height);
+    min-height: 100%;
+    outline: none;
+    word-break: break-word;
 
     *,
     *::before,
     *::after {
-      background: inherit;
+      appearance: none;
+      background-color: inherit;
       border: none;
       box-sizing: inherit;
       color: inherit;
+      font-family: inherit;
       font-size: inherit;
       list-style: none;
       margin: 0;

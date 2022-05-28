@@ -1,10 +1,8 @@
 // todo: https://github.com/facebook/create-react-app/tree/main/packages/cra-template-typescript/template/public
-
+import '@abraham/reflection';
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
-import { Global } from '@emotion/react';
 
-import { indexCss } from './indexCss';
 import { reportWebVitals } from './reportWebVitals';
 import { Router } from './Router';
 
@@ -12,10 +10,7 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 
 root.render(
   <StrictMode>
-    <>
-      <Global styles={indexCss} />
-      <Router />
-    </>
+    <Router />
   </StrictMode>
 );
 

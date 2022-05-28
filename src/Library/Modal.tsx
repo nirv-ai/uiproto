@@ -94,6 +94,7 @@ export const Modal: FC<ModalProps> = ({
   // dialog closes.
   const { buttonProps: openButtonProps } = useButton(
     {
+      ...props,
       onPress: () => state.open(),
     },
     /* @ts-ignore */
@@ -102,6 +103,7 @@ export const Modal: FC<ModalProps> = ({
 
   const { buttonProps: closeButtonProps } = useButton(
     {
+      ...props,
       onPress: () => state.close(),
     },
     /* @ts-ignore */

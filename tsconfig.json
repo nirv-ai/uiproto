@@ -12,9 +12,12 @@
     "alwaysStrict": true,
     "baseUrl": "./", // enables import { B } from 'src/a/b' without './'
     "checkJs": false,
+    "declaration": true,
+    "declarationMap": true,
+    "emitDecoratorMetadata": true,
     "esModuleInterop": true,
     "exactOptionalPropertyTypes": false,
-    "noEmitOnError": false,
+    "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": false, // fks with webpck plugins, e.g. responsive-loader
     "importHelpers": true,
     "isolatedModules": true,
@@ -23,14 +26,18 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "module": "ESNext", // active js runtime
     "moduleResolution": "node", // should be nodenext @see https://github.com/emotion-js/emotion/issues/2742
+    "noEmitOnError": false,
     "noFallthroughCasesInSwitch": false,
     "noImplicitAny": false,
     "noImplicitOverride": true,
     "noImplicitReturns": false,
     "noImplicitThis": true,
     "noPropertyAccessFromIndexSignature": false,
+    "noUnusedLocals": true /* Report errors on unused locals. */,
+    "noUnusedParameters": true /* Report errors on unused parameters. */,
     "outDir": "dist",
-    "paths": {}, // map import keys to file paths
+    // "paths": {}, // map import keys to file paths
+    "pretty": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "sourceMap": true,

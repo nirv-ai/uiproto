@@ -4,6 +4,8 @@ export const rootVarsCss = css`
   @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,600&family=Inconsolata:wght@200;400&family=Indie+Flower&family=Rubik:wght@300;400&family=Belgrano&family=Kelly+Slab&display=swap');
 
   :root {
+    --font-web-safe-reading: Consolas, monaco, monospace;
+    --font-web-safe-heading: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Frutiger, Dejavu Sans, sans-serif;
     /* fonts */
     --font-max-width: 50ch;
     --font-heading1: 'Rubik', cursive;

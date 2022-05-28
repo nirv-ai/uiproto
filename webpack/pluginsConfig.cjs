@@ -1,11 +1,15 @@
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
-
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = function ({ MiniCssExtractPlugin }) {
   return [
+    new CleanWebpackPlugin(),
     new (require('fork-ts-checker-webpack-plugin'))(),
     new (require('webpack-manifest-plugin').WebpackManifestPlugin)({}),
     new (require('html-webpack-plugin'))({ template: './src/index.html' }),
-    new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css',
+      // experimentalUseImportModule: true,
+    }),
     new (require('eslint-webpack-plugin'))({ extensions: ['ts', 'tsx', 'js', 'jsx', 'json'] }),
     new ImageMinimizerPlugin({
       minimizer: {

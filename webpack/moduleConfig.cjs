@@ -41,10 +41,22 @@ module.exports = function ({ MiniCssExtractPlugin, isDev }) {
       ...getAssetLoaders(),
       {
         test: /\.(csv|tsv)$/i,
+        // exclude: /node_modules/,
         use: ['csv-loader'],
       },
       { test: /\.tsx?$/, loader: 'ts-loader' },
-      { test: /\.css$/i, use: [MiniCssExtractPlugin.loader, 'css-loader'] },
+      {
+        test: /\.css$/i,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              esModule: true,
+            },
+          },
+          'css-loader',
+        ],
+      },
     ],
   };
 };

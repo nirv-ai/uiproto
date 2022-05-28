@@ -28,10 +28,6 @@ export const resetCss = css`
       padding: 0;
       text-decoration: none;
     }
-
-    [disabled] {
-      cursor: not-allowed;
-    }
   }
 
   code, pre, .code {
@@ -46,10 +42,5 @@ export const resetCss = css`
     * {
       font-size: var(--scale-XXS);
     }
-  }
-
-  /* dont resize images by default */
-  img {
-    flex: 0 0 auto;
   }
 `;

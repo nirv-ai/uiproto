@@ -3,7 +3,7 @@ import { FaTruckLoading, FaMinus, FaPlus } from 'react-icons/fa';
 import { GrCheckbox, GrCheckboxSelected } from 'react-icons/gr';
 import { MdOutlineCancel } from 'react-icons/md';
 import { type FC, type ReactNode, type ReactElement } from 'react';
-
+import { BsToggleOff, BsToggleOn } from 'react-icons/bs';
 import { IconButton, type IconInterface } from './IconButton';
 
 export interface DefaultIconInterface extends IconInterface {
@@ -47,3 +47,9 @@ CircleXIcon.displayName = 'CircleXIcon';
 
 export const CircleMinusIcon = props => <DefaultIcon {...props} Icon={<AiOutlineMinusCircle />} />;
 CircleMinusIcon.displayName = 'CircleMinusIcon';
+
+export const ToggleOffIcon = props => <DefaultIcon {...props} Icon={<BsToggleOff />} />;
+ToggleOffIcon.displayName = 'ToggleOffIcon';
+
+export const ToggleOnIcon = props => <DefaultIcon {...props} Icon={<BsToggleOn />} />;
+ToggleOnIcon.displayName = 'ToggleOnIcon';

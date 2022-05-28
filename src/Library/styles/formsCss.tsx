@@ -1,6 +1,15 @@
 import { css } from '@emotion/react';
 
 export const formsCss = css`
+  [disabled] {
+    cursor: not-allowed;
+  }
+  
+  input {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
   label, .label {
     display: flex;
     gap: var(--spacing-XXS);

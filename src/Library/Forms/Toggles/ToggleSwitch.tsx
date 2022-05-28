@@ -8,6 +8,8 @@ export interface ToggleSwitchInterface {
   [x: string]: any;
   ariaLabel: string;
 }
+
+// TODO: (noah) there should be a single event handler on label with event delegation
 export const ToggleSwitch: FC<ToggleSwitchInterface> = ({ ariaLabel, title, ...props }) => {
   const sendProps = {
     ...props,
@@ -27,7 +29,11 @@ export const ToggleSwitch: FC<ToggleSwitchInterface> = ({ ariaLabel, title, ...p
       <VisuallyHidden>
         <input {...inputProps} ref={ref} />
       </VisuallyHidden>
-      {state.isSelected ? <ToggleOnIcon /> : <ToggleOffIcon />}
+      {state.isSelected ? (
+        <ToggleOnIcon onClick={handleClick} />
+      ) : (
+        <ToggleOffIcon onClick={handleClick} />
+      )}
       {props.children}
     </Label>
   );

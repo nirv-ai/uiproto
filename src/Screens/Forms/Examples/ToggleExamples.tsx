@@ -1,6 +1,6 @@
 import { type FC } from 'react';
 
-import { ToggleSwitch, CopyPastas, P, type PastaItemInterface } from 'src/Library';
+import { ToggleSwitch, ToggleButton, CopyPastas, P, type PastaItemInterface } from 'src/Library';
 
 const toggleItem: PastaItemInterface = (El, about, props: any) => ({
   PastaEl: <El {...props} />,
@@ -11,6 +11,12 @@ const ToggleSwitchCopyPastaConfig = [
   toggleItem(ToggleSwitch, 'ToggleSwitch Element', {
     ariaLabel: 'ima aria-label',
     title: 'show me on hover',
+  }),
+
+  toggleItem(ToggleButton, 'ToggleButton Element', {
+    ariaLabel: 'ima aria-label',
+    title: 'show me on hover',
+    children: 'Button Text',
   }),
 ];
 

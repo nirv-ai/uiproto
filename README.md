@@ -18,7 +18,8 @@ frontend typescript starter kit focusing on semantic UI primitives with high Acc
 
 ### external
 
-- we rely heavily on adobes react-aria & react-stately, but theres some aria kit through in there too
+- we rely heavily on adobes react-aria & react-stately, but theres some aria kit thrown in there too
 - [ariakit alpha doesnt have docs, check the sourcecode](https://github.com/ariakit/ariakit/tree/main/packages/ariakit/src)
 - [adobes react-aria](https://react-spectrum.adobe.com/react-aria)
 - [adobes react-stately](https://react-spectrum.adobe.com/react-stately)
+  `

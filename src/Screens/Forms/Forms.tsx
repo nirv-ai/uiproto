@@ -6,6 +6,7 @@ import {
   CheckboxExamples,
   CheckboxGroupExamples,
   NumberInputExamples,
+  ToggleExamples,
 } from './Examples';
 
 export const FormsIntro = () => (
@@ -21,6 +22,7 @@ export const Forms = () => {
     <Screen text={text} docTitle={docTitle}>
       <P>{sentences}</P>
       <ButtonExamples />
+      <ToggleExamples />
       <CheckboxExamples />
       <CheckboxGroupExamples />
       <NumberInputExamples />

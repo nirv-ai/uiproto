@@ -3,7 +3,8 @@ import { FaTruckLoading, FaMinus, FaPlus } from 'react-icons/fa';
 import { GrCheckbox, GrCheckboxSelected } from 'react-icons/gr';
 import { MdOutlineCancel } from 'react-icons/md';
 import { type FC, type ReactNode, type ReactElement } from 'react';
-import { BsToggleOff, BsToggleOn } from 'react-icons/bs';
+import { BsToggleOff, BsToggleOn, BsAlarmFill } from 'react-icons/bs';
+import { FcAlarmClock } from 'react-icons/fc';
 
 import { Icons, type IconsInterface } from 'src/Library';
 
@@ -54,3 +55,9 @@ ToggleOffIcon.displayName = 'ToggleOffIcon';
 
 export const ToggleOnIcon = props => <DefaultIcon {...props} Icon={<BsToggleOn />} />;
 ToggleOnIcon.displayName = 'ToggleOnIcon';
+
+export const AlarmIcon = props => <DefaultIcon {...props} Icon={<FcAlarmClock />} />;
+AlarmIcon.displayName = 'ToggleOnIcon';
+
+export const AlarmFilledIcon = props => <DefaultIcon {...props} Icon={<BsAlarmFill />} />;
+AlarmFilledIcon.displayName = 'AlarmFilledIcon';

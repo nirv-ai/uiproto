@@ -1,20 +1,33 @@
-import { useRef } from 'react';
-import { ToggleOffIcon, ToggleOnIcon } from 'src/Library';
+import { useRef, FC } from 'react';
 import { useSwitch, VisuallyHidden } from 'react-aria';
 import { useToggleState } from 'react-stately';
 
-export const Switch = props => {
-  const state = useToggleState(props);
-  const ref = useRef<HTMLInputElement>(null);
-  const { inputProps } = useSwitch(props, state, ref);
+import { ToggleOffIcon, ToggleOnIcon, Label } from 'src/Library';
 
+export interface SwitchInterface {
+  [x: string]: any;
+  ariaLabel: string;
+}
+export const Switch: FC<SwitchInterface> = ({ ariaLabel, title, ...props }) => {
+  const sendProps = {
+    ...props,
+    'aria-label': ariaLabel,
+  };
+  const state = useToggleState(sendProps as any);
+  const ref = useRef<HTMLInputElement>(null);
+  const { inputProps } = useSwitch(sendProps, state, ref);
+
+  const handleClick = e => {
+    e.preventDefault();
+    state.toggle();
+  };
   return (
-    <label style={{ display: 'flex', alignItems: 'center' }}>
+    <Label onClick={handleClick} title={title}>
       <VisuallyHidden>
         <input {...inputProps} ref={ref} />
       </VisuallyHidden>
       {state.isSelected ? <ToggleOnIcon /> : <ToggleOffIcon />}
       {props.children}
-    </label>
+    </Label>
   );
 };

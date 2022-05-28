@@ -10,9 +10,7 @@ const switchItem: PastaItemInterface = (El, about, props: any) => ({
 const SwitchCopyPastaConfig = [
   switchItem(Switch, 'Switch Element', {
     ariaLabel: 'ima aria-label',
-    label: 'Total errors in the last 24 hours',
-    steps: 1,
-    value: 1234567,
+    title: 'show me on hover',
   }),
 ];
 

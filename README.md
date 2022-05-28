@@ -8,6 +8,7 @@ frontend typescript starter kit focusing on semantic UI primitives with high Acc
 - [image bg remover](https://www.remove.bg)
 - [google fonts](https://fonts.google.com/)
 - [RIP Nic Jackson: free high resolution images](https://littlevisuals.co/)
+- [favicon creator](https://favicon.io/)
 
 ## links
 

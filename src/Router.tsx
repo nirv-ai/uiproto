@@ -16,7 +16,6 @@ import {
   Video,
 } from './Screens';
 
-console.info('\n\n wtddf');
 export const Router = () => {
   return (
     <HashRouter>

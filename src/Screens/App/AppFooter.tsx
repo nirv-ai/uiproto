@@ -1,8 +1,8 @@
 import text from './text.json';
-import { Link, Small, textCss } from 'src/Library';
+import { Link, Small } from 'src/Library';
 
 export const AppFooter = () => (
-  <footer css={textCss}>
+  <footer>
     <Link
       ariaLabel="Go to NIRV.ai"
       ariaRole="link"

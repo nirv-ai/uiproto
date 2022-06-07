@@ -27,7 +27,6 @@ export const ToggleButton: FC<ButtonInterface> = ({ children, ElType = 'button',
       : 'green',
   };
 
-  console.info('n\n\n wtf', state.isSelected, isPressed);
   return (
     <TextWithRef
       ariaRole="button"

@@ -1,10 +1,12 @@
-import { AiOutlineCheckCircle, AiOutlineMinusCircle } from 'react-icons/ai';
+import { type FC, type ReactNode, type ReactElement } from 'react';
+
+import { AiOutlineMinusCircle } from 'react-icons/ai';
+import { BsToggleOff, BsToggleOn, BsAlarmFill } from 'react-icons/bs';
 import { FaTruckLoading, FaMinus, FaPlus } from 'react-icons/fa';
+import { FcAlarmClock } from 'react-icons/fc';
 import { GrCheckbox, GrCheckboxSelected } from 'react-icons/gr';
 import { MdOutlineCancel } from 'react-icons/md';
-import { type FC, type ReactNode, type ReactElement } from 'react';
-import { BsToggleOff, BsToggleOn, BsAlarmFill } from 'react-icons/bs';
-import { FcAlarmClock } from 'react-icons/fc';
+import { BsCircle, BsPatchCheck } from 'react-icons/bs';
 
 import { Icons, type IconsInterface } from 'src/Library';
 
@@ -41,7 +43,10 @@ PlusIcon.displayName = 'PlusIcon';
 export const MinusIcon = props => <DefaultIcon {...props} Icon={<FaMinus />} />;
 MinusIcon.displayName = 'MinusIcon';
 
-export const CircleCheckIcon = props => <DefaultIcon {...props} Icon={<AiOutlineCheckCircle />} />;
+export const CircleIcon = props => <DefaultIcon {...props} Icon={<BsCircle />} />;
+CircleIcon.displayName = 'CircleIcon';
+
+export const CircleCheckIcon = props => <DefaultIcon {...props} Icon={<BsPatchCheck />} />;
 CircleCheckIcon.displayName = 'CircleCheckIcon';
 
 export const CircleXIcon = props => <DefaultIcon {...props} Icon={<MdOutlineCancel />} />;

@@ -2,7 +2,7 @@ import { type FC, type ReactNode } from 'react';
 import { useCheckboxGroup } from 'react-aria';
 import { useCheckboxGroupState } from 'react-stately';
 
-import { Span } from 'src/Library';
+import { Label } from 'src/Library';
 import { CheckboxGroupContext } from './CheckboxGroupContext';
 
 export interface CheckboxGroupInterface {
@@ -11,16 +11,17 @@ export interface CheckboxGroupInterface {
   label: string;
 }
 
+// TODO: (noah) dont use children, check how we render in RadioGroup
 export const CheckboxGroup: FC<CheckboxGroupInterface> = props => {
   const { children, label } = props;
   const state = useCheckboxGroupState(props);
   const { groupProps, labelProps } = useCheckboxGroup(props, state);
 
   return (
-    <fieldset {...groupProps}>
-      <Span ariaRole="presentation" {...labelProps}>
+    <fieldset {...groupProps} className="small-label">
+      <Label ariaRole="presentation" {...labelProps}>
         {label}
-      </Span>
+      </Label>
       <CheckboxGroupContext.Provider value={state} children={children} />
     </fieldset>
   );

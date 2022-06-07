@@ -51,8 +51,12 @@ export const CheckboxBase = forwardRef(
     /* @ts-ignore */
     const isDisabled = state?.isDisabled || props?.isDisabled;
 
-    const useClass = getClass(className, isDisabled && 'disabled', 'checkbox');
-    const focusRing = getClass(isFocusVisible && 'focus-ring', 'checkbox');
+    const useClass = getClass(
+      className,
+      isDisabled && 'disabled',
+      isFocusVisible && 'focus-ring',
+      'checkbox'
+    );
 
     /* @ts-ignore */
     const isSelected = () =>
@@ -61,12 +65,13 @@ export const CheckboxBase = forwardRef(
     // @see https://bugs.webkit.org/show_bug.cgi?id=219188
     // ^ ElType === button requires double click
     const RenderCheckboxes = isSelected() ? (
-      <CheckedEl className={focusRing} ElType="span" ariaRole="checkbox" />
+      <CheckedEl className={useClass} ElType="span" ariaRole="checkbox" aria-hidden="true" />
     ) : (
-      <UncheckedEl className={focusRing} ElType="span" ariaRole="checkbox" />
+      <UncheckedEl className={useClass} ElType="span" ariaRole="checkbox" aria-hidden="true" />
     );
 
     // TODO: (noah) logic is far too wet, refactor
+    // TODO: (noah) pretty sure putting a className on a visually hidden input makes 0 sense
     return children || label ? (
       <Label>
         <VisuallyHidden>
@@ -92,9 +97,9 @@ export const CheckboxBase = forwardRef(
           <input {...props} {...focusProps} ref={ref} className={useClass} />
         </VisuallyHidden>
         {isSelected() ? (
-          <CheckedEl onClick={state.toggle} className={focusRing} />
+          <CheckedEl onClick={state.toggle} className={useClass} aria-hidden="true" />
         ) : (
-          <UncheckedEl onClick={state.toggle} className={focusRing} />
+          <UncheckedEl onClick={state.toggle} className={useClass} aria-hidden="true" />
         )}
       </>
     );

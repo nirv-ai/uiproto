@@ -10,11 +10,12 @@ export interface LabelInterface {
 /**
  * generally a form control should render this automatically
  */
-export const Label: FC<LabelInterface> = ({ children, id, ...props }) => {
+export const Label: FC<LabelInterface> = ({ children, ariaRole, id, ...props }) => {
   const labelId = useId(id);
+  const role = ariaRole || props['aria-role'] || props.role;
 
   return (
-    <label {...props} id={labelId}>
+    <label {...props} role={role} id={labelId}>
       {children}
     </label>
   );

@@ -6,6 +6,7 @@ import {
   CheckboxExamples,
   CheckboxGroupExamples,
   NumberInputExamples,
+  RadioGroupExamples,
   ToggleExamples,
 } from './Examples';
 
@@ -26,6 +27,7 @@ export const Forms = () => {
       <CheckboxExamples />
       <CheckboxGroupExamples />
       <NumberInputExamples />
+      <RadioGroupExamples />
     </Screen>
   );
 };

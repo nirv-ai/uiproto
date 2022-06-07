@@ -8,9 +8,10 @@ export const formsCss = css`
     align-items: center;
   }
 
-  .number-input-wrapper {
+  .small-label {
     > label:first-of-type {
       font-size: 0.7rem;
+      text-transform: uppercase;
     }
   }
 

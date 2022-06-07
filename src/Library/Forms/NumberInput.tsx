@@ -72,7 +72,7 @@ export const NumberInput: FC<NumberInputInterface> = ({
   };
 
   return (
-    <Section className="number-input-wrapper">
+    <Section className="small-label">
       <Label id={lId}>
         {props.label}
         {isFocused ? (

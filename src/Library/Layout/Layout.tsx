@@ -37,6 +37,7 @@ Screen.displayName = 'Screen';
 
 export interface SectionInterface extends Partial<HIntroInterface> {
   children: ReactNode;
+  ariaRole?: string;
   className?: string;
 }
 
@@ -46,10 +47,11 @@ export const Section: FC<SectionInterface> = ({
   SubTitle = H3,
   children,
   className,
+  ariaRole,
 }) => {
   const useClass = getClass(className);
   return (
-    <section className={useClass}>
+    <section className={useClass} role={ariaRole}>
       {text ? <HIntro Title={Title} SubTitle={SubTitle} text={text} /> : null}
       {children}
     </section>

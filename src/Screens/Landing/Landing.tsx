@@ -1,4 +1,4 @@
-import text from './text.json';
+import { text } from './text';
 import { Screen, P } from 'src/Library';
 
 import {

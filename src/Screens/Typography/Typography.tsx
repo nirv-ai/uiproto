@@ -3,7 +3,7 @@ import { type FC } from 'react';
 import { HExamples, TextExamples, LinkExamples } from './Examples';
 import { Screen, Section, P } from 'src/Library';
 import { sentences } from 'src/mocks';
-import text from './text.json';
+import { text } from './text';
 
 export const TypographyIntro: FC<any> = () => (
   <Section text={text}>

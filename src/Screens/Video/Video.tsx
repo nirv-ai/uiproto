@@ -1,4 +1,4 @@
-import text from './text.json';
+import { text } from './text';
 import { sentences } from 'src/mocks';
 import { Screen, Section, P } from 'src/Library';
 

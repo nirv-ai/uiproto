@@ -13,5 +13,6 @@ const lorem = new LoremIpsum({
   },
 });
 
+export const sentence = lorem.generateSentences(1);
 export const sentences = lorem.generateSentences(5);
 export const paragraphs = lorem.generateParagraphs(7);

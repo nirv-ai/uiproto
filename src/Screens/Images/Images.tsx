@@ -1,7 +1,7 @@
 import { ImgExamples, LazyImgExamples, BgImgExamples } from './Examples';
 import { Section, Screen, P } from 'src/Library';
 import { sentences } from 'src/mocks';
-import text from './text.json';
+import { text } from './text';
 
 export const ImagesIntro = () => (
   <Section text={text}>

@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import { RiMenu5Line } from 'react-icons/ri';
 
 import { MenuNav, menuItem, Popover, Strong, Img } from 'src/Library';
-import text from './text.json';
+import { text } from './text';
 import uiProtoLogo from 'src/assets/images/uiproto_logo_200x200.png';
 
 const appNavLinks = [

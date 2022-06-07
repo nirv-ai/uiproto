@@ -1,4 +1,4 @@
-import text from './text.json';
+import { text } from './text';
 import { Link, Small } from 'src/Library';
 
 export const AppFooter = () => (

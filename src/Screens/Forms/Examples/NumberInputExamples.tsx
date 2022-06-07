@@ -9,15 +9,16 @@ const numberInputItem: PastaItemInterface = (El, about, props: any) => ({
 
 const NumberInputCopyPastaConfig = [
   numberInputItem(NumberInput, 'NumberInput Element', {
-    ariaLabel: 'ima aria-label',
     label: 'Total errors in the last 24 hours',
+    description: 'Gotta catchem all',
     steps: 1,
     value: 1234567,
   }),
 
   numberInputItem(NumberInput, 'NumberInput Element', {
-    ariaLabel: 'ima aria-label',
     label: 'Donate to your local opens source developer',
+    checkValidity: value => value === 'this will always show errorMessage',
+    errorMessage: 'checkValidity returns false so errorMessage is displayed',
     prefix: '$',
     steps: 100,
     value: 995,

@@ -12,6 +12,7 @@ export const formsCss = css`
     > label:first-of-type {
       font-size: 0.7rem;
       text-transform: uppercase;
+      cursor: default;
     }
   }
 

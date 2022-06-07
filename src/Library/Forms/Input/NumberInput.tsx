@@ -1,11 +1,14 @@
 import { useRef, useState, type FC } from 'react';
-import { useId } from 'react-aria';
+import { useId, useTextField } from 'react-aria';
 import NumberFormat from 'react-number-format';
 
-import { PlusIcon, MinusIcon, CircleCheckIcon, Label, Section } from 'src/Library';
+import { PlusIcon, MinusIcon, CircleCheckIcon, Label, Section, Small, Strong } from 'src/Library';
 
 export interface NumberInputInterface {
   [x: string]: any;
+  description?: string;
+  errorMessage?: string;
+  checkValidity?: (value: string | number) => boolean;
   displayType?: 'input' | 'text';
   inputId?: string;
   labelId?: string;
@@ -17,7 +20,7 @@ export interface NumberInputInterface {
 }
 
 export const NumberInput: FC<NumberInputInterface> = ({
-  ariaLabel,
+  checkValidity,
   displayType = 'input',
   inputId,
   labelId,
@@ -29,6 +32,8 @@ export const NumberInput: FC<NumberInputInterface> = ({
   value,
   ...props
 }) => {
+  if (checkValidity && !props.errorMessage)
+    throw new Error('errorMessage: string is required when checkValidity is provided');
   const [useValue, setValue] = useState(value);
   const [isFocused, setIsFocused] = useState(false);
 
@@ -41,6 +46,11 @@ export const NumberInput: FC<NumberInputInterface> = ({
   const pId = useId(plusId);
   const mId = useId(minusId);
   const iId = useId(inputId);
+
+  const { labelProps, inputProps, descriptionProps, errorMessageProps } = useTextField(
+    props,
+    inputRef
+  );
 
   const plusClick = event => {
     event.preventDefault();
@@ -55,8 +65,9 @@ export const NumberInput: FC<NumberInputInterface> = ({
   const RenderInput: FC<any> = numberProps => {
     return (
       <input
-        {...props}
+        {...inputProps}
         {...numberProps}
+        aria-labelledby={lId}
         autoFocus={isFocused}
         id={iId}
         key={iId}
@@ -65,6 +76,7 @@ export const NumberInput: FC<NumberInputInterface> = ({
       />
     );
   };
+
   const handleCheckClick = e => {
     e.preventDefault();
     setValue(tempValue.current?.floatValue);
@@ -73,7 +85,7 @@ export const NumberInput: FC<NumberInputInterface> = ({
 
   return (
     <Section className="small-label">
-      <Label id={lId}>
+      <Label {...labelProps} id={lId} htmlFor={iId}>
         {props.label}
         {isFocused ? (
           <>
@@ -102,7 +114,6 @@ export const NumberInput: FC<NumberInputInterface> = ({
         thousandSeparator
         value={useValue}
       />
-
       <PlusIcon
         id={pId}
         forwardedRef={plusRef}
@@ -110,6 +121,13 @@ export const NumberInput: FC<NumberInputInterface> = ({
         onClick={plusClick}
         disabled={isFocused}
       />
+      <br />
+      {props.errorMessage && checkValidity && !checkValidity(useValue) ? (
+        <Strong {...errorMessageProps} css={{ color: 'red', fontSize: '0.7rem' }}>
+          {props.errorMessage}
+        </Strong>
+      ) : null}
+      {props.description ? <Small {...descriptionProps}>{props.description}</Small> : null}
     </Section>
   );
 };

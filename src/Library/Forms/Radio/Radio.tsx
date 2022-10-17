@@ -20,6 +20,7 @@ export const Radio: FC<RadioInterface> = ({
 }) => {
   const state = useContext(RadioGroupContext);
   const ref = useRef(null);
+  // @ts-ignore
   const { inputProps } = useRadio(props, state, ref);
   const { isFocusVisible, focusProps } = useFocusRing();
 

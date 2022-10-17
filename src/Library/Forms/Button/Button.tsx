@@ -30,7 +30,9 @@ export const Button: FC<ButtonInterface> = ({
     {
       ...props,
       ...ariaRefProps,
+      // @ts-ignore
       type,
+      // @ts-ignore
       elementType: ElType,
     },
     /* @ts-ignore */

@@ -4,7 +4,11 @@ import { useToggleState } from 'react-stately';
 
 import { ButtonInterface, TextWithRef } from 'src/Library';
 
-export const ToggleButton: FC<ButtonInterface> = ({ children, ElType = 'button', ...props }) => {
+export const ToggleButton: FC<ButtonInterface> = ({
+  children,
+  ElType = 'button' as const,
+  ...props
+}) => {
   const ref = useRef<HTMLButtonElement>(null);
   const state = useToggleState(props as any);
   const { buttonProps, isPressed } = useToggleButton(

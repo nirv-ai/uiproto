@@ -102,6 +102,7 @@ export const NumberInput: FC<NumberInputInterface> = ({
         onClick={minusClick}
       />
 
+      {/* @ts-ignore */}
       <NumberFormat
         onValueChange={(values, { source }) => {
           if (source === 'event') tempValue.current = values;

@@ -120,6 +120,7 @@ export const Checkbox: FC<CheckboxInterface> = ({ ariaLabel, id, label, ...props
     id: checkboxId,
   };
 
+  // @ts-ignore
   const state = useToggleState(sendProps);
   const ref = useRef<HTMLInputElement>(null);
   const { inputProps } = useCheckbox(sendProps, state, ref as any);
@@ -148,6 +149,7 @@ export const CheckboxInGroup: FC<CheckboxInterface> = ({ id, ariaLabel, label, .
     id: checkboxId,
   };
 
+  // @ts-ignore
   const { inputProps } = useCheckboxGroupItem(sendProps, state as any, ref);
 
   /* @ts-ignore */
